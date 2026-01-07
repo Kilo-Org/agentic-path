@@ -2,6 +2,7 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import catppuccin from "@catppuccin/starlight";
+import { viewTransitions } from "astro-vtbot/starlight-view-transitions";
 
 // https://astro.build/config
 export default defineConfig({
@@ -33,6 +34,7 @@ export default defineConfig({
           dark: { flavor: "macchiato", accent: "yellow" },
           light: { flavor: "latte", accent: "yellow" },
         }),
+        viewTransitions(),
       ],
     }),
   ],
