@@ -109,6 +109,9 @@ export function RoadmapApp({
     // Ref for the scroll container (used by NavigationControls)
     const scrollContainerRef = useRef<HTMLElement | null>(null);
 
+    // Ref for the persona selector section (used for scrolling into view)
+    const personaSelectorRef = useRef<HTMLElement | null>(null);
+
     // Flag to prevent URL update loops during popstate handling
     const isPopstateRef = useRef(false);
 
@@ -216,13 +219,25 @@ export function RoadmapApp({
             setIsDrawerOpen(false);
         };
 
+        // Scroll to persona selector after state update
+        const scrollToSelector = () => {
+            // Use requestAnimationFrame to ensure DOM has updated
+            requestAnimationFrame(() => {
+                personaSelectorRef.current?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            });
+        };
+
         // Use View Transitions API if available
         if (supportsViewTransitions()) {
             (document as any).startViewTransition(() => {
                 updateState();
-            });
+            }).finished.then(scrollToSelector);
         } else {
             updateState();
+            scrollToSelector();
         }
     }, [selectedPersonaId, isMinimized]);
 
@@ -301,6 +316,7 @@ export function RoadmapApp({
                 onSelect={handlePersonaSelect}
                 isMinimized={isMinimized}
                 onBackToFull={handleBackToPersonas}
+                sectionRef={personaSelectorRef}
             />
 
             {isMinimized && selectedPersona && (
