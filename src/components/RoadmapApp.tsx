@@ -8,6 +8,7 @@
  * - Persona cards minimize to top when one is selected
  * - Drawer opens with view transitions
  * - Vertical navigation controls for scrolling through the graph
+ * - URL-based state management for deep linking and sharing
  */
 
 import { useState, useEffect, useCallback, useRef } from "preact/hooks";
@@ -18,6 +19,7 @@ import { MobileRoadmapView } from "./MobileRoadmapView";
 import { ConceptDrawer } from "./ConceptDrawer";
 import { PersonaSelector } from "./PersonaSelector";
 import { NavigationControls } from "./NavigationControls";
+import { parseUrlHash, updateUrlHash, clearUrlHash } from "../utils/urlState";
 
 export interface RoadmapAppProps {
     /** Optional initial selected node ID */
@@ -48,22 +50,119 @@ export function RoadmapApp({
     initialPersonaId,
 }: RoadmapAppProps): JSX.Element {
     // State for tracking selected persona (null = none selected, show full cards)
-    const [selectedPersonaId, setSelectedPersonaId] = useState<string | null>(initialPersonaId || null);
+    const [selectedPersonaId, setSelectedPersonaId] = useState<string | null>(() => {
+        // Initialize from URL hash if available, otherwise use prop
+        if (typeof window !== "undefined") {
+            const urlState = parseUrlHash();
+            if (urlState.persona && urlState.persona in personas) {
+                return urlState.persona;
+            }
+        }
+        return initialPersonaId || null;
+    });
 
     // State for tracking if the view is minimized (persona selected)
-    const [isMinimized, setIsMinimized] = useState(!!initialPersonaId);
+    const [isMinimized, setIsMinimized] = useState(() => {
+        if (typeof window !== "undefined") {
+            const urlState = parseUrlHash();
+            if (urlState.persona && urlState.persona in personas) {
+                return true;
+            }
+        }
+        return !!initialPersonaId;
+    });
 
     // State for tracking selected node
-    const [selectedNodeId, setSelectedNodeId] = useState<string | null>(initialNodeId);
+    const [selectedNodeId, setSelectedNodeId] = useState<string | null>(() => {
+        // Initialize from URL hash if available
+        if (typeof window !== "undefined") {
+            const urlState = parseUrlHash();
+            if (urlState.persona && urlState.topic) {
+                // Validate the topic exists in this persona
+                const persona = personas[urlState.persona as keyof typeof personas];
+                if (persona && findNodeById(persona, urlState.topic)) {
+                    return urlState.topic;
+                }
+            }
+        }
+        return initialNodeId;
+    });
 
     // State for tracking viewport size (mobile vs desktop)
     const [isMobile, setIsMobile] = useState(false);
 
     // State for drawer visibility (separate from selectedNodeId for animation)
-    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+    const [isDrawerOpen, setIsDrawerOpen] = useState(() => {
+        // Open drawer if URL has a topic
+        if (typeof window !== "undefined") {
+            const urlState = parseUrlHash();
+            if (urlState.persona && urlState.topic) {
+                const persona = personas[urlState.persona as keyof typeof personas];
+                if (persona && findNodeById(persona, urlState.topic)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    });
 
     // Ref for the scroll container (used by NavigationControls)
     const scrollContainerRef = useRef<HTMLElement | null>(null);
+
+    // Flag to prevent URL update loops during popstate handling
+    const isPopstateRef = useRef(false);
+
+    // Sync URL when state changes (but not during popstate handling)
+    useEffect(() => {
+        if (typeof window === "undefined" || isPopstateRef.current) {
+            isPopstateRef.current = false;
+            return;
+        }
+
+        if (selectedPersonaId) {
+            updateUrlHash({
+                persona: selectedPersonaId,
+                topic: selectedNodeId,
+            });
+        } else {
+            clearUrlHash();
+        }
+    }, [selectedPersonaId, selectedNodeId]);
+
+    // Handle browser back/forward navigation
+    useEffect(() => {
+        if (typeof window === "undefined") return;
+
+        const handlePopstate = () => {
+            isPopstateRef.current = true;
+            const urlState = parseUrlHash();
+
+            // Validate persona
+            if (urlState.persona && urlState.persona in personas) {
+                const persona = personas[urlState.persona as keyof typeof personas];
+                setSelectedPersonaId(urlState.persona);
+                setIsMinimized(true);
+
+                // Validate topic
+                if (urlState.topic && findNodeById(persona, urlState.topic)) {
+                    setSelectedNodeId(urlState.topic);
+                    setIsDrawerOpen(true);
+                } else {
+                    setSelectedNodeId(null);
+                    setIsDrawerOpen(false);
+                }
+            } else {
+                // No valid persona in URL, go back to full view
+                setSelectedPersonaId(null);
+                setIsMinimized(false);
+                setSelectedNodeId(null);
+                setIsDrawerOpen(false);
+            }
+        };
+
+        window.addEventListener("popstate", handlePopstate);
+        return () => window.removeEventListener("popstate", handlePopstate);
+    }, []);
 
     // Detect mobile viewport on mount and listen for changes
     useEffect(() => {
