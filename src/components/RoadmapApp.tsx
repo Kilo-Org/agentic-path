@@ -2,20 +2,22 @@
  * RoadmapApp is the main Preact island component for the interactive learning roadmap.
  * It manages the selected persona, selected node state, detects viewport size, and orchestrates
  * the rendering of persona selector, desktop/mobile views, and the concept drawer.
- * 
+ *
  * Features:
  * - View Transitions for smooth animations between states
  * - Persona cards minimize to top when one is selected
  * - Drawer opens with view transitions
+ * - Vertical navigation controls for scrolling through the graph
  */
 
-import { useState, useEffect, useCallback } from "preact/hooks";
+import { useState, useEffect, useCallback, useRef } from "preact/hooks";
 import type { JSX } from "preact";
 import { allPersonas, personas, findNodeById } from "../data";
 import { RoadmapView } from "./RoadmapView";
 import { MobileRoadmapView } from "./MobileRoadmapView";
 import { ConceptDrawer } from "./ConceptDrawer";
 import { PersonaSelector } from "./PersonaSelector";
+import { NavigationControls } from "./NavigationControls";
 
 export interface RoadmapAppProps {
     /** Optional initial selected node ID */
@@ -59,6 +61,9 @@ export function RoadmapApp({
 
     // State for drawer visibility (separate from selectedNodeId for animation)
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+    // Ref for the scroll container (used by NavigationControls)
+    const scrollContainerRef = useRef<HTMLElement | null>(null);
 
     // Detect mobile viewport on mount and listen for changes
     useEffect(() => {
@@ -200,7 +205,10 @@ export function RoadmapApp({
             />
 
             {isMinimized && selectedPersona && (
-                <>
+                <div
+                    className="roadmap-scroll-container"
+                    ref={(el) => { scrollContainerRef.current = el; }}
+                >
                     {isMobile ? (
                         <MobileRoadmapView
                             persona={selectedPersona}
@@ -214,8 +222,14 @@ export function RoadmapApp({
                             selectedNodeId={selectedNodeId}
                         />
                     )}
-                </>
+                </div>
             )}
+
+            {/* Navigation controls for scrolling through the graph */}
+            <NavigationControls
+                scrollContainerRef={scrollContainerRef}
+                isVisible={isMinimized && !isMobile && !!selectedPersona}
+            />
 
             <ConceptDrawer
                 node={selectedNode}

@@ -753,3 +753,161 @@
 .roadmap-view--leaving {
   animation: roadmap-hide 0.3s ease-in forwards;
 }
+
+/* ============================================
+   SCROLL CONTAINER & NAVIGATION CONTROLS
+   ============================================ */
+
+/* Scroll container wraps the roadmap views */
+.roadmap-scroll-container {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Navigation Controls - Fixed position on the right side */
+.navigation-controls {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: var(--z-sticky);
+  opacity: 0;
+  animation: fadeInNav 0.3s ease-out 0.5s forwards;
+}
+
+@keyframes fadeInNav {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+/* Navigation Button Base Styles */
+.nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--bg-surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition:
+    background var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-base),
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.nav-button:hover {
+  background: rgba(203, 166, 247, 0.1);
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+  transform: scale(1.05);
+}
+
+.nav-button:active {
+  transform: scale(0.95);
+}
+
+.nav-button:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* Top/Bottom buttons have more visual emphasis */
+.nav-button--top,
+.nav-button--bottom {
+  background: var(--bg-secondary);
+}
+
+.nav-button--top:hover,
+.nav-button--bottom:hover {
+  background: rgba(203, 166, 247, 0.15);
+  box-shadow: var(--shadow-sm);
+}
+
+/* SVG icon styling within nav buttons */
+.nav-button svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.5;
+}
+
+/* Keyboard shortcut hint (shown on hover) */
+.nav-button::after {
+  content: attr(title);
+  position: absolute;
+  right: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 4px 8px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
+}
+
+.nav-button:hover::after {
+  opacity: 1;
+}
+
+/* Responsive adjustments for navigation controls */
+@media (max-width: 1024px) {
+  .navigation-controls {
+    right: 16px;
+  }
+
+  .nav-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Hide tooltips on smaller screens */
+  .nav-button::after {
+    display: none;
+  }
+}
+
+/* Hide navigation on mobile (vertical scrolling is natural there) */
+@media (max-width: 768px) {
+  .navigation-controls {
+    display: none;
+  }
+}
+
+/* When drawer is open, shift nav controls left */
+.roadmap-app:has(.concept-drawer--open) .navigation-controls {
+  right: calc(400px + 24px);
+  transition: right var(--transition-slow);
+}
+
+@media (max-width: 1024px) {
+  .roadmap-app:has(.concept-drawer--open) .navigation-controls {
+    right: calc(320px + 16px);
+  }
+}

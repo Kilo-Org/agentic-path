@@ -47,6 +47,10 @@ export type { ResourceListProps } from "./ResourceList";
 export { ResourceItem } from "./ResourceItem";
 export type { ResourceItemProps } from "./ResourceItem";
 
+// Navigation controls
+export { NavigationControls } from "./NavigationControls";
+export type { NavigationControlsProps } from "./NavigationControls";
+
 // Main roadmap island app
 export { RoadmapApp } from "./RoadmapApp";
 export type { RoadmapAppProps } from "./RoadmapApp";
