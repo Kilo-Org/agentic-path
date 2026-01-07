@@ -75,8 +75,9 @@
   --connection-line: var(--ctp-overlay0);
 
   /* Node Colors for Side Items (Left/Right columns) */
-  --node-bg-left: rgba(203, 166, 247, 0.12);
-  --node-bg-right: rgba(137, 180, 250, 0.12);
+  /* Opaque backgrounds to hide connection lines behind cards */
+  --node-bg-left: #282735;
+  --node-bg-right: #252838;
   --node-border-left: var(--ctp-mauve);
   --node-border-right: var(--ctp-blue);
 

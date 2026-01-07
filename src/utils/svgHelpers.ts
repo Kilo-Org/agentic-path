@@ -35,13 +35,19 @@ export function generateCurvedPath(from: Point, to: Point): string {
   // Calculate horizontal midpoint for control points
   const midX = (from.x + to.x) / 2;
 
+  // Determine direction and add offset to stop line before the card edge
+  // Card width is approximately 160-260px, so use 90px offset from center
+  const cardOffset = 90;
+  const direction = to.x > from.x ? -1 : 1; // -1 for right, +1 for left
+  const adjustedToX = to.x + direction * cardOffset;
+
   // Create a cubic bezier curve:
   // - M: Move to starting point
   // - C: Cubic bezier with two control points and end point
   //   - First control point is at (midX, from.y) - horizontal from start
   //   - Second control point is at (midX, to.y) - horizontal from end
-  //   - End point is (to.x, to.y)
-  return `M ${from.x} ${from.y} C ${midX} ${from.y}, ${midX} ${to.y}, ${to.x} ${to.y}`;
+  //   - End point is adjusted to stop before the card
+  return `M ${from.x} ${from.y} C ${midX} ${from.y}, ${midX} ${to.y}, ${adjustedToX} ${to.y}`;
 }
 
 /**

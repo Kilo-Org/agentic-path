@@ -10,6 +10,7 @@
   padding: var(--spacing-xl) var(--spacing-md);
   background-color: var(--bg-primary);
   margin: 0 auto;
+  isolation: isolate;
 }
 
 /* Roadmap Header */
@@ -83,6 +84,8 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: var(--spacing-xs) 0;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .section-label--left {
@@ -123,7 +126,7 @@
 /* Main Topic Node (Center Column) */
 .main-topic-node {
   position: relative;
-  z-index: 1;
+  z-index: 10 !important;
   background: linear-gradient(
     135deg,
     var(--ctp-mauve) 0%,
@@ -162,8 +165,9 @@
 /* Detail Node (Left Column) - Mauve/Purple themed */
 .detail-node {
   position: relative;
-  z-index: 1;
-  background: var(--node-bg-left);
+  z-index: 10 !important;
+  isolation: isolate;
+  background: #282735 !important;
   border: 2px solid var(--ctp-surface2);
   color: var(--text-primary);
   padding: 12px 20px;
@@ -183,40 +187,40 @@
 
 .detail-node:hover {
   border-color: var(--ctp-mauve);
-  background: rgba(203, 166, 247, 0.18);
+  background: #302a3d;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(203, 166, 247, 0.15);
 }
 
 .detail-node:active {
-  background: rgba(203, 166, 247, 0.22);
+  background: #332d40;
   transform: translateY(0);
 }
 
 .detail-node--selected {
   border-color: var(--ctp-mauve);
-  background: rgba(203, 166, 247, 0.2);
+  background: #312b3e;
   box-shadow: 0 0 0 2px rgba(203, 166, 247, 0.3);
 }
 
 /* Detail Node (Right Column) - Blue themed */
 .roadmap-column--right .detail-node {
-  background: var(--node-bg-right);
+  background: #252838;
 }
 
 .roadmap-column--right .detail-node:hover {
   border-color: var(--ctp-blue);
-  background: rgba(137, 180, 250, 0.18);
+  background: #272d40;
   box-shadow: 0 4px 12px rgba(137, 180, 250, 0.15);
 }
 
 .roadmap-column--right .detail-node:active {
-  background: rgba(137, 180, 250, 0.22);
+  background: #2a3044;
 }
 
 .roadmap-column--right .detail-node--selected {
   border-color: var(--ctp-blue);
-  background: rgba(137, 180, 250, 0.2);
+  background: #282e42;
   box-shadow: 0 0 0 2px rgba(137, 180, 250, 0.3);
 }
 
@@ -285,7 +289,7 @@
   height: 100%;
   pointer-events: none;
   overflow: visible;
-  z-index: var(--z-base);
+  z-index: 1;
 }
 
 .connection-lines-svg {
@@ -295,7 +299,7 @@
   width: 100%;
   height: 100%;
   overflow: visible;
-  z-index: 0;
+  z-index: 1;
 }
 
 /* Connection Line Styles */

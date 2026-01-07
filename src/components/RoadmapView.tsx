@@ -117,7 +117,7 @@ export function RoadmapView({
                 height: `${canvasHeight}px`,
             }}
         >
-            {/* Section Labels */}
+            {/* Section Labels - rendered first (lowest z-index) */}
             {sectionLabels.map((item) => (
                 <SectionLabel
                     key={item.label}
@@ -125,6 +125,24 @@ export function RoadmapView({
                     yPosition={item.yPosition}
                 />
             ))}
+
+            {/* SVG Connection Lines - rendered before nodes so they appear behind */}
+            <svg
+                className="connection-lines-svg"
+                style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    pointerEvents: "none",
+                    zIndex: 1,
+                }}
+                viewBox={`0 0 ${canvasWidth} ${canvasHeight}`}
+                preserveAspectRatio="xMidYMid meet"
+            >
+                <ConnectionLines connections={positions.connections} />
+            </svg>
 
             {/* Detail Nodes - Left Column */}
             {positions.left.map((pos) => {
@@ -173,24 +191,6 @@ export function RoadmapView({
                     />
                 );
             })}
-
-            {/* SVG Overlay for Connection Lines */}
-            <svg
-                className="connection-lines-svg"
-                style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    pointerEvents: "none",
-                    zIndex: 0,
-                }}
-                viewBox={`0 0 ${canvasWidth} ${canvasHeight}`}
-                preserveAspectRatio="xMidYMid meet"
-            >
-                <ConnectionLines connections={positions.connections} />
-            </svg>
         </div>
     );
 }

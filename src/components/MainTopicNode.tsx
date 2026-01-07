@@ -33,6 +33,7 @@ export function MainTopicNode({
                 left: `${position.x}px`,
                 top: `${position.y}px`,
                 transform: "translate(-50%, -50%)",
+                zIndex: 10,
             }}
             onClick={onClick}
             aria-pressed={isSelected}

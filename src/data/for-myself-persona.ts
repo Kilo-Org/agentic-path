@@ -10,7 +10,7 @@ export const forMyselfPersona: Persona = {
   id: "for-myself",
   title: "For Myself",
   subtitle: "Individual Engineer",
-  icon: "user",
+  icon: "🧑‍💻",
   sections: [
     // ========================================================================
     // FOUNDATIONS
