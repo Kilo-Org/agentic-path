@@ -3,28 +3,38 @@
  * Import persona data from this module for clean, consistent imports:
  *
  * @example
- * import { forMyselfPersona, findNodeById } from '@/data';
+ * import { forMyselfPersona, forMyTeamPersona, forMyOrgPersona, findNodeById } from '@/data';
  */
 
 import type { Persona, MainTopic, DetailNode } from "@/types";
 
 // Persona data exports
 export { forMyselfPersona } from "./for-myself-persona";
+export { forMyTeamPersona } from "./for-my-team-persona";
+export { forMyOrgPersona } from "./for-my-org-persona";
 
 // Re-export for convenience when you need all personas
 import { forMyselfPersona } from "./for-myself-persona";
+import { forMyTeamPersona } from "./for-my-team-persona";
+import { forMyOrgPersona } from "./for-my-org-persona";
 
 /**
  * All available personas, keyed by their ID for easy lookup.
  */
 export const personas = {
   "for-myself": forMyselfPersona,
+  "for-my-team": forMyTeamPersona,
+  "for-my-org": forMyOrgPersona,
 } as const;
 
 /**
  * Array of all personas for iteration/display purposes.
  */
-export const allPersonas = [forMyselfPersona] as const;
+export const allPersonas = [
+  forMyselfPersona,
+  forMyTeamPersona,
+  forMyOrgPersona,
+] as const;
 
 /**
  * Find a node (MainTopic or DetailNode) by its ID within a persona.

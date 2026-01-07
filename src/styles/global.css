@@ -1,36 +1,91 @@
 /**
  * Global Styles - CSS Reset, Variables, Base Typography
- * Dark theme for the Interactive Learning Roadmap
+ * Catppuccin Mocha inspired dark theme for the Interactive Learning Roadmap
  */
 
-/* CSS Custom Properties (Variables) */
+/* CSS Custom Properties (Variables) - Catppuccin Mocha Palette */
 :root {
+  /* Catppuccin Mocha Base Colors */
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+
   /* Background Colors */
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #141414;
-  --bg-drawer: #1a1a1a;
-  --bg-hover: rgba(229, 192, 123, 0.05);
+  --bg-primary: var(--ctp-base);
+  --bg-secondary: var(--ctp-mantle);
+  --bg-tertiary: var(--ctp-crust);
+  --bg-drawer: var(--ctp-mantle);
+  --bg-hover: rgba(203, 166, 247, 0.08);
+  --bg-surface: var(--ctp-surface0);
 
   /* Accent Colors */
-  --accent-yellow: #e5c07b;
-  --accent-yellow-muted: #c9a961;
-  --accent-blue: #4aa8d8;
+  --accent-primary: var(--ctp-mauve);
+  --accent-secondary: var(--ctp-lavender);
+  --accent-yellow: var(--ctp-yellow);
+  --accent-yellow-muted: var(--ctp-peach);
+  --accent-blue: var(--ctp-sapphire);
+  --accent-green: var(--ctp-green);
+  --accent-red: var(--ctp-red);
+  --accent-pink: var(--ctp-pink);
+  --accent-teal: var(--ctp-teal);
 
   /* Text Colors */
-  --text-primary: #e5e5e5;
-  --text-muted: #9ca3af;
-  --text-dark: #1a1a1a;
+  --text-primary: var(--ctp-text);
+  --text-secondary: var(--ctp-subtext1);
+  --text-muted: var(--ctp-subtext0);
+  --text-dark: var(--ctp-crust);
+
+  /* For index.astro page-specific styles */
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-muted);
+  --color-accent: var(--accent-primary);
+  --color-accent-hover: var(--accent-secondary);
+  --color-accent-rgb: 203, 166, 247;
+  --color-border: var(--border);
 
   /* Border & Lines */
-  --border: #2a2a2a;
-  --border-hover: var(--accent-yellow-muted);
-  --connection-line: #4a4a4a;
+  --border: var(--ctp-surface1);
+  --border-hover: var(--ctp-surface2);
+  --connection-line: var(--ctp-overlay0);
+
+  /* Node Colors for Side Items (Left/Right columns) */
+  --node-bg-left: rgba(203, 166, 247, 0.12);
+  --node-bg-right: rgba(137, 180, 250, 0.12);
+  --node-border-left: var(--ctp-mauve);
+  --node-border-right: var(--ctp-blue);
 
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 8px 25px rgba(229, 192, 123, 0.2);
+  --shadow-sm: 0 2px 8px rgba(17, 17, 27, 0.4);
+  --shadow-md: 0 4px 16px rgba(17, 17, 27, 0.5);
+  --shadow-lg: 0 8px 32px rgba(17, 17, 27, 0.6);
+  --shadow-glow: 0 8px 25px rgba(203, 166, 247, 0.25);
+  --shadow-glow-blue: 0 8px 25px rgba(137, 180, 250, 0.25);
 
   /* Spacing */
   --spacing-xs: 4px;
@@ -73,6 +128,14 @@
   --z-overlay: 500;
   --z-drawer: 1000;
   --z-modal: 1100;
+
+  /* View Transition Timing */
+  --view-transition-duration: 0.35s;
+}
+
+/* Enable View Transitions API */
+@view-transition {
+  navigation: auto;
 }
 
 /* CSS Reset */
@@ -150,7 +213,7 @@ button {
 
 /* Focus styles for accessibility */
 :focus-visible {
-  outline: 2px solid var(--accent-yellow);
+  outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
 }
 
@@ -202,7 +265,7 @@ p {
 
 /* Selection styling */
 ::selection {
-  background-color: var(--accent-yellow);
+  background-color: var(--accent-primary);
   color: var(--text-dark);
 }
 
@@ -222,7 +285,7 @@ p {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--connection-line);
+  background: var(--ctp-surface2);
 }
 
 /* Firefox scrollbar */
@@ -249,7 +312,7 @@ p {
 }
 
 .text-accent {
-  color: var(--accent-yellow);
+  color: var(--accent-primary);
 }
 
 .text-center {
@@ -273,5 +336,121 @@ p {
 @media (min-width: 1024px) {
   .container {
     padding: 0 var(--spacing-xl);
+  }
+}
+
+/* ============================================
+   VIEW TRANSITION ANIMATIONS
+   ============================================ */
+
+/* Default view transition animation */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: var(--view-transition-duration);
+}
+
+/* Persona cards view transition */
+::view-transition-old(persona-cards),
+::view-transition-new(persona-cards) {
+  animation-duration: var(--view-transition-duration);
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Roadmap view transition */
+::view-transition-old(roadmap),
+::view-transition-new(roadmap) {
+  animation-duration: var(--view-transition-duration);
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Drawer view transition */
+::view-transition-old(drawer),
+::view-transition-new(drawer) {
+  animation-duration: var(--view-transition-duration);
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom keyframes for smooth transitions */
+@keyframes slide-from-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-to-right {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes scale-up {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-down {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+}
+
+@keyframes minimize-to-top {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-20px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes expand-from-top {
+  from {
+    transform: translateY(-20px) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
   }
 }

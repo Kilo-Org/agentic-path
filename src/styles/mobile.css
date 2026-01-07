@@ -1,6 +1,7 @@
 /**
- * Mobile Styles - Accordion Layout
+ * Mobile Styles - Single-Column Card Layout
  * Responsive styles for mobile roadmap view (<768px)
+ * Using Catppuccin Mocha color palette
  */
 
 /* ============================================
@@ -21,6 +22,8 @@
 /* Mobile Container */
 .mobile-roadmap {
   width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
   padding: var(--spacing-md);
 }
 
@@ -33,13 +36,13 @@
 .mobile-roadmap__title {
   font-size: var(--font-2xl);
   font-weight: var(--font-bold);
-  color: var(--text-primary);
+  color: var(--ctp-text);
   margin-bottom: var(--spacing-xs);
 }
 
 .mobile-roadmap__subtitle {
   font-size: var(--font-base);
-  color: var(--text-muted);
+  color: var(--ctp-subtext0);
 }
 
 /* ============================================
@@ -54,19 +57,20 @@
 
 /* Accordion Item */
 .accordion-item {
-  background: var(--bg-secondary);
+  background: var(--ctp-surface0);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid var(--border);
+  border: 1px solid var(--ctp-surface1);
   transition: border-color var(--transition-base);
 }
 
 .accordion-item:hover {
-  border-color: var(--accent-yellow-muted);
+  border-color: var(--ctp-mauve);
 }
 
 .accordion-item--active {
-  border-color: var(--accent-yellow);
+  border-color: var(--ctp-mauve);
+  background: rgba(203, 166, 247, 0.05);
 }
 
 /* Accordion Header (Main Topic Node on Mobile) */
@@ -84,7 +88,7 @@
 }
 
 .accordion-header:hover {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(203, 166, 247, 0.08);
 }
 
 .accordion-header__content {
@@ -97,7 +101,11 @@
 .accordion-header__indicator {
   width: 8px;
   height: 8px;
-  background: var(--accent-yellow);
+  background: linear-gradient(
+    135deg,
+    var(--ctp-mauve) 0%,
+    var(--ctp-lavender) 100%
+  );
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -105,7 +113,7 @@
 .accordion-header__title {
   font-size: var(--font-lg);
   font-weight: var(--font-semibold);
-  color: var(--text-primary);
+  color: var(--ctp-text);
   line-height: 1.4;
 }
 
@@ -113,14 +121,14 @@
 .accordion-header__chevron {
   width: 24px;
   height: 24px;
-  color: var(--text-muted);
+  color: var(--ctp-subtext0);
   transition: transform var(--transition-slow);
   flex-shrink: 0;
 }
 
 .accordion-item--active .accordion-header__chevron {
   transform: rotate(180deg);
-  color: var(--accent-yellow);
+  color: var(--ctp-mauve);
 }
 
 /* Accordion Content (Detail Nodes) */
@@ -154,52 +162,55 @@
   align-items: center;
   gap: var(--spacing-md);
   padding: var(--spacing-md);
-  background: transparent;
-  border: 1px solid var(--border);
+  background: rgba(203, 166, 247, 0.08);
+  border: 1px solid var(--ctp-surface1);
   border-radius: var(--radius-md);
   cursor: pointer;
   text-align: left;
   width: 100%;
   transition:
     background var(--transition-base),
-    border-color var(--transition-base);
+    border-color var(--transition-base),
+    transform var(--transition-base);
   margin-left: var(--spacing-lg); /* Indentation */
   width: calc(100% - var(--spacing-lg));
 }
 
 .mobile-detail-node:hover {
-  background: var(--bg-hover);
-  border-color: var(--accent-yellow-muted);
+  background: rgba(203, 166, 247, 0.15);
+  border-color: var(--ctp-mauve);
+  transform: translateX(4px);
 }
 
 .mobile-detail-node--selected {
-  background: var(--bg-hover);
-  border-color: var(--accent-yellow);
+  background: rgba(203, 166, 247, 0.18);
+  border-color: var(--ctp-mauve);
+  box-shadow: 0 0 0 2px rgba(203, 166, 247, 0.2);
 }
 
 .mobile-detail-node__indicator {
   width: 6px;
   height: 6px;
-  background: var(--text-muted);
+  background: var(--ctp-subtext0);
   border-radius: 50%;
   flex-shrink: 0;
 }
 
 .mobile-detail-node--selected .mobile-detail-node__indicator {
-  background: var(--accent-yellow);
+  background: var(--ctp-mauve);
 }
 
 .mobile-detail-node__label {
   font-size: var(--font-sm);
   font-weight: var(--font-medium);
-  color: var(--text-primary);
+  color: var(--ctp-text);
   flex: 1;
 }
 
 .mobile-detail-node__arrow {
   width: 16px;
   height: 16px;
-  color: var(--text-muted);
+  color: var(--ctp-subtext0);
   flex-shrink: 0;
   opacity: 0;
   transition: opacity var(--transition-fast);
@@ -220,12 +231,12 @@
 .mobile-section__label {
   font-size: var(--font-xs);
   font-weight: var(--font-semibold);
-  color: var(--text-muted);
+  color: var(--ctp-subtext0);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: var(--spacing-sm) 0;
   margin-bottom: var(--spacing-sm);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--ctp-surface1);
 }
 
 /* ============================================
@@ -239,7 +250,7 @@
 .mobile-node-group__title {
   font-size: var(--font-xs);
   font-weight: var(--font-medium);
-  color: var(--text-muted);
+  color: var(--ctp-subtext0);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: var(--spacing-xs) var(--spacing-md);
@@ -262,18 +273,20 @@
 
 /* Mobile Main Topic as Card */
 .mobile-main-card {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
+  background: var(--ctp-surface0);
+  border: 1px solid var(--ctp-surface1);
   border-radius: var(--radius-lg);
   padding: var(--spacing-lg);
   cursor: pointer;
   transition:
     border-color var(--transition-base),
-    transform var(--transition-base);
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
 }
 
 .mobile-main-card:hover {
-  border-color: var(--accent-yellow-muted);
+  border-color: var(--ctp-mauve);
+  box-shadow: 0 4px 12px rgba(203, 166, 247, 0.15);
 }
 
 .mobile-main-card:active {
@@ -290,7 +303,11 @@
 .mobile-main-card__dot {
   width: 12px;
   height: 12px;
-  background: var(--accent-yellow);
+  background: linear-gradient(
+    135deg,
+    var(--ctp-mauve) 0%,
+    var(--ctp-lavender) 100%
+  );
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -298,7 +315,7 @@
 .mobile-main-card__title {
   font-size: var(--font-lg);
   font-weight: var(--font-semibold);
-  color: var(--text-primary);
+  color: var(--ctp-text);
 }
 
 .mobile-main-card__details {
@@ -312,10 +329,10 @@
   align-items: center;
   gap: var(--spacing-xs);
   padding: var(--spacing-xs) var(--spacing-sm);
-  background: rgba(229, 192, 123, 0.1);
+  background: rgba(203, 166, 247, 0.12);
   border-radius: var(--radius-sm);
   font-size: var(--font-xs);
-  color: var(--text-muted);
+  color: var(--ctp-subtext1);
 }
 
 /* ============================================
@@ -327,15 +344,15 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: var(--bg-secondary);
-  border-top: 1px solid var(--border);
+  background: var(--ctp-mantle);
+  border-top: 1px solid var(--ctp-surface1);
   padding: var(--spacing-md);
   z-index: var(--z-sticky);
 }
 
 .mobile-progress__bar {
   height: 4px;
-  background: var(--border);
+  background: var(--ctp-surface1);
   border-radius: var(--radius-sm);
   overflow: hidden;
   margin-bottom: var(--spacing-sm);
@@ -343,14 +360,18 @@
 
 .mobile-progress__fill {
   height: 100%;
-  background: var(--accent-yellow);
+  background: linear-gradient(
+    90deg,
+    var(--ctp-mauve) 0%,
+    var(--ctp-lavender) 100%
+  );
   border-radius: var(--radius-sm);
   transition: width var(--transition-base);
 }
 
 .mobile-progress__text {
   font-size: var(--font-xs);
-  color: var(--text-muted);
+  color: var(--ctp-subtext0);
   text-align: center;
 }
 
@@ -397,12 +418,12 @@
 
 @media (hover: none) {
   .accordion-header:active {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(203, 166, 247, 0.12);
   }
 
   .mobile-detail-node:active {
-    background: rgba(229, 192, 123, 0.1);
-    border-color: var(--accent-yellow);
+    background: rgba(203, 166, 247, 0.18);
+    border-color: var(--ctp-mauve);
   }
 
   .mobile-detail-node:active .mobile-detail-node__arrow {
@@ -474,4 +495,169 @@
     margin-left: var(--spacing-md);
     width: calc(100% - var(--spacing-md));
   }
+
+  .mobile-main-topic-card {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-base);
+  }
+
+  .mobile-detail-cards {
+    margin-left: var(--spacing-md);
+  }
+}
+
+/* ============================================
+   MOBILE CARD LAYOUT (Single Column)
+   ============================================ */
+
+.mobile-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.mobile-topic-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* Mobile Main Topic Card - Gradient styling like desktop */
+.mobile-main-topic-card {
+  width: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--ctp-mauve) 0%,
+    var(--ctp-lavender) 100%
+  );
+  color: var(--ctp-crust);
+  font-weight: var(--font-semibold);
+  font-size: var(--font-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.mobile-main-topic-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.mobile-main-topic-card:active {
+  transform: translateY(0);
+}
+
+.mobile-main-topic-card--selected {
+  box-shadow:
+    var(--shadow-glow),
+    0 0 0 3px var(--ctp-lavender);
+}
+
+.mobile-main-topic-card__title {
+  display: block;
+}
+
+/* Mobile Detail Card - Bordered styling with background */
+.mobile-detail-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-left: var(--spacing-lg);
+}
+
+.mobile-detail-card {
+  width: 100%;
+  background: rgba(203, 166, 247, 0.1);
+  border: 2px solid var(--ctp-surface1);
+  color: var(--ctp-text);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: left;
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+  transition:
+    border-color var(--transition-base),
+    background var(--transition-base),
+    transform var(--transition-base);
+}
+
+.mobile-detail-card:hover {
+  border-color: var(--ctp-mauve);
+  background: rgba(203, 166, 247, 0.18);
+  transform: translateX(4px);
+}
+
+.mobile-detail-card:active {
+  background: rgba(203, 166, 247, 0.22);
+}
+
+.mobile-detail-card--selected {
+  border-color: var(--ctp-mauve);
+  background: rgba(203, 166, 247, 0.18);
+  box-shadow: 0 0 0 2px rgba(203, 166, 247, 0.2);
+}
+
+.mobile-detail-card__title {
+  display: block;
+}
+
+/* Touch states for card layout */
+@media (hover: none) {
+  .mobile-main-topic-card:active {
+    transform: scale(0.98);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .mobile-detail-card:active {
+    background: rgba(203, 166, 247, 0.22);
+    border-color: var(--ctp-mauve);
+  }
+}
+
+/* ============================================
+   PERSONA SELECTOR BACK BUTTON
+   ============================================ */
+
+.persona-selector-back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--ctp-surface0);
+  border: 1px solid var(--ctp-surface1);
+  border-radius: var(--radius-md);
+  color: var(--ctp-subtext1);
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+  margin-bottom: var(--spacing-md);
+}
+
+.persona-selector-back:hover {
+  background: rgba(203, 166, 247, 0.1);
+  border-color: var(--ctp-mauve);
+  color: var(--ctp-text);
+}
+
+.persona-selector-back:active {
+  transform: translateX(-2px);
+}
+
+.persona-selector-back svg {
+  transition: transform var(--transition-fast);
+}
+
+.persona-selector-back:hover svg {
+  transform: translateX(-2px);
 }

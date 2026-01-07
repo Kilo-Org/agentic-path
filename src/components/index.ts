@@ -30,6 +30,13 @@ export type { ConnectionLinesProps } from "./ConnectionLines";
 export { SectionLabel } from "./SectionLabel";
 export type { SectionLabelProps } from "./SectionLabel";
 
+// Persona selection components
+export { PersonaCard } from "./PersonaCard";
+export type { PersonaCardProps } from "./PersonaCard";
+
+export { PersonaSelector } from "./PersonaSelector";
+export type { PersonaSelectorProps } from "./PersonaSelector";
+
 // Drawer components
 export { ConceptDrawer } from "./ConceptDrawer";
 export type { ConceptDrawerProps } from "./ConceptDrawer";

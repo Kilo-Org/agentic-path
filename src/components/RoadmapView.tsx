@@ -176,7 +176,7 @@ export function RoadmapView({
 
             {/* SVG Overlay for Connection Lines */}
             <svg
-                className="connection-lines"
+                className="connection-lines-svg"
                 style={{
                     position: "absolute",
                     top: 0,
@@ -184,6 +184,7 @@ export function RoadmapView({
                     width: "100%",
                     height: "100%",
                     pointerEvents: "none",
+                    zIndex: 0,
                 }}
                 viewBox={`0 0 ${canvasWidth} ${canvasHeight}`}
                 preserveAspectRatio="xMidYMid meet"
