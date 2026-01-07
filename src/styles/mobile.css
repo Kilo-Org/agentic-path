@@ -1,0 +1,477 @@
+/**
+ * Mobile Styles - Accordion Layout
+ * Responsive styles for mobile roadmap view (<768px)
+ */
+
+/* ============================================
+   MOBILE ROADMAP VIEW
+   ============================================ */
+
+/* Show only on mobile */
+.roadmap-view--mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .roadmap-view--mobile {
+    display: block;
+  }
+}
+
+/* Mobile Container */
+.mobile-roadmap {
+  width: 100%;
+  padding: var(--spacing-md);
+}
+
+.mobile-roadmap__header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md) 0;
+}
+
+.mobile-roadmap__title {
+  font-size: var(--font-2xl);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.mobile-roadmap__subtitle {
+  font-size: var(--font-base);
+  color: var(--text-muted);
+}
+
+/* ============================================
+   ACCORDION PATTERN
+   ============================================ */
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* Accordion Item */
+.accordion-item {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: border-color var(--transition-base);
+}
+
+.accordion-item:hover {
+  border-color: var(--accent-yellow-muted);
+}
+
+.accordion-item--active {
+  border-color: var(--accent-yellow);
+}
+
+/* Accordion Header (Main Topic Node on Mobile) */
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--transition-base);
+}
+
+.accordion-header:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.accordion-header__content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex: 1;
+}
+
+.accordion-header__indicator {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-yellow);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.accordion-header__title {
+  font-size: var(--font-lg);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+/* Chevron Icon */
+.accordion-header__chevron {
+  width: 24px;
+  height: 24px;
+  color: var(--text-muted);
+  transition: transform var(--transition-slow);
+  flex-shrink: 0;
+}
+
+.accordion-item--active .accordion-header__chevron {
+  transform: rotate(180deg);
+  color: var(--accent-yellow);
+}
+
+/* Accordion Content (Detail Nodes) */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-slow) ease-out;
+}
+
+.accordion-item--active .accordion-content {
+  max-height: 1000px; /* Large enough to contain content */
+  transition: max-height var(--transition-slow) ease-in;
+}
+
+.accordion-content__inner {
+  padding: 0 var(--spacing-lg) var(--spacing-lg);
+}
+
+/* ============================================
+   MOBILE DETAIL NODES
+   ============================================ */
+
+.mobile-detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.mobile-detail-node {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition:
+    background var(--transition-base),
+    border-color var(--transition-base);
+  margin-left: var(--spacing-lg); /* Indentation */
+  width: calc(100% - var(--spacing-lg));
+}
+
+.mobile-detail-node:hover {
+  background: var(--bg-hover);
+  border-color: var(--accent-yellow-muted);
+}
+
+.mobile-detail-node--selected {
+  background: var(--bg-hover);
+  border-color: var(--accent-yellow);
+}
+
+.mobile-detail-node__indicator {
+  width: 6px;
+  height: 6px;
+  background: var(--text-muted);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.mobile-detail-node--selected .mobile-detail-node__indicator {
+  background: var(--accent-yellow);
+}
+
+.mobile-detail-node__label {
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.mobile-detail-node__arrow {
+  width: 16px;
+  height: 16px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.mobile-detail-node:hover .mobile-detail-node__arrow {
+  opacity: 1;
+}
+
+/* ============================================
+   MOBILE SECTION DIVIDERS
+   ============================================ */
+
+.mobile-section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.mobile-section__label {
+  font-size: var(--font-xs);
+  font-weight: var(--font-semibold);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: var(--spacing-sm) 0;
+  margin-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--border);
+}
+
+/* ============================================
+   MOBILE NODE GROUPING
+   ============================================ */
+
+.mobile-node-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.mobile-node-group__title {
+  font-size: var(--font-xs);
+  font-weight: var(--font-medium);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: var(--spacing-xs) var(--spacing-md);
+  margin-left: var(--spacing-lg);
+}
+
+/* ============================================
+   MOBILE STACKED LAYOUT (Alternative)
+   ============================================ */
+
+.mobile-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.mobile-stack__item {
+  width: 100%;
+}
+
+/* Mobile Main Topic as Card */
+.mobile-main-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  cursor: pointer;
+  transition:
+    border-color var(--transition-base),
+    transform var(--transition-base);
+}
+
+.mobile-main-card:hover {
+  border-color: var(--accent-yellow-muted);
+}
+
+.mobile-main-card:active {
+  transform: scale(0.98);
+}
+
+.mobile-main-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.mobile-main-card__dot {
+  width: 12px;
+  height: 12px;
+  background: var(--accent-yellow);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.mobile-main-card__title {
+  font-size: var(--font-lg);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+}
+
+.mobile-main-card__details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.mobile-main-card__detail-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: rgba(229, 192, 123, 0.1);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+}
+
+/* ============================================
+   MOBILE PROGRESS INDICATOR
+   ============================================ */
+
+.mobile-progress {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  padding: var(--spacing-md);
+  z-index: var(--z-sticky);
+}
+
+.mobile-progress__bar {
+  height: 4px;
+  background: var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: var(--spacing-sm);
+}
+
+.mobile-progress__fill {
+  height: 100%;
+  background: var(--accent-yellow);
+  border-radius: var(--radius-sm);
+  transition: width var(--transition-base);
+}
+
+.mobile-progress__text {
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* ============================================
+   MOBILE ANIMATIONS
+   ============================================ */
+
+/* Accordion expand animation */
+@keyframes accordionExpand {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.accordion-content__inner > * {
+  animation: accordionExpand 0.2s ease-out forwards;
+}
+
+/* Stagger animation for detail nodes */
+.accordion-content__inner > *:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.accordion-content__inner > *:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.accordion-content__inner > *:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.accordion-content__inner > *:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.accordion-content__inner > *:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+/* ============================================
+   MOBILE TOUCH STATES
+   ============================================ */
+
+@media (hover: none) {
+  .accordion-header:active {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .mobile-detail-node:active {
+    background: rgba(229, 192, 123, 0.1);
+    border-color: var(--accent-yellow);
+  }
+
+  .mobile-detail-node:active .mobile-detail-node__arrow {
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   SAFE AREA INSETS (Notch Support)
+   ============================================ */
+
+@supports (padding: max(0px)) {
+  .mobile-roadmap {
+    padding-left: max(var(--spacing-md), env(safe-area-inset-left));
+    padding-right: max(var(--spacing-md), env(safe-area-inset-right));
+    padding-bottom: max(var(--spacing-md), env(safe-area-inset-bottom));
+  }
+
+  .mobile-progress {
+    padding-bottom: max(var(--spacing-md), env(safe-area-inset-bottom));
+  }
+}
+
+/* ============================================
+   LANDSCAPE MOBILE
+   ============================================ */
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .mobile-roadmap__header {
+    padding: var(--spacing-sm) 0;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .mobile-roadmap__title {
+    font-size: var(--font-xl);
+  }
+
+  .accordion-header {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .accordion-content__inner {
+    padding: 0 var(--spacing-md) var(--spacing-md);
+  }
+
+  .mobile-detail-node {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+}
+
+/* ============================================
+   SMALL MOBILE (<375px)
+   ============================================ */
+
+@media (max-width: 375px) {
+  .mobile-roadmap {
+    padding: var(--spacing-sm);
+  }
+
+  .mobile-roadmap__title {
+    font-size: var(--font-xl);
+  }
+
+  .accordion-header__title {
+    font-size: var(--font-base);
+  }
+
+  .mobile-detail-node {
+    margin-left: var(--spacing-md);
+    width: calc(100% - var(--spacing-md));
+  }
+}

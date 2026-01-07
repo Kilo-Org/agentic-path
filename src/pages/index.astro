@@ -1,0 +1,254 @@
+---
+/**
+ * Main page for the Agentic Engineering for Humans interactive learning roadmap.
+ * This page integrates all components into a cohesive experience.
+ */
+
+// Import the main island component
+import { RoadmapApp } from "../components/RoadmapApp";
+
+// Import all CSS styles
+import "../styles/global.css";
+import "../styles/roadmap.css";
+import "../styles/mobile.css";
+import "../styles/drawer.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="An interactive learning roadmap for understanding agentic AI, LLMs, and prompt engineering - designed for humans who want to level up their AI skills."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a1a2e" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Agentic Engineering for Humans" />
+    <meta
+      property="og:description"
+      content="An interactive learning roadmap for understanding agentic AI, LLMs, and prompt engineering."
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Generator -->
+    <meta name="generator" content={Astro.generator} />
+
+    <title>Agentic Engineering for Humans | path.kilo.ai</title>
+  </head>
+
+  <body>
+    <!-- Site Header -->
+    <header class="site-header">
+      <div class="header-content">
+        <h1 class="site-title">Agentic Engineering for Humans</h1>
+        <p class="site-subtitle">An Interactive Learning Roadmap</p>
+      </div>
+    </header>
+
+    <!-- Hero Section with Description -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <p class="hero-description">
+          Navigate the world of <strong>agentic AI</strong> with confidence. This
+          roadmap guides you through the essential concepts of <strong
+            >LLMs</strong
+          >,
+          <strong>prompt engineering</strong>, and <strong>AI agents</strong> — from
+          foundational understanding to practical implementation.
+        </p>
+        <p class="hero-instructions">
+          <span class="instruction-icon">👆</span>
+          Click on any topic to explore resources and learn more.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Preact Island: Interactive Roadmap -->
+      <RoadmapApp client:load />
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p class="footer-text">
+          Made with 💜 by <a
+            href="https://kilo.ai"
+            target="_blank"
+            rel="noopener noreferrer">Kilo Code</a
+          >
+        </p>
+        <p class="footer-copyright">
+          © {new Date().getFullYear()} path.kilo.ai — Learn AI, one concept at a time.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  /* Page-specific styles that augment global.css */
+
+  .site-header {
+    background: linear-gradient(
+      135deg,
+      var(--color-bg-primary) 0%,
+      var(--color-bg-secondary) 100%
+    );
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .site-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.02em;
+  }
+
+  .site-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+    font-weight: 400;
+  }
+
+  .hero-section {
+    background: var(--color-bg-secondary);
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin: 0 0 1rem 0;
+  }
+
+  .hero-description strong {
+    color: var(--color-text-primary);
+    font-weight: 600;
+  }
+
+  .hero-instructions {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--color-accent);
+    margin: 0;
+    padding: 0.75rem 1.25rem;
+    background: rgba(var(--color-accent-rgb), 0.1);
+    border-radius: 9999px;
+  }
+
+  .instruction-icon {
+    font-size: 1.25rem;
+  }
+
+  .main-content {
+    flex: 1;
+    padding: 0;
+    background: var(--color-bg-primary);
+  }
+
+  .site-footer {
+    background: var(--color-bg-secondary);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-text {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin: 0 0 0.5rem 0;
+  }
+
+  .footer-text a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .footer-text a:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+  }
+
+  .footer-copyright {
+    font-size: 0.875rem;
+    color: var(--color-text-tertiary);
+    margin: 0;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .site-header {
+      padding: 1.5rem 1rem;
+    }
+
+    .site-title {
+      font-size: 1.75rem;
+    }
+
+    .site-subtitle {
+      font-size: 1rem;
+    }
+
+    .hero-section {
+      padding: 1rem;
+    }
+
+    .hero-description {
+      font-size: 1rem;
+    }
+
+    .hero-instructions {
+      font-size: 0.875rem;
+      padding: 0.6rem 1rem;
+    }
+
+    .site-footer {
+      padding: 1.5rem 1rem;
+    }
+  }
+
+  /* Extra small screens */
+  @media (max-width: 480px) {
+    .site-title {
+      font-size: 1.5rem;
+    }
+
+    .hero-description {
+      font-size: 0.95rem;
+    }
+  }
+</style>
