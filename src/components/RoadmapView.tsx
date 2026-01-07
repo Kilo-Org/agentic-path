@@ -49,7 +49,7 @@ function buildNodeLookup(
 
 /**
  * Calculate section label positions based on the layout algorithm.
- * Each section label appears above its first topic.
+ * Each section label appears above its first topic (vertically centered in the section spacing area).
  */
 function calculateSectionLabels(
     persona: Persona,
@@ -59,10 +59,11 @@ function calculateSectionLabels(
     let currentY = config.startY;
 
     persona.sections.forEach((section) => {
-        // Section label positioned at the current Y with some offset
+        // Section label positioned at the start of the section spacing area
+        // This places it clearly above the first topic node
         sectionLabels.push({
             label: section.label,
-            yPosition: currentY + config.sectionSpacing / 2,
+            yPosition: currentY,
         });
 
         // Advance past section spacing
