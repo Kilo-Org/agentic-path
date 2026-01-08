@@ -48,31 +48,42 @@ function buildNodeLookup(
 }
 
 /**
- * Calculate section label positions based on the layout algorithm.
+ * Calculate section label positions based on actual node positions.
  * Each section label appears above its first topic, positioned to not overlap with nodes.
+ * This uses the actual computed positions rather than trying to replicate the algorithm,
+ * ensuring labels stay clear of nodes even when collision detection adjusts positions.
  */
 function calculateSectionLabels(
     persona: Persona,
+    positions: NodePositions,
     config = DEFAULT_LAYOUT_CONFIG
 ): Array<{ label: string; yPosition: number }> {
     const sectionLabels: Array<{ label: string; yPosition: number }> = [];
-    let currentY = config.startY;
+
+    // Build a lookup of topic ID to position
+    const topicPositions: Record<string, number> = {};
+    positions.center.forEach((pos) => {
+        topicPositions[pos.id] = pos.y;
+    });
 
     persona.sections.forEach((section) => {
-        // Section label positioned above the section spacing area
-        // The first topic node will be at currentY + sectionSpacing, and nodes are centered on their Y,
-        // so we position the label higher to avoid overlap with the main node's top edge
-        // Main nodes are ~64px tall, so they extend ~32px above their center point
-        // Place label well above that
-        sectionLabels.push({
-            label: section.label,
-            yPosition: currentY - 30, // Position label 20px above the section start
-        });
+        if (section.topics.length === 0) return;
 
-        // Advance past section spacing (where the section label visual space is)
-        currentY += config.sectionSpacing;
-        // Advance past all topics in this section
-        currentY += section.topics.length * config.topicSpacing;
+        // Get the actual Y position of the first topic in this section
+        const firstTopicId = section.topics[0].id;
+        const firstTopicY = topicPositions[firstTopicId];
+
+        if (firstTopicY !== undefined) {
+            // Main topic nodes are centered on their Y position and can be ~80-100px tall
+            // (multi-line titles). Place the label well above the node's top edge.
+            // Using mainNodeHeight estimate plus extra margin for safety.
+            const labelY = firstTopicY - config.mainNodeHeight - 35;
+
+            sectionLabels.push({
+                label: section.label,
+                yPosition: labelY,
+            });
+        }
     });
 
     return sectionLabels;
@@ -100,10 +111,10 @@ export function RoadmapView({
         [persona]
     );
 
-    // Calculate section labels
+    // Calculate section labels based on actual node positions
     const sectionLabels = useMemo(
-        () => calculateSectionLabels(persona),
-        [persona]
+        () => calculateSectionLabels(persona, positions),
+        [persona, positions]
     );
 
     // Calculate positions on persona change
