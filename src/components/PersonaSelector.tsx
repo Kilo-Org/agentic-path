@@ -4,7 +4,7 @@
  * Supports minimized state when a persona is selected.
  */
 
-import type { JSX } from "preact";
+import type { JSX, RefObject } from "preact";
 import type { Persona } from "../types";
 import { PersonaCard } from "./PersonaCard";
 
@@ -19,6 +19,8 @@ export interface PersonaSelectorProps {
     isMinimized?: boolean;
     /** Callback to go back to full view */
     onBackToFull?: () => void;
+    /** Ref for the section element (used for scrolling) */
+    sectionRef?: RefObject<HTMLElement>;
 }
 
 /**
@@ -36,6 +38,7 @@ export function PersonaSelector({
     onSelect,
     isMinimized = false,
     onBackToFull,
+    sectionRef,
 }: PersonaSelectorProps): JSX.Element {
     const sectionClasses = [
         "persona-selector-section",
@@ -53,6 +56,7 @@ export function PersonaSelector({
 
     return (
         <section
+            ref={sectionRef}
             className={sectionClasses}
             aria-labelledby="persona-selector-title"
             style={{ viewTransitionName: "persona-section" }}

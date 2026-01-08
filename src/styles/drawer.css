@@ -43,16 +43,26 @@
   background: var(--ctp-mantle);
   z-index: var(--z-drawer);
   transform: translateX(100%);
-  transition: transform var(--transition-slow) cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transition:
+    transform 0.35s cubic-bezier(0.32, 0.72, 0, 1),
+    opacity 0.25s ease-out,
+    box-shadow 0.35s ease-out;
   display: flex;
   flex-direction: column;
-  box-shadow: -8px 0 32px rgba(17, 17, 27, 0.6);
+  box-shadow: 0 0 0 rgba(17, 17, 27, 0);
   view-transition-name: drawer;
+  /* Hardware acceleration for smooth animations */
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .drawer--open,
 .concept-drawer-open {
   transform: translateX(0);
+  opacity: 1;
+  box-shadow: -8px 0 32px rgba(17, 17, 27, 0.6);
 }
 
 /* Tablet width */

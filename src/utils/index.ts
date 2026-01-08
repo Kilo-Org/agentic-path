@@ -33,3 +33,13 @@ export {
 } from "./svgHelpers";
 
 export type { Point } from "./svgHelpers";
+
+// URL state management
+export {
+  parseUrlHash,
+  buildHashString,
+  updateUrlHash,
+  clearUrlHash,
+} from "./urlState";
+
+export type { UrlState } from "./urlState";

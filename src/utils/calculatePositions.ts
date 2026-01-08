@@ -30,6 +30,12 @@ export interface LayoutConfig {
   detailSpacing: number;
   /** Vertical spacing between main topics */
   topicSpacing: number;
+  /** Minimum vertical gap between any two nodes (prevents overlap) */
+  minNodeGap: number;
+  /** Estimated height of detail nodes for collision detection */
+  detailNodeHeight: number;
+  /** Estimated height of main topic nodes for collision detection */
+  mainNodeHeight: number;
 }
 
 /**
@@ -45,6 +51,12 @@ export const DEFAULT_LAYOUT_CONFIG: LayoutConfig = {
   sectionSpacing: 60,
   detailSpacing: 80,
   topicSpacing: 200,
+  /** Minimum 16px gap between nodes to ensure they never touch */
+  minNodeGap: 16,
+  /** Estimated detail node height based on CSS (padding 12px*2 + line height ~20px) */
+  detailNodeHeight: 44,
+  /** Estimated main node height based on CSS (padding 20px*2 + line height ~24px) */
+  mainNodeHeight: 64,
 };
 
 /**
@@ -82,7 +94,21 @@ export function calculateNodePositions(
     sectionSpacing,
     detailSpacing,
     topicSpacing,
+    minNodeGap,
+    detailNodeHeight,
+    mainNodeHeight,
   } = { ...DEFAULT_LAYOUT_CONFIG, ...config };
+
+  // Calculate minimum spacing that ensures nodes don't overlap
+  // This is the node height plus the minimum gap
+  const effectiveDetailSpacing = Math.max(
+    detailSpacing,
+    detailNodeHeight + minNodeGap
+  );
+  const effectiveTopicSpacing = Math.max(
+    topicSpacing,
+    mainNodeHeight + minNodeGap
+  );
 
   const positions: NodePositions = {
     left: [],
@@ -113,15 +139,32 @@ export function calculateNodePositions(
       const targetX = placeOnLeft ? leftX : rightX;
 
       // Calculate starting Y to center detail nodes around the main topic
+      // Using effectiveDetailSpacing to ensure minimum gap between nodes
       const detailStartY =
-        currentY - ((topic.children.length - 1) * detailSpacing) / 2;
+        currentY - ((topic.children.length - 1) * effectiveDetailSpacing) / 2;
 
-      // Place detail nodes
+      // Place detail nodes with collision-checked spacing
       topic.children.forEach((child, childIndex) => {
+        let proposedY = detailStartY + childIndex * effectiveDetailSpacing;
+
+        // Check for collision with previous nodes in the same column
+        // and adjust position if necessary
+        const lastNodeInColumn = targetColumn[targetColumn.length - 1];
+        if (lastNodeInColumn) {
+          const minY =
+            lastNodeInColumn.y +
+            detailNodeHeight / 2 +
+            minNodeGap +
+            detailNodeHeight / 2;
+          if (proposedY < minY) {
+            proposedY = minY;
+          }
+        }
+
         const detailPos: NodePosition = {
           id: child.id,
           x: targetX,
-          y: detailStartY + childIndex * detailSpacing,
+          y: proposedY,
           type: "detail" as const,
         };
         targetColumn.push(detailPos);
@@ -136,8 +179,8 @@ export function calculateNodePositions(
         positions.connections.push(connection);
       });
 
-      // Space for next main topic
-      currentY += topicSpacing;
+      // Space for next main topic using effective spacing
+      currentY += effectiveTopicSpacing;
     });
   });
 
