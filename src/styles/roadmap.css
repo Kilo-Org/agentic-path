@@ -748,16 +748,53 @@
     max-width: 320px;
   }
 
+  /* Minimized state on mobile - horizontal scrolling row */
+  .persona-selector-section--minimized {
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-sm);
+    margin: 0;
+    border-radius: var(--radius-md);
+    background: var(--bg-secondary);
+  }
+
   .persona-selector--minimized {
+    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: auto;
-    padding-bottom: var(--spacing-sm);
+    overflow-y: visible;
+    padding: var(--spacing-xs) 0;
+    gap: var(--spacing-xs);
+    justify-content: center;
+    /* Hide scrollbar but allow scrolling */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
+  .persona-selector--minimized::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Compact minimized cards to fit all 3 on mobile */
   .persona-card--minimized {
     min-width: auto;
     flex-shrink: 0;
+    white-space: nowrap;
+    padding: var(--spacing-sm) var(--spacing-sm);
+    font-size: var(--font-xs);
+  }
+
+  .persona-card--minimized .persona-icon {
+    font-size: var(--font-base);
+  }
+
+  .persona-card--minimized .persona-title {
+    font-size: var(--font-xs);
+  }
+
+  /* Center the back button */
+  .persona-selector-section--minimized .persona-selector-back {
+    align-self: center;
+    margin-bottom: var(--spacing-xs);
   }
 }
 

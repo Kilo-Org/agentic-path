@@ -649,3 +649,28 @@
 .persona-selector-back:hover svg {
   transform: translateX(-2px);
 }
+
+/* ============================================
+   MOBILE MINIMIZED PERSONA SECTION
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Minimized section wrapper layout */
+  .persona-selector-section--minimized {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+
+  /* Back button centered on mobile minimized state */
+  .persona-selector-section--minimized .persona-selector-back {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  /* Hint text styling in minimized state */
+  .persona-selector-section--minimized .roadmap-instructions {
+    margin-top: var(--spacing-sm);
+    font-size: var(--font-xs);
+  }
+}
