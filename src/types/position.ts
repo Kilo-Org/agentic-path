@@ -18,6 +18,13 @@ export interface NodePosition {
 }
 
 /**
+ * Type of connection line in the roadmap.
+ * - "detail": Connection from main topic to detail node (horizontal curve)
+ * - "spine": Connection between main topics or from persona to first topic (vertical curve)
+ */
+export type ConnectionType = "detail" | "spine";
+
+/**
  * A visual connection (line/curve) between two nodes in the roadmap.
  */
 export interface Connection {
@@ -29,6 +36,8 @@ export interface Connection {
   fromId: string;
   /** ID of the destination node (typically a detail node) */
   toId: string;
+  /** Type of connection (defaults to "detail" for backward compatibility) */
+  type?: ConnectionType;
 }
 
 /**

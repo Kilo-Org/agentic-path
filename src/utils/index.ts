@@ -26,6 +26,7 @@ export type { LayoutConfig } from "./calculatePositions";
 // SVG path generation helpers
 export {
   generateCurvedPath,
+  generateVerticalCurvedPath,
   generateStraightPath,
   generateElbowPath,
   generateQuadraticPath,

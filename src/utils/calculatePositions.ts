@@ -118,6 +118,7 @@ export function calculateNodePositions(
   };
 
   let currentY = startY;
+  let previousMainTopicY: number | null = null;
 
   persona.sections.forEach((section) => {
     // Add section label spacing (not a node, just vertical space)
@@ -132,6 +133,35 @@ export function calculateNodePositions(
         type: "main" as const,
       };
       positions.center.push(mainTopicPos);
+
+      // Add spine connection from previous main topic (or persona anchor) to this topic
+      if (previousMainTopicY !== null) {
+        // Connection between consecutive main topics
+        const spineConnection: Connection = {
+          from: { x: centerX, y: previousMainTopicY },
+          to: { x: centerX, y: currentY },
+          fromId:
+            positions.center[positions.center.length - 2]?.id || "persona",
+          toId: topic.id,
+          type: "spine",
+        };
+        positions.connections.push(spineConnection);
+      } else {
+        // First topic: add connection from persona anchor point
+        // This creates the line from the selected persona button to the first topic
+        // Start from Y=0 (top of canvas) which visually connects to the persona selector above
+        const personaAnchorY = 0;
+        const personaToFirstConnection: Connection = {
+          from: { x: centerX, y: personaAnchorY },
+          to: { x: centerX, y: currentY },
+          fromId: "persona-anchor",
+          toId: topic.id,
+          type: "spine",
+        };
+        positions.connections.push(personaToFirstConnection);
+      }
+
+      previousMainTopicY = currentY;
 
       // Determine which side children go based on topic data
       const placeOnLeft = topic.childrenSide === "left";

@@ -311,6 +311,14 @@
   transition: stroke var(--transition-base);
 }
 
+/* Spine connection - solid line connecting main topics */
+.connection-line--spine {
+  stroke: var(--ctp-mauve);
+  stroke-width: 2;
+  stroke-dasharray: none;
+  opacity: 0.7;
+}
+
 .connection-line--active {
   stroke: var(--ctp-mauve);
   stroke-dasharray: none;
@@ -566,7 +574,7 @@
 
 .persona-selector-section--minimized {
   padding: var(--spacing-md);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 0;
 }
 
 .persona-selector-title {

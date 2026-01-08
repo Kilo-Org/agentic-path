@@ -51,6 +51,48 @@ export function generateCurvedPath(from: Point, to: Point): string {
 }
 
 /**
+ * Generates a vertical curved bezier path between two points.
+ * Uses a cubic bezier curve optimized for vertical connections (like spine lines).
+ * The curve flows smoothly from top to bottom with a subtle horizontal S-curve.
+ *
+ * @param from - Starting point (top)
+ * @param to - Ending point (bottom)
+ * @returns SVG path data string for use in <path d="...">
+ *
+ * @example
+ * ```typescript
+ * import { generateVerticalCurvedPath } from '@/utils';
+ *
+ * const path = generateVerticalCurvedPath({ x: 400, y: 100 }, { x: 400, y: 300 });
+ * // Creates a smooth vertical S-curve
+ * ```
+ */
+export function generateVerticalCurvedPath(from: Point, to: Point): string {
+  // Stop the line before the destination node (main topic height ~64px, so ~32px from center)
+  const nodeOffset = 32;
+
+  // If starting from Y=0 (persona anchor), start from the edge of the canvas
+  // Otherwise, start after the source node
+  const isFromPersonaAnchor = from.y === 0;
+  const adjustedFromY = isFromPersonaAnchor ? from.y : from.y + nodeOffset;
+  const adjustedToY = to.y - nodeOffset;
+
+  // Calculate vertical quarter points for control points
+  const quarterY = adjustedFromY + (adjustedToY - adjustedFromY) * 0.33;
+  const threeQuarterY = adjustedFromY + (adjustedToY - adjustedFromY) * 0.67;
+
+  // Add horizontal offset to control points to create visible S-curve
+  // This makes the curve bend slightly left then right (or vice versa)
+  const curveOffset = 25; // pixels to offset control points horizontally
+
+  // Create a cubic bezier curve with horizontal offset for visible curvature:
+  // - First control point offset to the left at 1/3 height
+  // - Second control point offset to the right at 2/3 height
+  // This creates a gentle S-curve for vertical connections
+  return `M ${from.x} ${adjustedFromY} C ${from.x - curveOffset} ${quarterY}, ${to.x + curveOffset} ${threeQuarterY}, ${to.x} ${adjustedToY}`;
+}
+
+/**
  * Generates a straight line path between two points.
  * Useful for simpler visualizations or as a fallback.
  *

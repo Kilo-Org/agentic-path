@@ -16,4 +16,9 @@ export type {
 } from "./roadmap";
 
 // Position and layout types
-export type { NodePosition, Connection, NodePositions } from "./position";
+export type {
+  NodePosition,
+  Connection,
+  ConnectionType,
+  NodePositions,
+} from "./position";
