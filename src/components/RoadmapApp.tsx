@@ -1,5 +1,5 @@
 /**
- * RoadmapApp is the main Preact island component for the interactive learning roadmap.
+ * RoadmapApp is the main React island component for the interactive learning roadmap.
  * It manages the selected persona, selected node state, detects viewport size, and orchestrates
  * the rendering of persona selector, desktop/mobile views, and the concept drawer.
  *
@@ -11,8 +11,8 @@
  * - URL-based state management for deep linking and sharing
  */
 
-import { useState, useEffect, useCallback, useRef } from "preact/hooks";
-import type { JSX } from "preact";
+import { useState, useEffect, useCallback, useRef } from "react";
+import type { JSX } from "react";
 import { allPersonas, personas, findNodeById } from "../data";
 import { RoadmapView } from "./RoadmapView";
 import { MobileRoadmapView } from "./MobileRoadmapView";
@@ -36,7 +36,7 @@ const supportsViewTransitions = () => {
 };
 
 /**
- * Main application component that serves as the Preact island for the roadmap.
+ * Main application component that serves as the React island for the roadmap.
  * Handles:
  * - Persona selection state management
  * - Mobile/desktop viewport detection via matchMedia

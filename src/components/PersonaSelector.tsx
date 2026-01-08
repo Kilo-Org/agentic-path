@@ -4,7 +4,7 @@
  * Supports minimized state when a persona is selected.
  */
 
-import type { JSX, RefObject } from "preact";
+import type { JSX, RefObject } from "react";
 import type { Persona } from "../types";
 import { PersonaCard } from "./PersonaCard";
 
@@ -20,7 +20,7 @@ export interface PersonaSelectorProps {
     /** Callback to go back to full view */
     onBackToFull?: () => void;
     /** Ref for the section element (used for scrolling) */
-    sectionRef?: RefObject<HTMLElement>;
+    sectionRef?: RefObject<HTMLElement | null>;
     /** Whether to show the instruction hint (for when minimized and no topic selected) */
     showHint?: boolean;
 }

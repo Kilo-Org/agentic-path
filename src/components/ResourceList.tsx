@@ -28,15 +28,15 @@ const emptyMessages: Record<ResourceListProps["category"], string> = {
 export function ResourceList({ resources, category }: ResourceListProps) {
     if (resources.length === 0) {
         return (
-            <div class="resource-list-empty">
-                <span class="resource-list-empty-icon">📭</span>
-                <p class="resource-list-empty-text">{emptyMessages[category]}</p>
+            <div className="resource-list-empty">
+                <span className="resource-list-empty-icon">📭</span>
+                <p className="resource-list-empty-text">{emptyMessages[category]}</p>
             </div>
         );
     }
 
     return (
-        <div class="resource-list">
+        <div className="resource-list">
             {resources.map((resource, index) => (
                 <ResourceItem key={`${resource.url}-${index}`} resource={resource} />
             ))}

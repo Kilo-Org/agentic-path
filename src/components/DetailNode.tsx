@@ -3,7 +3,7 @@
  * These are clickable items that open the resource drawer when selected.
  */
 
-import { type JSX } from "preact";
+import { type JSX } from "react";
 import type { DetailNode as DetailNodeType, NodePosition } from "@/types";
 
 export interface DetailNodeProps {

@@ -7,7 +7,7 @@
  * - No accordion behavior
  */
 
-import { type JSX } from "preact";
+import { type JSX } from "react";
 import type { Persona, MainTopic, DetailNode as DetailNodeType } from "@/types";
 
 export interface MobileRoadmapViewProps {

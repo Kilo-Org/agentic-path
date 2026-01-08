@@ -4,7 +4,7 @@
  * Also renders "spine" connections between main topics and from persona to first topic.
  */
 
-import { type JSX } from "preact";
+import { type JSX } from "react";
 import type { Connection } from "@/types";
 import { generateCurvedPath, generateVerticalCurvedPath, createPathAttributes } from "@/utils";
 
