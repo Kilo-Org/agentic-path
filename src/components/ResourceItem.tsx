@@ -36,6 +36,10 @@ const typeLabels: Record<Resource["type"], string> = {
 
 /**
  * Renders a single resource item as a card with metadata.
+ * Uses a 3-column grid layout:
+ * - Column 1: Type badge (left)
+ * - Column 2: Title and author (center)
+ * - Column 3: Duration (right)
  */
 export function ResourceItem({ resource }: ResourceItemProps) {
     const icon = typeIcons[resource.type];
@@ -46,20 +50,20 @@ export function ResourceItem({ resource }: ResourceItemProps) {
             href={resource.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="resource-item"
+            class="resource-item resource-item-grid"
         >
-            <div class="resource-item-header">
-                <span class={`resource-type-badge resource-type-${resource.type}`}>
-                    <span class="resource-type-icon">{icon}</span>
-                    <span class="resource-type-label">{label}</span>
-                </span>
-                {resource.duration && (
-                    <span class="resource-duration">{resource.duration}</span>
+            <span class={`resource-type-badge resource-type-${resource.type}`}>
+                <span class="resource-type-icon">{icon}</span>
+                <span class="resource-type-label">{label}</span>
+            </span>
+            <div class="resource-item-title-container">
+                <h4 class="resource-title">{resource.title}</h4>
+                {resource.author && (
+                    <span class="resource-author">by {resource.author}</span>
                 )}
             </div>
-            <h4 class="resource-title">{resource.title}</h4>
-            {resource.author && (
-                <span class="resource-author">by {resource.author}</span>
+            {resource.duration && (
+                <span class="resource-duration">{resource.duration}</span>
             )}
         </a>
     );

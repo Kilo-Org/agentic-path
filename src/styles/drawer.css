@@ -411,6 +411,44 @@
   box-shadow: 0 4px 12px rgba(248, 246, 118, 0.1);
 }
 
+/* Resource Item 3-Column Grid Layout */
+.resource-item-grid {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+}
+
+.resource-item-grid .resource-type-badge {
+  grid-column: 1;
+  align-self: flex-start;
+}
+
+.resource-item-title-container {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  min-width: 0;
+}
+
+.resource-item-grid .resource-title {
+  margin: 0;
+}
+
+.resource-item-grid .resource-duration {
+  grid-column: 3;
+  align-self: flex-start;
+  white-space: nowrap;
+}
+
+.resource-item-grid .resource-author {
+  display: block;
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+}
+
 .resource-item__icon {
   width: 20px;
   height: 20px;
