@@ -39,3 +39,6 @@ pnpm-debug.log*
 
 # Netlify
 .netlify/
+
+# Kilo Code agent worktrees
+.kilocode/worktrees/
