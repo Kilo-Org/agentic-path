@@ -1,10 +1,14 @@
 /**
  * Global Styles - CSS Reset, Variables, Base Typography
- * Dark theme with Kilo Code brand colors for the Interactive Learning Roadmap
+ * Supports dark and light themes with Kilo Code brand colors
  */
 
 /* CSS Custom Properties (Variables) - Brand Colors */
+/* Dark theme (default) */
 :root {
+  /* Theme indicator for JS */
+  --theme: dark;
+
   /* Background Colors - Dark but not harsh */
   --bg-primary: #121212; /* softer dark */
   --bg-secondary: #1a1a1a; /* dark gray */
@@ -104,6 +108,140 @@
 
   /* View Transition Timing */
   --view-transition-duration: 0.35s;
+
+  /* Scrollbar hover (needs explicit value for light theme override) */
+  --scrollbar-thumb-hover: #4a4a4a;
+}
+
+/* Light theme - Applied via data-theme attribute or system preference */
+[data-theme="light"] {
+  --theme: light;
+
+  /* Background Colors - Clean light surfaces */
+  --bg-primary: #fafafa; /* near white */
+  --bg-secondary: #f4f4f5; /* zinc-100 */
+  --bg-tertiary: #ffffff; /* pure white */
+  --bg-drawer: #ffffff; /* white */
+  --bg-hover: rgba(
+    180,
+    178,
+    80,
+    0.08
+  ); /* darker yellow with opacity for light bg */
+  --bg-surface: #ffffff; /* white surface */
+
+  /* Accent Colors - Adjusted for light mode contrast */
+  --accent-primary: #c9c654; /* darker brand yellow for better contrast */
+  --accent-secondary: #b8b548; /* even darker for hover */
+  --accent-yellow: #c9c654; /* darker brand yellow */
+  --accent-yellow-muted: #a8a53c; /* muted darker yellow */
+  --accent-blue: #3b82f6; /* blue-500 for better contrast */
+  --accent-green: #22c55e; /* green-500 */
+  --accent-red: #ef4444; /* red-500 */
+  --accent-pink: #ec4899; /* pink-500 */
+  --accent-teal: #14b8a6; /* teal-500 */
+
+  /* Text Colors - Dark text on light bg */
+  --text-primary: #18181b; /* zinc-900 */
+  --text-secondary: #52525b; /* zinc-600 */
+  --text-muted: #71717a; /* zinc-500 */
+  --text-dark: #18181b; /* zinc-900 */
+
+  /* For index.astro page-specific styles */
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-muted);
+  --color-accent: var(--accent-primary);
+  --color-accent-hover: var(--accent-secondary);
+  --color-accent-rgb: 201, 198, 84;
+  --color-border: var(--border);
+
+  /* Border & Lines - Subtle light borders */
+  --border: #e4e4e7; /* zinc-200 */
+  --border-hover: #d4d4d8; /* zinc-300 */
+  --connection-line: #d4d4d8; /* zinc-300 */
+
+  /* Node Colors for Side Items */
+  --node-bg-left: #ffffff; /* white */
+  --node-bg-right: #ffffff; /* white */
+  --node-border-left: #c9c654; /* darker brand yellow */
+  --node-border-right: #3b82f6; /* blue-500 */
+
+  /* Shadows - Softer for light theme */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 4px 20px rgba(201, 198, 84, 0.25);
+  --shadow-glow-blue: 0 4px 20px rgba(59, 130, 246, 0.2);
+
+  /* Scrollbar hover */
+  --scrollbar-thumb-hover: #a1a1aa;
+}
+
+/* System preference detection - only when no explicit theme is set */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --theme: light;
+
+    /* Background Colors - Clean light surfaces */
+    --bg-primary: #fafafa;
+    --bg-secondary: #f4f4f5;
+    --bg-tertiary: #ffffff;
+    --bg-drawer: #ffffff;
+    --bg-hover: rgba(180, 178, 80, 0.08);
+    --bg-surface: #ffffff;
+
+    /* Accent Colors - Adjusted for light mode contrast */
+    --accent-primary: #c9c654;
+    --accent-secondary: #b8b548;
+    --accent-yellow: #c9c654;
+    --accent-yellow-muted: #a8a53c;
+    --accent-blue: #3b82f6;
+    --accent-green: #22c55e;
+    --accent-red: #ef4444;
+    --accent-pink: #ec4899;
+    --accent-teal: #14b8a6;
+
+    /* Text Colors - Dark text on light bg */
+    --text-primary: #18181b;
+    --text-secondary: #52525b;
+    --text-muted: #71717a;
+    --text-dark: #18181b;
+
+    /* For index.astro page-specific styles */
+    --color-bg-primary: var(--bg-primary);
+    --color-bg-secondary: var(--bg-secondary);
+    --color-text-primary: var(--text-primary);
+    --color-text-secondary: var(--text-secondary);
+    --color-text-tertiary: var(--text-muted);
+    --color-accent: var(--accent-primary);
+    --color-accent-hover: var(--accent-secondary);
+    --color-accent-rgb: 201, 198, 84;
+    --color-border: var(--border);
+
+    /* Border & Lines - Subtle light borders */
+    --border: #e4e4e7;
+    --border-hover: #d4d4d8;
+    --connection-line: #d4d4d8;
+
+    /* Node Colors for Side Items */
+    --node-bg-left: #ffffff;
+    --node-bg-right: #ffffff;
+    --node-border-left: #c9c654;
+    --node-border-right: #3b82f6;
+
+    /* Shadows - Softer for light theme */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-glow: 0 4px 20px rgba(201, 198, 84, 0.25);
+    --shadow-glow-blue: 0 4px 20px rgba(59, 130, 246, 0.2);
+
+    /* Scrollbar hover */
+    --scrollbar-thumb-hover: #a1a1aa;
+  }
 }
 
 /* Enable View Transitions API */
@@ -258,7 +396,7 @@ p {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4a4a4a; /* lighter gray */
+  background: var(--scrollbar-thumb-hover);
 }
 
 /* Firefox scrollbar */
@@ -290,6 +428,80 @@ p {
 
 .text-center {
   text-align: center;
+}
+
+/* ============================================
+   THEME TOGGLE
+   ============================================ */
+
+.theme-toggle {
+  position: fixed;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  z-index: var(--z-sticky);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  color: var(--text-secondary);
+  cursor: pointer;
+
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-base),
+    transform var(--transition-fast),
+    box-shadow var(--transition-base);
+}
+
+.theme-toggle:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+  transform: scale(1.05);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.theme-toggle:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.theme-toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-base);
+}
+
+.theme-toggle:hover .theme-toggle-icon {
+  transform: rotate(15deg);
+}
+
+/* Adjust position on mobile */
+@media (max-width: 768px) {
+  .theme-toggle {
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    width: 36px;
+    height: 36px;
+  }
+
+  .theme-toggle svg {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 /* Container */

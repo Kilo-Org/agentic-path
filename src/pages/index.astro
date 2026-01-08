@@ -6,6 +6,7 @@
 
 // Import the main island component
 import { RoadmapApp } from "../components/RoadmapApp";
+import { ThemeToggle } from "../components/ThemeToggle";
 
 // Import all CSS styles
 import "../styles/global.css";
@@ -40,9 +41,23 @@ import "../styles/drawer.css";
     <meta name="generator" content={Astro.generator} />
 
     <title>Agentic Engineering for Humans | Kilo Code</title>
+
+    <!-- Prevent flash of wrong theme by applying theme before render -->
+    <script is:inline>
+      (function () {
+        const stored = localStorage.getItem("theme");
+        if (stored === "light" || stored === "dark") {
+          document.documentElement.setAttribute("data-theme", stored);
+        }
+        // If 'system' or nothing stored, let CSS media query handle it
+      })();
+    </script>
   </head>
 
   <body>
+    <!-- Theme Toggle -->
+    <ThemeToggle client:load />
+
     <!-- Main Content Area - Full App -->
     <main class="main-content">
       <!-- Preact Island: Interactive Roadmap -->

@@ -54,3 +54,6 @@ export type { NavigationControlsProps } from "./NavigationControls";
 // Main roadmap island app
 export { RoadmapApp } from "./RoadmapApp";
 export type { RoadmapAppProps } from "./RoadmapApp";
+
+// Theme toggle
+export { ThemeToggle } from "./ThemeToggle";
