@@ -66,7 +66,7 @@ function calculateSectionLabels(
         // Place label well above that
         sectionLabels.push({
             label: section.label,
-            yPosition: currentY - 20, // Position label 20px above the section start
+            yPosition: currentY - 30, // Position label 20px above the section start
         });
 
         // Advance past section spacing (where the section label visual space is)
