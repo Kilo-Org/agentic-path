@@ -388,9 +388,7 @@
 
 /* Resource Item */
 .resource-item {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--spacing-md);
+  display: block;
   padding: var(--spacing-md);
   background: var(--bg-surface);
   border: 1px solid var(--border);
@@ -402,6 +400,19 @@
     transform var(--transition-fast),
     box-shadow var(--transition-fast);
   text-decoration: none;
+}
+
+/* 3-column grid layout for resource item */
+.resource-item-grid {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+/* Main content column (title + author) */
+.resource-item-main {
+  min-width: 0;
 }
 
 .resource-item:hover {
@@ -470,9 +481,10 @@
 .resource-duration {
   font-size: var(--font-xs);
   color: var(--text-muted);
-  padding: 2px 8px;
+  padding: 4px 8px;
   background: var(--border);
   border-radius: var(--radius-sm);
+  white-space: nowrap;
 }
 
 .resource-author {
@@ -803,5 +815,17 @@
 
   .resource-item {
     padding: var(--spacing-sm);
+  }
+
+  .resource-item-grid {
+    grid-template-columns: auto 1fr;
+    gap: var(--spacing-sm);
+  }
+
+  .resource-duration {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: flex-start;
+    margin-top: var(--spacing-xs);
   }
 }

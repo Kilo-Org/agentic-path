@@ -48,19 +48,26 @@ export function ResourceItem({ resource }: ResourceItemProps) {
             rel="noopener noreferrer"
             class="resource-item"
         >
-            <div class="resource-item-header">
+            <div class="resource-item-grid">
+                {/* Left column: Type badge */}
                 <span class={`resource-type-badge resource-type-${resource.type}`}>
                     <span class="resource-type-icon">{icon}</span>
                     <span class="resource-type-label">{label}</span>
                 </span>
+                
+                {/* Middle column: Title and author */}
+                <div class="resource-item-main">
+                    <h4 class="resource-title">{resource.title}</h4>
+                    {resource.author && (
+                        <span class="resource-author">by {resource.author}</span>
+                    )}
+                </div>
+                
+                {/* Right column: Time estimate */}
                 {resource.duration && (
                     <span class="resource-duration">{resource.duration}</span>
                 )}
             </div>
-            <h4 class="resource-title">{resource.title}</h4>
-            {resource.author && (
-                <span class="resource-author">by {resource.author}</span>
-            )}
         </a>
     );
 }
