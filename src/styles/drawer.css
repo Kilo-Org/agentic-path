@@ -19,8 +19,7 @@
   transition:
     opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
     visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  /* Blur removed per ap-3yk - don't blur the left side when clicking items */
 }
 
 .drawer-backdrop--visible,

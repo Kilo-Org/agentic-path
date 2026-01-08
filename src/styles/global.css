@@ -5,11 +5,11 @@
 
 /* CSS Custom Properties (Variables) - Brand Colors */
 :root {
-  /* Background Colors - True blacks for a premium feel */
-  --bg-primary: #0a0a0a; /* near black */
-  --bg-secondary: #141414; /* dark gray */
-  --bg-tertiary: #000000; /* pure black */
-  --bg-drawer: #141414; /* dark gray */
+  /* Background Colors - Dark but not harsh */
+  --bg-primary: #121212; /* softer dark */
+  --bg-secondary: #1a1a1a; /* dark gray */
+  --bg-tertiary: #0d0d0d; /* near black */
+  --bg-drawer: #1a1a1a; /* dark gray */
   --bg-hover: rgba(248, 246, 118, 0.06); /* brand yellow with opacity */
   --bg-surface: #1c1c1c; /* elevated surface */
 
