@@ -188,7 +188,7 @@
 
 .drawer-close:hover,
 .drawer-close-btn:hover {
-  background: rgba(167, 139, 250, 0.1); /* violet-400 with opacity */
+  background: rgba(248, 246, 118, 0.08);
   color: var(--text-primary);
   border-color: var(--accent-primary);
   transform: rotate(90deg);
@@ -252,7 +252,7 @@
 .drawer-tab:hover,
 .resource-tab:hover {
   color: var(--text-primary);
-  background: #475569; /* slate-600 */
+  background: #2a2a2a;
   border-color: var(--border-hover);
   transform: translateY(-1px);
 }
@@ -260,7 +260,7 @@
 .drawer-tab--active,
 .resource-tab-active {
   color: var(--accent-primary);
-  background: rgba(167, 139, 250, 0.15);
+  background: rgba(248, 246, 118, 0.1);
   border-color: var(--accent-primary);
 }
 
@@ -276,14 +276,14 @@
 }
 
 .resource-tab-count {
-  background: rgba(167, 139, 250, 0.2);
+  background: rgba(248, 246, 118, 0.15);
   padding: 2px 8px;
   border-radius: var(--radius-xl);
   font-size: var(--font-xs);
 }
 
 .resource-tab-active .resource-tab-count {
-  background: rgba(167, 139, 250, 0.35);
+  background: rgba(248, 246, 118, 0.25);
 }
 
 /* ============================================
@@ -405,10 +405,10 @@
 }
 
 .resource-item:hover {
-  background: #475569; /* slate-600 */
-  border-color: var(--accent-blue);
+  background: #2a2a2a;
+  border-color: var(--accent-primary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.15);
+  box-shadow: 0 4px 12px rgba(248, 246, 118, 0.1);
 }
 
 .resource-item__icon {
@@ -518,7 +518,7 @@
 .resource-item--course .resource-item__icon,
 .resource-type-course {
   color: var(--accent-primary);
-  background: rgba(167, 139, 250, 0.15);
+  background: rgba(248, 246, 118, 0.12);
 }
 
 .resource-item--tool .resource-item__icon,
@@ -603,7 +603,7 @@
 }
 
 .topic-chip:hover {
-  background: rgba(167, 139, 250, 0.1);
+  background: rgba(248, 246, 118, 0.08);
   border-color: var(--accent-primary);
   color: var(--text-primary);
   transform: translateY(-1px);
@@ -686,18 +686,16 @@
 }
 
 .drawer-footer__button--primary {
-  background: linear-gradient(
-    135deg,
-    var(--accent-primary) 0%,
-    var(--accent-secondary) 100%
-  );
+  background: var(--accent-primary);
   color: var(--text-dark);
   border: none;
+  font-weight: var(--font-semibold);
 }
 
 .drawer-footer__button--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(167, 139, 250, 0.3);
+  box-shadow: 0 4px 12px rgba(248, 246, 118, 0.2);
+  background: var(--accent-secondary);
 }
 
 .drawer-footer__button--secondary {

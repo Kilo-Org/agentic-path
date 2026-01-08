@@ -1,34 +1,34 @@
 /**
  * Global Styles - CSS Reset, Variables, Base Typography
- * Dark theme using Tailwind CSS color palette for the Interactive Learning Roadmap
+ * Dark theme with Kilo Code brand colors for the Interactive Learning Roadmap
  */
 
-/* CSS Custom Properties (Variables) - Tailwind CSS Colors */
+/* CSS Custom Properties (Variables) - Brand Colors */
 :root {
-  /* Background Colors - Using Tailwind Slate */
-  --bg-primary: #0f172a; /* slate-900 */
-  --bg-secondary: #1e293b; /* slate-800 */
-  --bg-tertiary: #020617; /* slate-950 */
-  --bg-drawer: #1e293b; /* slate-800 */
-  --bg-hover: rgba(139, 92, 246, 0.08); /* violet-500 with opacity */
-  --bg-surface: #334155; /* slate-700 */
+  /* Background Colors - True blacks for a premium feel */
+  --bg-primary: #0a0a0a; /* near black */
+  --bg-secondary: #141414; /* dark gray */
+  --bg-tertiary: #000000; /* pure black */
+  --bg-drawer: #141414; /* dark gray */
+  --bg-hover: rgba(248, 246, 118, 0.06); /* brand yellow with opacity */
+  --bg-surface: #1c1c1c; /* elevated surface */
 
-  /* Accent Colors - Using Tailwind Violet/Indigo */
-  --accent-primary: #a78bfa; /* violet-400 */
-  --accent-secondary: #818cf8; /* indigo-400 */
-  --accent-yellow: #fbbf24; /* amber-400 */
-  --accent-yellow-muted: #f59e0b; /* amber-500 */
-  --accent-blue: #38bdf8; /* sky-400 */
-  --accent-green: #34d399; /* emerald-400 */
-  --accent-red: #fb7185; /* rose-400 */
+  /* Accent Colors - Kilo Code Yellow as primary */
+  --accent-primary: #f8f676; /* brand yellow */
+  --accent-secondary: #e6e464; /* slightly darker yellow */
+  --accent-yellow: #f8f676; /* brand yellow */
+  --accent-yellow-muted: #d4d25a; /* muted yellow */
+  --accent-blue: #60a5fa; /* blue-400 for secondary accents */
+  --accent-green: #4ade80; /* green-400 */
+  --accent-red: #f87171; /* red-400 */
   --accent-pink: #f472b6; /* pink-400 */
   --accent-teal: #2dd4bf; /* teal-400 */
 
-  /* Text Colors - Using Tailwind Slate */
-  --text-primary: #f1f5f9; /* slate-100 */
-  --text-secondary: #cbd5e1; /* slate-300 */
-  --text-muted: #94a3b8; /* slate-400 */
-  --text-dark: #020617; /* slate-950 */
+  /* Text Colors - Clean whites and grays */
+  --text-primary: #fafafa; /* near white */
+  --text-secondary: #a1a1aa; /* zinc-400 */
+  --text-muted: #71717a; /* zinc-500 */
+  --text-dark: #0a0a0a; /* near black for dark text on light bg */
 
   /* For index.astro page-specific styles */
   --color-bg-primary: var(--bg-primary);
@@ -38,27 +38,27 @@
   --color-text-tertiary: var(--text-muted);
   --color-accent: var(--accent-primary);
   --color-accent-hover: var(--accent-secondary);
-  --color-accent-rgb: 167, 139, 250;
+  --color-accent-rgb: 248, 246, 118;
   --color-border: var(--border);
 
-  /* Border & Lines - Using Tailwind Slate */
-  --border: #475569; /* slate-600 */
-  --border-hover: #64748b; /* slate-500 */
-  --connection-line: #64748b; /* slate-500 */
+  /* Border & Lines - Subtle grays */
+  --border: #2a2a2a; /* dark border */
+  --border-hover: #3a3a3a; /* slightly lighter on hover */
+  --connection-line: #3a3a3a; /* connection lines */
 
   /* Node Colors for Side Items (Left/Right columns) */
   /* Opaque backgrounds to hide connection lines behind cards */
-  --node-bg-left: #1e1b4b; /* indigo-950 */
-  --node-bg-right: #172554; /* blue-950 */
-  --node-border-left: #a78bfa; /* violet-400 */
-  --node-border-right: #38bdf8; /* sky-400 */
+  --node-bg-left: #181818; /* dark surface */
+  --node-bg-right: #181818; /* dark surface */
+  --node-border-left: #f8f676; /* brand yellow */
+  --node-border-right: #60a5fa; /* blue accent */
 
-  /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(2, 6, 23, 0.4);
-  --shadow-md: 0 4px 16px rgba(2, 6, 23, 0.5);
-  --shadow-lg: 0 8px 32px rgba(2, 6, 23, 0.6);
-  --shadow-glow: 0 8px 25px rgba(167, 139, 250, 0.25);
-  --shadow-glow-blue: 0 8px 25px rgba(56, 189, 248, 0.25);
+  /* Shadows - Refined for dark theme */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 8px 25px rgba(248, 246, 118, 0.15);
+  --shadow-glow-blue: 0 8px 25px rgba(96, 165, 250, 0.2);
 
   /* Spacing */
   --spacing-xs: 4px;
@@ -258,7 +258,7 @@ p {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #64748b; /* slate-500 */
+  background: #4a4a4a; /* lighter gray */
 }
 
 /* Firefox scrollbar */
