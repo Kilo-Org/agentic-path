@@ -50,67 +50,77 @@ export function RoadmapApp({
     initialPersonaId,
 }: RoadmapAppProps): JSX.Element {
     // State for tracking selected persona (null = none selected, show full cards)
-    const [selectedPersonaId, setSelectedPersonaId] = useState<string | null>(() => {
-        // Initialize from URL hash if available, otherwise use prop
-        if (typeof window !== "undefined") {
-            const urlState = parseUrlHash();
-            if (urlState.persona && urlState.persona in personas) {
-                return urlState.persona;
-            }
-        }
-        return initialPersonaId || null;
-    });
+    const [selectedPersonaId, setSelectedPersonaId] = useState<string | null>(initialPersonaId || null);
 
     // State for tracking if the view is minimized (persona selected)
-    const [isMinimized, setIsMinimized] = useState(() => {
-        if (typeof window !== "undefined") {
-            const urlState = parseUrlHash();
-            if (urlState.persona && urlState.persona in personas) {
-                return true;
-            }
-        }
-        return !!initialPersonaId;
-    });
+    const [isMinimized, setIsMinimized] = useState(!!initialPersonaId);
 
     // State for tracking selected node
-    const [selectedNodeId, setSelectedNodeId] = useState<string | null>(() => {
-        // Initialize from URL hash if available
-        if (typeof window !== "undefined") {
-            const urlState = parseUrlHash();
-            if (urlState.persona && urlState.topic) {
-                // Validate the topic exists in this persona
-                const persona = personas[urlState.persona as keyof typeof personas];
-                if (persona && findNodeById(persona, urlState.topic)) {
-                    return urlState.topic;
-                }
-            }
-        }
-        return initialNodeId;
-    });
+    const [selectedNodeId, setSelectedNodeId] = useState<string | null>(initialNodeId);
 
     // State for tracking viewport size (mobile vs desktop)
     const [isMobile, setIsMobile] = useState(false);
 
     // State for drawer visibility (separate from selectedNodeId for animation)
-    const [isDrawerOpen, setIsDrawerOpen] = useState(() => {
-        // Open drawer if URL has a topic
-        if (typeof window !== "undefined") {
-            const urlState = parseUrlHash();
-            if (urlState.persona && urlState.topic) {
-                const persona = personas[urlState.persona as keyof typeof personas];
-                if (persona && findNodeById(persona, urlState.topic)) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    });
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+    // Track if we've initialized from URL (to prevent double updates)
+    const hasInitializedFromUrl = useRef(false);
 
     // Ref for the scroll container (used by NavigationControls)
     const scrollContainerRef = useRef<HTMLElement | null>(null);
 
     // Ref for the persona selector section (used for scrolling into view)
     const personaSelectorRef = useRef<HTMLElement | null>(null);
+
+    // Initialize state from URL hash on mount (client-side only)
+    // This runs after hydration to properly restore state from URL
+    // Uses View Transitions for smooth animations like regular clicks
+    useEffect(() => {
+        if (typeof window === "undefined" || hasInitializedFromUrl.current) {
+            return;
+        }
+        hasInitializedFromUrl.current = true;
+
+        const urlState = parseUrlHash();
+
+        // If there's a valid persona in the URL, restore the full state with animation
+        if (urlState.persona && urlState.persona in personas) {
+            const persona = personas[urlState.persona as keyof typeof personas];
+            const topicId = urlState.topic && findNodeById(persona, urlState.topic) ? urlState.topic : null;
+
+            const updateState = () => {
+                setSelectedPersonaId(urlState.persona);
+                setIsMinimized(true);
+
+                // If there's also a valid topic, restore that too
+                if (topicId) {
+                    setSelectedNodeId(topicId);
+                    setIsDrawerOpen(true);
+                }
+            };
+
+            // Scroll to persona selector after state update
+            const scrollToSelector = () => {
+                requestAnimationFrame(() => {
+                    personaSelectorRef.current?.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                    });
+                });
+            };
+
+            // Use View Transitions API if available for smooth animation
+            if (supportsViewTransitions()) {
+                (document as any).startViewTransition(() => {
+                    updateState();
+                }).finished.then(scrollToSelector);
+            } else {
+                updateState();
+                scrollToSelector();
+            }
+        }
+    }, []);
 
     // Flag to prevent URL update loops during popstate handling
     const isPopstateRef = useRef(false);

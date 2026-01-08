@@ -89,57 +89,68 @@ export function NavigationControls({
 }: NavigationControlsProps): JSX.Element | null {
     const lastScrollPosition = useRef(0);
 
-    // Smooth scroll function
+    // Check if an element is scrollable (has overflow set to scroll/auto and content exceeds viewport)
+    const isScrollable = useCallback((element: HTMLElement): boolean => {
+        const style = window.getComputedStyle(element);
+        const overflowY = style.overflowY;
+        const isScrollableOverflow = overflowY === "auto" || overflowY === "scroll";
+        const hasScrollableContent = element.scrollHeight > element.clientHeight;
+        return isScrollableOverflow && hasScrollableContent;
+    }, []);
+
+    // Smooth scroll function - scrolls the container if it's scrollable, otherwise scrolls the window
     const smoothScroll = useCallback((amount: number) => {
         const container = scrollContainerRef.current;
-        if (!container) {
-            // Fallback to window scrolling
+
+        // If container exists and is scrollable, scroll it; otherwise scroll the window
+        if (container && isScrollable(container)) {
+            container.scrollBy({
+                top: amount,
+                behavior: "smooth",
+            });
+        } else {
             window.scrollBy({
                 top: amount,
                 behavior: "smooth",
             });
-            return;
         }
-
-        container.scrollBy({
-            top: amount,
-            behavior: "smooth",
-        });
-    }, [scrollContainerRef]);
+    }, [scrollContainerRef, isScrollable]);
 
     // Scroll to top
     const scrollToTop = useCallback(() => {
         const container = scrollContainerRef.current;
-        if (!container) {
+
+        // If container exists and is scrollable, scroll it; otherwise scroll the window
+        if (container && isScrollable(container)) {
+            container.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        } else {
             window.scrollTo({
                 top: 0,
                 behavior: "smooth",
             });
-            return;
         }
-
-        container.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
-    }, [scrollContainerRef]);
+    }, [scrollContainerRef, isScrollable]);
 
     // Scroll to bottom
     const scrollToBottom = useCallback(() => {
         const container = scrollContainerRef.current;
-        if (!container) {
+
+        // If container exists and is scrollable, scroll it; otherwise scroll the window
+        if (container && isScrollable(container)) {
+            container.scrollTo({
+                top: container.scrollHeight,
+                behavior: "smooth",
+            });
+        } else {
             window.scrollTo({
                 top: document.documentElement.scrollHeight,
                 behavior: "smooth",
             });
-            return;
         }
-
-        container.scrollTo({
-            top: container.scrollHeight,
-            behavior: "smooth",
-        });
-    }, [scrollContainerRef]);
+    }, [scrollContainerRef, isScrollable]);
 
     // Keyboard navigation handler
     const handleKeyDown = useCallback((event: KeyboardEvent) => {
