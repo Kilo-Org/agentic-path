@@ -1,62 +1,34 @@
 /**
  * Global Styles - CSS Reset, Variables, Base Typography
- * Catppuccin Mocha inspired dark theme for the Interactive Learning Roadmap
+ * Dark theme using Tailwind CSS color palette for the Interactive Learning Roadmap
  */
 
-/* CSS Custom Properties (Variables) - Catppuccin Mocha Palette */
+/* CSS Custom Properties (Variables) - Tailwind CSS Colors */
 :root {
-  /* Catppuccin Mocha Base Colors */
-  --ctp-rosewater: #f5e0dc;
-  --ctp-flamingo: #f2cdcd;
-  --ctp-pink: #f5c2e7;
-  --ctp-mauve: #cba6f7;
-  --ctp-red: #f38ba8;
-  --ctp-maroon: #eba0ac;
-  --ctp-peach: #fab387;
-  --ctp-yellow: #f9e2af;
-  --ctp-green: #a6e3a1;
-  --ctp-teal: #94e2d5;
-  --ctp-sky: #89dceb;
-  --ctp-sapphire: #74c7ec;
-  --ctp-blue: #89b4fa;
-  --ctp-lavender: #b4befe;
-  --ctp-text: #cdd6f4;
-  --ctp-subtext1: #bac2de;
-  --ctp-subtext0: #a6adc8;
-  --ctp-overlay2: #9399b2;
-  --ctp-overlay1: #7f849c;
-  --ctp-overlay0: #6c7086;
-  --ctp-surface2: #585b70;
-  --ctp-surface1: #45475a;
-  --ctp-surface0: #313244;
-  --ctp-base: #1e1e2e;
-  --ctp-mantle: #181825;
-  --ctp-crust: #11111b;
+  /* Background Colors - Using Tailwind Slate */
+  --bg-primary: #0f172a; /* slate-900 */
+  --bg-secondary: #1e293b; /* slate-800 */
+  --bg-tertiary: #020617; /* slate-950 */
+  --bg-drawer: #1e293b; /* slate-800 */
+  --bg-hover: rgba(139, 92, 246, 0.08); /* violet-500 with opacity */
+  --bg-surface: #334155; /* slate-700 */
 
-  /* Background Colors */
-  --bg-primary: var(--ctp-base);
-  --bg-secondary: var(--ctp-mantle);
-  --bg-tertiary: var(--ctp-crust);
-  --bg-drawer: var(--ctp-mantle);
-  --bg-hover: rgba(203, 166, 247, 0.08);
-  --bg-surface: var(--ctp-surface0);
+  /* Accent Colors - Using Tailwind Violet/Indigo */
+  --accent-primary: #a78bfa; /* violet-400 */
+  --accent-secondary: #818cf8; /* indigo-400 */
+  --accent-yellow: #fbbf24; /* amber-400 */
+  --accent-yellow-muted: #f59e0b; /* amber-500 */
+  --accent-blue: #38bdf8; /* sky-400 */
+  --accent-green: #34d399; /* emerald-400 */
+  --accent-red: #fb7185; /* rose-400 */
+  --accent-pink: #f472b6; /* pink-400 */
+  --accent-teal: #2dd4bf; /* teal-400 */
 
-  /* Accent Colors */
-  --accent-primary: var(--ctp-mauve);
-  --accent-secondary: var(--ctp-lavender);
-  --accent-yellow: var(--ctp-yellow);
-  --accent-yellow-muted: var(--ctp-peach);
-  --accent-blue: var(--ctp-sapphire);
-  --accent-green: var(--ctp-green);
-  --accent-red: var(--ctp-red);
-  --accent-pink: var(--ctp-pink);
-  --accent-teal: var(--ctp-teal);
-
-  /* Text Colors */
-  --text-primary: var(--ctp-text);
-  --text-secondary: var(--ctp-subtext1);
-  --text-muted: var(--ctp-subtext0);
-  --text-dark: var(--ctp-crust);
+  /* Text Colors - Using Tailwind Slate */
+  --text-primary: #f1f5f9; /* slate-100 */
+  --text-secondary: #cbd5e1; /* slate-300 */
+  --text-muted: #94a3b8; /* slate-400 */
+  --text-dark: #020617; /* slate-950 */
 
   /* For index.astro page-specific styles */
   --color-bg-primary: var(--bg-primary);
@@ -66,27 +38,27 @@
   --color-text-tertiary: var(--text-muted);
   --color-accent: var(--accent-primary);
   --color-accent-hover: var(--accent-secondary);
-  --color-accent-rgb: 203, 166, 247;
+  --color-accent-rgb: 167, 139, 250;
   --color-border: var(--border);
 
-  /* Border & Lines */
-  --border: var(--ctp-surface1);
-  --border-hover: var(--ctp-surface2);
-  --connection-line: var(--ctp-overlay0);
+  /* Border & Lines - Using Tailwind Slate */
+  --border: #475569; /* slate-600 */
+  --border-hover: #64748b; /* slate-500 */
+  --connection-line: #64748b; /* slate-500 */
 
   /* Node Colors for Side Items (Left/Right columns) */
   /* Opaque backgrounds to hide connection lines behind cards */
-  --node-bg-left: #282735;
-  --node-bg-right: #252838;
-  --node-border-left: var(--ctp-mauve);
-  --node-border-right: var(--ctp-blue);
+  --node-bg-left: #1e1b4b; /* indigo-950 */
+  --node-bg-right: #172554; /* blue-950 */
+  --node-border-left: #a78bfa; /* violet-400 */
+  --node-border-right: #38bdf8; /* sky-400 */
 
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(17, 17, 27, 0.4);
-  --shadow-md: 0 4px 16px rgba(17, 17, 27, 0.5);
-  --shadow-lg: 0 8px 32px rgba(17, 17, 27, 0.6);
-  --shadow-glow: 0 8px 25px rgba(203, 166, 247, 0.25);
-  --shadow-glow-blue: 0 8px 25px rgba(137, 180, 250, 0.25);
+  --shadow-sm: 0 2px 8px rgba(2, 6, 23, 0.4);
+  --shadow-md: 0 4px 16px rgba(2, 6, 23, 0.5);
+  --shadow-lg: 0 8px 32px rgba(2, 6, 23, 0.6);
+  --shadow-glow: 0 8px 25px rgba(167, 139, 250, 0.25);
+  --shadow-glow-blue: 0 8px 25px rgba(56, 189, 248, 0.25);
 
   /* Spacing */
   --spacing-xs: 4px;
@@ -286,7 +258,7 @@ p {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--ctp-surface2);
+  background: #64748b; /* slate-500 */
 }
 
 /* Firefox scrollbar */
