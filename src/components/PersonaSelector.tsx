@@ -65,14 +65,23 @@ export function PersonaSelector({
             style={{ viewTransitionName: "persona-section" }}
         >
             {!isMinimized && (
-                <>
+                <div className="persona-selector-hero">
                     <h1 id="persona-selector-title" className="persona-selector-title">
                         Agentic Engineering for Humans
                     </h1>
+                    <p className="persona-selector-tagline">
+                        An Interactive Learning Roadmap
+                    </p>
+                    <p className="persona-selector-description">
+                        Navigate the world of <strong>agentic AI</strong> with confidence. This
+                        roadmap guides you through the essential concepts of <strong>LLMs</strong>,{" "}
+                        <strong>prompt engineering</strong>, and <strong>AI agents</strong> — from
+                        foundational understanding to practical implementation.
+                    </p>
                     <p className="persona-selector-subtitle">
                         Choose your learning path based on how you'll apply AI agents
                     </p>
-                </>
+                </div>
             )}
 
             {isMinimized && onBackToFull && (

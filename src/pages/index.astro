@@ -43,29 +43,7 @@ import "../styles/drawer.css";
   </head>
 
   <body>
-    <!-- Site Header -->
-    <header class="site-header">
-      <div class="header-content">
-        <h1 class="site-title">Agentic Engineering for Humans</h1>
-        <p class="site-subtitle">An Interactive Learning Roadmap</p>
-      </div>
-    </header>
-
-    <!-- Hero Section with Description -->
-    <section class="hero-section">
-      <div class="hero-content">
-        <p class="hero-description">
-          Navigate the world of <strong>agentic AI</strong> with confidence. This
-          roadmap guides you through the essential concepts of <strong
-            >LLMs</strong
-          >,
-          <strong>prompt engineering</strong>, and <strong>AI agents</strong> — from
-          foundational understanding to practical implementation.
-        </p>
-      </div>
-    </section>
-
-    <!-- Main Content Area -->
+    <!-- Main Content Area - Full App -->
     <main class="main-content">
       <!-- Preact Island: Interactive Roadmap -->
       <RoadmapApp client:load />
@@ -93,65 +71,11 @@ import "../styles/drawer.css";
 <style>
   /* Page-specific styles that augment global.css */
 
-  .site-header {
-    background: linear-gradient(
-      135deg,
-      var(--color-bg-primary) 0%,
-      var(--color-bg-secondary) 100%
-    );
-    padding: 2rem 1.5rem;
-    text-align: center;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .site-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--color-text-primary);
-    margin: 0 0 0.5rem 0;
-    letter-spacing: -0.02em;
-  }
-
-  .site-subtitle {
-    font-size: 1.25rem;
-    color: var(--color-text-secondary);
-    margin: 0;
-    font-weight: 400;
-  }
-
-  .hero-section {
-    background: var(--color-bg-secondary);
-    padding: 1.5rem;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .hero-description {
-    font-size: 1.125rem;
-    line-height: 1.7;
-    color: var(--color-text-secondary);
-    margin: 0 0 1rem 0;
-  }
-
-  .hero-description strong {
-    color: var(--color-text-primary);
-    font-weight: 600;
-  }
-
   .main-content {
     flex: 1;
     padding: 0;
     background: var(--color-bg-primary);
+    min-height: 100vh;
   }
 
   .site-footer {
@@ -192,44 +116,8 @@ import "../styles/drawer.css";
 
   /* Responsive adjustments */
   @media (max-width: 768px) {
-    .site-header {
-      padding: 1.5rem 1rem;
-    }
-
-    .site-title {
-      font-size: 1.75rem;
-    }
-
-    .site-subtitle {
-      font-size: 1rem;
-    }
-
-    .hero-section {
-      padding: 1rem;
-    }
-
-    .hero-description {
-      font-size: 1rem;
-    }
-
-    .hero-instructions {
-      font-size: 0.875rem;
-      padding: 0.6rem 1rem;
-    }
-
     .site-footer {
       padding: 1.5rem 1rem;
-    }
-  }
-
-  /* Extra small screens */
-  @media (max-width: 480px) {
-    .site-title {
-      font-size: 1.5rem;
-    }
-
-    .hero-description {
-      font-size: 0.95rem;
     }
   }
 </style>
