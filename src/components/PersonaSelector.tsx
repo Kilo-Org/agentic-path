@@ -21,6 +21,8 @@ export interface PersonaSelectorProps {
     onBackToFull?: () => void;
     /** Ref for the section element (used for scrolling) */
     sectionRef?: RefObject<HTMLElement>;
+    /** Whether to show the instruction hint (for when minimized and no topic selected) */
+    showHint?: boolean;
 }
 
 /**
@@ -39,6 +41,7 @@ export function PersonaSelector({
     isMinimized = false,
     onBackToFull,
     sectionRef,
+    showHint = false,
 }: PersonaSelectorProps): JSX.Element {
     const sectionClasses = [
         "persona-selector-section",
@@ -106,6 +109,13 @@ export function PersonaSelector({
                     />
                 ))}
             </div>
+
+            {showHint && (
+                <p className="roadmap-instructions">
+                    <span className="roadmap-instructions-icon">👇</span>
+                    Click on any topic to explore resources!
+                </p>
+            )}
         </section>
     );
 }

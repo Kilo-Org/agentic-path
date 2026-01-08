@@ -919,3 +919,50 @@
     right: calc(320px + 16px);
   }
 }
+
+/* ============================================
+   ROADMAP INSTRUCTIONS HINT
+   ============================================ */
+
+.roadmap-instructions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-sm);
+  color: var(--accent-primary);
+  margin: var(--spacing-md) auto 0;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: rgba(167, 139, 250, 0.1);
+  border-radius: 9999px;
+  text-align: center;
+  width: fit-content;
+  animation: instruction-fade-in 0.4s ease-out;
+}
+
+.roadmap-instructions-icon {
+  font-size: var(--font-lg);
+}
+
+@keyframes instruction-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .roadmap-instructions {
+    font-size: var(--font-xs);
+    padding: var(--spacing-xs) var(--spacing-md);
+  }
+
+  .roadmap-instructions-icon {
+    font-size: var(--font-base);
+  }
+}

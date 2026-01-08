@@ -327,6 +327,7 @@ export function RoadmapApp({
                 isMinimized={isMinimized}
                 onBackToFull={handleBackToPersonas}
                 sectionRef={personaSelectorRef}
+                showHint={isMinimized && !!selectedPersona && !selectedNodeId}
             />
 
             {isMinimized && selectedPersona && (
