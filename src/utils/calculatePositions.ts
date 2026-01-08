@@ -49,12 +49,12 @@ export const DEFAULT_LAYOUT_CONFIG: LayoutConfig = {
   rightX: 750,
   startY: 100,
   sectionSpacing: 60,
-  detailSpacing: 80,
+  detailSpacing: 90,
   topicSpacing: 200,
-  /** Minimum 16px gap between nodes to ensure they never touch */
-  minNodeGap: 16,
-  /** Estimated detail node height based on CSS (padding 12px*2 + line height ~20px) */
-  detailNodeHeight: 44,
+  /** Minimum 20px gap between nodes to ensure they never touch */
+  minNodeGap: 20,
+  /** Estimated detail node height based on CSS (padding 12px*2 + 2 lines of text ~48px + borders) */
+  detailNodeHeight: 76,
   /** Estimated main node height based on CSS (padding 20px*2 + line height ~24px) */
   mainNodeHeight: 64,
 };
