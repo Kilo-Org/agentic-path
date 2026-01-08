@@ -30,7 +30,7 @@ export function ConnectionLines({ connections }: ConnectionLinesProps): JSX.Elem
                 const pathData = generateVerticalCurvedPath(connection.from, connection.to);
                 const attrs = createPathAttributes(pathData, {
                     strokeWidth: 2,
-                    stroke: "var(--ctp-mauve)",
+                    stroke: "var(--accent-primary)",
                 });
 
                 return (

@@ -1,7 +1,7 @@
 /**
  * Roadmap Styles - Desktop Layout
  * 3-column grid layout with nodes and connection lines
- * Using Catppuccin Mocha color palette
+ * Using Tailwind CSS color palette
  */
 
 /* Main Roadmap Container */
@@ -129,10 +129,10 @@
   z-index: 10 !important;
   background: linear-gradient(
     135deg,
-    var(--ctp-mauve) 0%,
-    var(--ctp-lavender) 100%
+    var(--accent-primary) 0%,
+    var(--accent-secondary) 100%
   );
-  color: var(--ctp-crust);
+  color: var(--text-dark);
   font-weight: var(--font-semibold);
   font-size: var(--font-lg);
   padding: 20px 28px;
@@ -159,16 +159,16 @@
 .main-topic-node--selected {
   box-shadow:
     var(--shadow-glow),
-    0 0 0 3px var(--ctp-lavender);
+    0 0 0 3px var(--accent-secondary);
 }
 
-/* Detail Node (Left Column) - Mauve/Purple themed */
+/* Detail Node (Left Column) - Violet/Purple themed */
 .detail-node {
   position: relative;
   z-index: 10 !important;
   isolation: isolate;
-  background: #282735 !important;
-  border: 2px solid var(--ctp-surface2);
+  background: #1e1b4b !important; /* indigo-950 */
+  border: 2px solid var(--border-hover);
   color: var(--text-primary);
   padding: 12px 20px;
   border-radius: var(--radius-md);
@@ -186,42 +186,42 @@
 }
 
 .detail-node:hover {
-  border-color: var(--ctp-mauve);
-  background: #302a3d;
+  border-color: var(--accent-primary);
+  background: #312e81; /* indigo-900 */
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(203, 166, 247, 0.15);
+  box-shadow: 0 4px 12px rgba(167, 139, 250, 0.15);
 }
 
 .detail-node:active {
-  background: #332d40;
+  background: #3730a3; /* indigo-800 */
   transform: translateY(0);
 }
 
 .detail-node--selected {
-  border-color: var(--ctp-mauve);
-  background: #312b3e;
-  box-shadow: 0 0 0 2px rgba(203, 166, 247, 0.3);
+  border-color: var(--accent-primary);
+  background: #312e81;
+  box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.3);
 }
 
 /* Detail Node (Right Column) - Blue themed */
 .roadmap-column--right .detail-node {
-  background: #252838;
+  background: #172554; /* blue-950 */
 }
 
 .roadmap-column--right .detail-node:hover {
-  border-color: var(--ctp-blue);
-  background: #272d40;
-  box-shadow: 0 4px 12px rgba(137, 180, 250, 0.15);
+  border-color: var(--accent-blue);
+  background: #1e3a8a; /* blue-900 */
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.15);
 }
 
 .roadmap-column--right .detail-node:active {
-  background: #2a3044;
+  background: #1e40af; /* blue-800 */
 }
 
 .roadmap-column--right .detail-node--selected {
-  border-color: var(--ctp-blue);
-  background: #282e42;
-  box-shadow: 0 0 0 2px rgba(137, 180, 250, 0.3);
+  border-color: var(--accent-blue);
+  background: #1e3a8a;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.3);
 }
 
 /* Node with icon */
@@ -256,7 +256,7 @@
   right: -4px;
   width: 12px;
   height: 12px;
-  background: var(--ctp-green);
+  background: var(--accent-green);
   border-radius: 50%;
   border: 2px solid var(--bg-primary);
 }
@@ -272,7 +272,7 @@
   right: -4px;
   width: 12px;
   height: 12px;
-  background: var(--ctp-sapphire);
+  background: var(--accent-blue);
   border-radius: 50%;
   border: 2px solid var(--bg-primary);
 }
@@ -304,7 +304,7 @@
 
 /* Connection Line Styles */
 .connection-line {
-  stroke: var(--ctp-overlay0);
+  stroke: var(--connection-line);
   stroke-width: 2;
   stroke-dasharray: 5, 5;
   fill: none;
@@ -313,31 +313,31 @@
 
 /* Spine connection - solid line connecting main topics */
 .connection-line--spine {
-  stroke: var(--ctp-mauve);
+  stroke: var(--accent-primary);
   stroke-width: 2;
   stroke-dasharray: none;
   opacity: 0.7;
 }
 
 .connection-line--active {
-  stroke: var(--ctp-mauve);
+  stroke: var(--accent-primary);
   stroke-dasharray: none;
 }
 
 .connection-line--highlighted {
-  stroke: var(--ctp-lavender);
+  stroke: var(--accent-secondary);
   stroke-width: 3;
   stroke-dasharray: none;
 }
 
 /* Connection dot at endpoints */
 .connection-dot {
-  fill: var(--ctp-overlay0);
+  fill: var(--connection-line);
   transition: fill var(--transition-base);
 }
 
 .connection-dot--active {
-  fill: var(--ctp-mauve);
+  fill: var(--accent-primary);
 }
 
 /* ============================================
@@ -624,13 +624,13 @@
   transform: translateY(-4px);
   border-color: var(--accent-primary);
   box-shadow: var(--shadow-glow);
-  background: rgba(203, 166, 247, 0.08);
+  background: rgba(167, 139, 250, 0.08);
 }
 
 .persona-card--selected {
   border-color: var(--accent-primary);
-  background: rgba(203, 166, 247, 0.12);
-  box-shadow: 0 0 0 3px rgba(203, 166, 247, 0.25);
+  background: rgba(167, 139, 250, 0.12);
+  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.25);
 }
 
 /* Minimized state for persona cards */
@@ -822,7 +822,7 @@
 }
 
 .nav-button:hover {
-  background: rgba(203, 166, 247, 0.1);
+  background: rgba(167, 139, 250, 0.1);
   border-color: var(--accent-primary);
   color: var(--text-primary);
   transform: scale(1.05);
@@ -845,7 +845,7 @@
 
 .nav-button--top:hover,
 .nav-button--bottom:hover {
-  background: rgba(203, 166, 247, 0.15);
+  background: rgba(167, 139, 250, 0.15);
   box-shadow: var(--shadow-sm);
 }
 
