@@ -24,7 +24,7 @@ export const forMyTeamPersona: Persona = {
         // --------------------------------------------------------------------
         {
           id: "introducing-ai-agents-to-your-team",
-          title: "Introducing AI Agents to Your Team",
+          title: "Introducing AI to Your Team",
           summary:
             "Successfully introducing AI agents to your team requires thoughtful planning and clear communication. You need to understand your team's current skill levels, address concerns about job security, and create an environment where experimentation is encouraged. The key is positioning AI as a force multiplier, not a replacement.",
           childrenSide: "right",
