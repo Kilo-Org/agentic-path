@@ -70,14 +70,21 @@ import "../styles/drawer.css";
 <style>
   /* Page-specific styles that augment global.css */
 
-  .main-content {
-    flex: 1;
-    padding: 0;
-    background: var(--color-bg-primary);
+  /* Sticky footer layout using flexbox on body */
+  :global(body) {
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
   }
 
+  .main-content {
+    flex: 1 0 auto;
+    padding: 0;
+    background: var(--color-bg-primary);
+  }
+
   .site-footer {
+    flex-shrink: 0;
     background: var(--color-bg-secondary);
     padding: 2rem 1.5rem;
     text-align: center;

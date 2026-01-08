@@ -1,6 +1,7 @@
 /**
  * ConceptDrawer component displays node content in a slide-in side panel.
  * Shows the node title, summary, and resources organized in tabs (Read/Watch/Do).
+ * For MainTopics, also displays a list of subnodes that can be clicked.
  * Supports View Transitions for smooth animations.
  */
 
@@ -15,6 +16,15 @@ export interface ConceptDrawerProps {
   onClose: () => void;
   /** Whether the drawer is currently open */
   isOpen: boolean;
+  /** Optional callback when a subnode is clicked (for MainTopic nodes) */
+  onSubnodeClick?: (nodeId: string) => void;
+}
+
+/**
+ * Type guard to check if a node is a MainTopic (has children)
+ */
+function isMainTopic(node: MainTopic | DetailNode): node is MainTopic {
+  return "children" in node && Array.isArray((node as MainTopic).children);
 }
 
 /** Available resource tab categories */
@@ -32,8 +42,11 @@ const tabs: { key: TabType; label: string; icon: string }[] = [
  * and displays detailed information about a node including
  * its summary and categorized resources.
  */
-export function ConceptDrawer({ node, onClose, isOpen }: ConceptDrawerProps) {
+export function ConceptDrawer({ node, onClose, isOpen, onSubnodeClick }: ConceptDrawerProps) {
   const [activeTab, setActiveTab] = useState<TabType>("read");
+
+  // Check if this node has subnodes (is a MainTopic)
+  const hasSubnodes = node && isMainTopic(node) && node.children.length > 0;
 
   // Handle ESC key to close drawer
   const handleKeyDown = useCallback(
@@ -164,6 +177,43 @@ export function ConceptDrawer({ node, onClose, isOpen }: ConceptDrawerProps) {
           >
             <ResourceList resources={currentResources} category={activeTab} />
           </div>
+
+          {/* Subnodes section (only for MainTopics with children) - shown below resources */}
+          {hasSubnodes && isMainTopic(node) && (
+            <section class="drawer-subnodes">
+              <h3 class="drawer-subnodes-title">
+                <span class="drawer-subnodes-icon">📚</span>
+                Subtopics
+                <span class="drawer-subnodes-count">{node.children.length}</span>
+              </h3>
+              <ul class="drawer-subnodes-list">
+                {node.children.map((child) => (
+                  <li key={child.id}>
+                    <button
+                      type="button"
+                      class="drawer-subnode-item"
+                      onClick={() => onSubnodeClick?.(child.id)}
+                    >
+                      <span class="drawer-subnode-title">{child.title}</span>
+                      <svg
+                        class="drawer-subnode-arrow"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <polyline points="9 18 15 12 9 6" />
+                      </svg>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
         </div>
       </aside>
     </>

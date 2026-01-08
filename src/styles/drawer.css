@@ -345,6 +345,106 @@
   margin-bottom: 0;
 }
 
+/* ============================================
+   DRAWER SUBNODES SECTION
+   Shows subtopics list for main topics
+   ============================================ */
+
+.drawer-subnodes {
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  /* Staggered animation - appears after resource panel */
+  opacity: 0;
+  animation: drawer-content-slide-in 0.35s cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
+  animation-delay: 0.3s;
+}
+
+.drawer-subnodes-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-sm);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-md) 0;
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--border);
+}
+
+.drawer-subnodes-icon {
+  font-size: 1rem;
+}
+
+.drawer-subnodes-count {
+  margin-left: auto;
+  background: rgba(248, 246, 118, 0.15);
+  padding: 2px 8px;
+  border-radius: var(--radius-xl);
+  font-size: var(--font-xs);
+  font-weight: var(--font-medium);
+  color: var(--accent-primary);
+}
+
+.drawer-subnodes-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.drawer-subnode-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+  text-align: left;
+}
+
+.drawer-subnode-item:hover {
+  background: rgba(248, 246, 118, 0.08);
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+  transform: translateX(4px);
+}
+
+.drawer-subnode-title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.drawer-subnode-arrow {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  transition: transform var(--transition-fast);
+}
+
+.drawer-subnode-item:hover .drawer-subnode-arrow {
+  color: var(--accent-primary);
+  transform: translateX(4px);
+}
+
 /* Resource Panel */
 .resource-panel {
   min-height: 200px;

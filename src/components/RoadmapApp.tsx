@@ -361,6 +361,7 @@ export function RoadmapApp({
                 node={selectedNode}
                 isOpen={isDrawerOpen}
                 onClose={handleCloseDrawer}
+                onSubnodeClick={handleNodeClick}
             />
         </div>
     );

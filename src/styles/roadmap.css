@@ -6,7 +6,6 @@
 
 /* Main Roadmap Container */
 .roadmap-container {
-  min-height: 100vh;
   padding: var(--spacing-xl) var(--spacing-md);
   background-color: var(--bg-primary);
   margin: 0 auto;
