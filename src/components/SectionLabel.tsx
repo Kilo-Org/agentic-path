@@ -21,8 +21,6 @@ export function SectionLabel({ label, yPosition }: SectionLabelProps): JSX.Eleme
                 top: `${yPosition}px`,
                 left: "50%",
                 transform: "translateX(-50%)",
-                zIndex: 0,
-                opacity: 0.6,
             }}
         >
             {label}

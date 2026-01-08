@@ -83,9 +83,11 @@
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: var(--spacing-xs) 0;
-  z-index: 0;
+  padding: var(--spacing-xs) var(--spacing-md);
+  z-index: 2;
   pointer-events: none;
+  background: var(--bg-primary);
+  border-radius: var(--radius-sm);
 }
 
 .section-label--left {
