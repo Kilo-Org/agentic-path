@@ -7,6 +7,7 @@
 // Import the main island component
 import { RoadmapApp } from "../components/RoadmapApp";
 import { ThemeToggle } from "../components/ThemeToggle";
+import PostHogAnalytics from "../components/PostHogAnalytics.astro";
 
 // Import all CSS styles
 import "../styles/global.css";
@@ -41,6 +42,9 @@ import "../styles/drawer.css";
     <meta name="generator" content={Astro.generator} />
 
     <title>Agentic Engineering for Humans | Kilo Code</title>
+
+    <!-- Analytics -->
+    <PostHogAnalytics />
 
     <!-- Prevent flash of wrong theme by applying theme before render -->
     <script is:inline>

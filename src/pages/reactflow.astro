@@ -7,6 +7,7 @@
 // Import the main island component
 import { ReactFlowApp } from "../components/reactflow/ReactFlowApp";
 import { ThemeToggle } from "../components/ThemeToggle";
+import PostHogAnalytics from "../components/PostHogAnalytics.astro";
 
 // Import all CSS styles
 import "../styles/global.css";
@@ -45,6 +46,9 @@ import "../styles/reactflow.css";
     <meta name="generator" content={Astro.generator} />
 
     <title>Agentic Engineering - React Flow | Kilo Code</title>
+
+    <!-- Analytics -->
+    <PostHogAnalytics />
 
     <!-- Prevent flash of wrong theme by applying theme before render -->
     <script is:inline>

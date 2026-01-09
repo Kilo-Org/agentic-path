@@ -7,6 +7,7 @@
 // Import the main island component
 import { SpotifyApp } from "../components/spotify";
 import { ThemeToggle } from "../components/ThemeToggle";
+import PostHogAnalytics from "../components/PostHogAnalytics.astro";
 
 // Import all CSS styles
 import "../styles/global.css";
@@ -39,6 +40,9 @@ import "../styles/spotify.css";
     <meta name="generator" content={Astro.generator} />
 
     <title>Agentic Engineering - Spotify View | Kilo Code</title>
+
+    <!-- Analytics -->
+    <PostHogAnalytics />
 
     <!-- Prevent flash of wrong theme by applying theme before render -->
     <script is:inline>
