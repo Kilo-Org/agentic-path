@@ -3,8 +3,8 @@
  * It orchestrates the layout of main topics, detail nodes, section labels, and connection lines.
  */
 
-import { type JSX } from "preact";
-import { useEffect, useState, useMemo } from "preact/hooks";
+import { type JSX } from "react";
+import { useEffect, useState, useMemo } from "react";
 import type { Persona, NodePositions, MainTopic, DetailNode as DetailNodeType } from "@/types";
 import {
     calculateNodePositions,

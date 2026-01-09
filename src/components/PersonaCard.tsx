@@ -4,7 +4,7 @@
  * Supports minimized state when displayed in the compact top bar.
  */
 
-import type { JSX } from "preact";
+import type { JSX } from "react";
 import type { Persona } from "../types";
 
 export interface PersonaCardProps {

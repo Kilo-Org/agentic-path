@@ -1,0 +1,80 @@
+---
+/**
+ * Spotify-style interface for the Agentic Engineering learning roadmap.
+ * Three-column layout: Sidebar (personas) | Main (topics) | Drawer (details)
+ */
+
+// Import the main island component
+import { SpotifyApp } from "../components/spotify";
+import { ThemeToggle } from "../components/ThemeToggle";
+
+// Import all CSS styles
+import "../styles/global.css";
+import "../styles/spotify.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Spotify-style interface for exploring the Agentic Engineering learning roadmap - designed for linear navigation through AI skills."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#121212" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Agentic Engineering - Spotify View" />
+    <meta
+      property="og:description"
+      content="Spotify-style interface for exploring the Agentic Engineering learning roadmap."
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Generator -->
+    <meta name="generator" content={Astro.generator} />
+
+    <title>Agentic Engineering - Spotify View | Kilo Code</title>
+
+    <!-- Prevent flash of wrong theme by applying theme before render -->
+    <script is:inline>
+      (function () {
+        const stored = localStorage.getItem("theme");
+        if (stored === "light" || stored === "dark") {
+          document.documentElement.setAttribute("data-theme", stored);
+        }
+        // If 'system' or nothing stored, let CSS media query handle it
+      })();
+    </script>
+  </head>
+
+  <body>
+    <!-- Theme Toggle -->
+    <ThemeToggle client:load />
+
+    <!-- Main Content Area - Full App -->
+    <main class="spotify-page">
+      <!-- React Island: Spotify-style Roadmap -->
+      <SpotifyApp client:load />
+    </main>
+  </body>
+</html>
+
+<style>
+  /* Page-specific styles */
+  :global(body) {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .spotify-page {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+</style>

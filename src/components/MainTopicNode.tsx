@@ -4,7 +4,7 @@
  * to view topic-level resources.
  */
 
-import { type JSX } from "preact";
+import { type JSX } from "react";
 import type { MainTopic, NodePosition } from "@/types";
 
 export interface MainTopicNodeProps {

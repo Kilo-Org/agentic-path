@@ -3,8 +3,8 @@
  * Includes up/down scroll buttons and keyboard navigation support.
  */
 
-import { type JSX } from "preact";
-import { useEffect, useCallback, useRef } from "preact/hooks";
+import { type JSX } from "react";
+import { useEffect, useCallback, useRef } from "react";
 
 export interface NavigationControlsProps {
     /** Reference to the scrollable container element */

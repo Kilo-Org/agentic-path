@@ -5,7 +5,7 @@
  * Supports View Transitions for smooth animations.
  */
 
-import { useState, useEffect, useCallback } from "preact/hooks";
+import { useState, useEffect, useCallback } from "react";
 import type { MainTopic, DetailNode } from "../types/roadmap";
 import { ResourceList } from "./ResourceList";
 
@@ -79,7 +79,7 @@ export function ConceptDrawer({ node, onClose, isOpen, onSubnodeClick }: Concept
   }, [isOpen]);
 
   // Handle backdrop click
-  const handleBackdropClick = (event: MouseEvent) => {
+  const handleBackdropClick = (event: React.MouseEvent<HTMLDivElement>) => {
     // Only close if clicking the backdrop itself, not the drawer content
     if (event.target === event.currentTarget) {
       onClose();
@@ -98,27 +98,27 @@ export function ConceptDrawer({ node, onClose, isOpen, onSubnodeClick }: Concept
     <>
       {/* Backdrop overlay */}
       <div
-        class={`drawer-backdrop ${isOpen ? "drawer-backdrop-visible" : ""}`}
+        className={`drawer-backdrop ${isOpen ? "drawer-backdrop-visible" : ""}`}
         onClick={handleBackdropClick}
         aria-hidden="true"
       />
 
       {/* Drawer panel */}
       <aside
-        class={`concept-drawer ${isOpen ? "concept-drawer-open" : ""}`}
+        className={`concept-drawer ${isOpen ? "concept-drawer-open" : ""}`}
         role="dialog"
         aria-modal="true"
         aria-labelledby="drawer-title"
         style={{ viewTransitionName: "concept-drawer" }}
       >
         {/* Header with title and close button */}
-        <header class="drawer-header">
-          <h2 id="drawer-title" class="drawer-title">
+        <header className="drawer-header">
+          <h2 id="drawer-title" className="drawer-title">
             {node.title}
           </h2>
           <button
             type="button"
-            class="drawer-close-btn"
+            className="drawer-close-btn"
             onClick={onClose}
             aria-label="Close drawer"
           >
@@ -139,14 +139,14 @@ export function ConceptDrawer({ node, onClose, isOpen, onSubnodeClick }: Concept
         </header>
 
         {/* Scrollable content area */}
-        <div class="drawer-content">
+        <div className="drawer-content">
           {/* Summary section */}
-          <section class="drawer-summary">
+          <section className="drawer-summary">
             <p>{node.summary}</p>
           </section>
 
           {/* Resource tabs */}
-          <nav class="resource-tabs" role="tablist" aria-label="Resource types">
+          <nav className="resource-tabs" role="tablist" aria-label="Resource types">
             {tabs.map((tab) => {
               const count = node.resources[tab.key].length;
               return (
@@ -154,15 +154,15 @@ export function ConceptDrawer({ node, onClose, isOpen, onSubnodeClick }: Concept
                   key={tab.key}
                   type="button"
                   role="tab"
-                  class={`resource-tab ${activeTab === tab.key ? "resource-tab-active" : ""
+                  className={`resource-tab ${activeTab === tab.key ? "resource-tab-active" : ""
                     }`}
                   onClick={() => setActiveTab(tab.key)}
                   aria-selected={activeTab === tab.key}
                   aria-controls={`tabpanel-${tab.key}`}
                 >
-                  <span class="resource-tab-icon">{tab.icon}</span>
-                  <span class="resource-tab-label">{tab.label}</span>
-                  <span class="resource-tab-count">{count}</span>
+                  <span className="resource-tab-icon">{tab.icon}</span>
+                  <span className="resource-tab-label">{tab.label}</span>
+                  <span className="resource-tab-count">{count}</span>
                 </button>
               );
             })}
@@ -172,7 +172,7 @@ export function ConceptDrawer({ node, onClose, isOpen, onSubnodeClick }: Concept
           <div
             id={`tabpanel-${activeTab}`}
             role="tabpanel"
-            class="resource-panel"
+            className="resource-panel"
             aria-labelledby={`tab-${activeTab}`}
           >
             <ResourceList resources={currentResources} category={activeTab} />
@@ -180,23 +180,23 @@ export function ConceptDrawer({ node, onClose, isOpen, onSubnodeClick }: Concept
 
           {/* Subnodes section (only for MainTopics with children) - shown below resources */}
           {hasSubnodes && isMainTopic(node) && (
-            <section class="drawer-subnodes">
-              <h3 class="drawer-subnodes-title">
-                <span class="drawer-subnodes-icon">📚</span>
+            <section className="drawer-subnodes">
+              <h3 className="drawer-subnodes-title">
+                <span className="drawer-subnodes-icon">📚</span>
                 Subtopics
-                <span class="drawer-subnodes-count">{node.children.length}</span>
+                <span className="drawer-subnodes-count">{node.children.length}</span>
               </h3>
-              <ul class="drawer-subnodes-list">
+              <ul className="drawer-subnodes-list">
                 {node.children.map((child) => (
                   <li key={child.id}>
                     <button
                       type="button"
-                      class="drawer-subnode-item"
+                      className="drawer-subnode-item"
                       onClick={() => onSubnodeClick?.(child.id)}
                     >
-                      <span class="drawer-subnode-title">{child.title}</span>
+                      <span className="drawer-subnode-title">{child.title}</span>
                       <svg
-                        class="drawer-subnode-arrow"
+                        className="drawer-subnode-arrow"
                         width="16"
                         height="16"
                         viewBox="0 0 24 24"

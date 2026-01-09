@@ -3,7 +3,7 @@
  * in the center column of the roadmap. Positioned absolutely based on y coordinate.
  */
 
-import { type JSX } from "preact";
+import { type JSX } from "react";
 
 export interface SectionLabelProps {
     /** Section display label text */

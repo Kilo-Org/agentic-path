@@ -8,8 +8,8 @@
  * - Accessible with proper aria labels
  */
 
-import { useState, useEffect, useCallback } from "preact/hooks";
-import type { JSX } from "preact";
+import { useState, useEffect, useCallback } from "react";
+import type { JSX } from "react";
 
 type Theme = "light" | "dark" | "system";
 

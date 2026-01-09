@@ -50,20 +50,20 @@ export function ResourceItem({ resource }: ResourceItemProps) {
             href={resource.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="resource-item resource-item-grid"
+            className="resource-item resource-item-grid"
         >
-            <span class={`resource-type-badge resource-type-${resource.type}`}>
-                <span class="resource-type-icon">{icon}</span>
-                <span class="resource-type-label">{label}</span>
+            <span className={`resource-type-badge resource-type-${resource.type}`}>
+                <span className="resource-type-icon">{icon}</span>
+                <span className="resource-type-label">{label}</span>
             </span>
-            <div class="resource-item-title-container">
-                <h4 class="resource-title">{resource.title}</h4>
+            <div className="resource-item-title-container">
+                <h4 className="resource-title">{resource.title}</h4>
                 {resource.author && (
-                    <span class="resource-author">by {resource.author}</span>
+                    <span className="resource-author">by {resource.author}</span>
                 )}
             </div>
             {resource.duration && (
-                <span class="resource-duration">{resource.duration}</span>
+                <span className="resource-duration">{resource.duration}</span>
             )}
         </a>
     );

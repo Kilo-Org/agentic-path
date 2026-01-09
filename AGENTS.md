@@ -1,5 +1,9 @@
 # Agent Instructions
 
+## General
+
+- **Always use bun** - not pnpm or npm
+
 ## Running the server
 
 Typically the server will already be running at http://localhost:4321. Check that first with the browser or a curl before attempting to run it.
@@ -41,6 +45,7 @@ bd sync               # Sync with git
 7. **Hand off** - Provide context for next session
 
 **CRITICAL RULES:**
+
 - Work is NOT complete until `git push` succeeds
 - NEVER stop before pushing - that leaves work stranded locally
 - NEVER say "ready to push when you are" - YOU must push
