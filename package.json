@@ -1,25 +1,17 @@
 {
-  "name": "agentic-path",
+  "name": "",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/react": "^4.2.0",
-    "@types/dagre": "^0.7.53",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "@xyflow/react": "^12.10.0",
-    "astro": "^5.1.5",
-    "dagre": "^0.8.5",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "typescript": "^5.7.2"
+    "@astrojs/starlight": "^0.37.2",
+    "astro": "^5.6.1",
+    "sharp": "^0.34.2"
   }
 }
