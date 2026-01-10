@@ -112,12 +112,15 @@ Unwritten rules, relationship dynamics, resource constraints—humans navigate t
 - Generate rough sizing for comparison
 - Identify dependencies between initiatives
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
+- [Spec-Driven Development – Al Harris, Amazon Kiro](https://www.youtube.com/watch?v=HY_JyxAZsiE) - How specs enable reproducible AI delivery
+- [The New Code – Sean Grove, OpenAI](https://www.youtube.com/watch?v=8rABwKRsec4) - Why specifications are becoming the fundamental unit of programming
+- [Spec Kit](https://github.com/github/spec-kit) - GitHub's spec-driven development framework
 
-- Requirements engineering with AI
-- Planning process integration examples
-- Specification templates
+### Deep dives
+
+- [AI in Product Development: Netflix, BMW, PepsiCo](https://www.virtasant.com/ai-today/ai-in-product-development-netflix-bmw) - Case studies of AI in product planning
+- [AI Product Development: Why Founders Are Fascinated](https://www.techmagic.co/blog/ai-product-development) - AI reshaping ideation to launch

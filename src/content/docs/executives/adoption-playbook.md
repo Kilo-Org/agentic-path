@@ -137,12 +137,13 @@ Adoption doesn't fail because of technology. It fails because of people, process
 - **Share learnings** across teams
 - **Plan next integration level**
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
+- [Stop Peanut Buttering AI Onto Your Organization](https://blog.kilo.ai/p/stop-peanut-buttering-ai) - Why surface-level adoption fails
 
-- Change management frameworks
-- Case studies of successful (and failed) adoptions
-- Resistance handling playbooks
+### Videos
+
+- [Leadership in AI Assisted Engineering – Justin Reock, DX](https://www.youtube.com/watch?v=PmZDupFP3UM) - Leading AI-enabled engineering organizations
+- [Moving away from Agile – Martin Harrysson, McKinsey](https://www.youtube.com/watch?v=SZStlIhyTCY) - Why operating model changes are required

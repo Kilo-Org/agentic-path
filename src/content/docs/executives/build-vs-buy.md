@@ -148,12 +148,9 @@ Before deciding to build, honestly assess:
 
 If any answer is "no," build may not be realistic yet.
 
----
+## Resources
 
-## Further reading
+### Deep dives
 
-_Links to external resources coming soon:_
-
-- Build vs. buy case studies
-- Fine-tuning guide for enterprise
-- MLOps for agentic systems
+- [Open-Source vs Closed-Source LLMs – Deloitte AI360](https://www.youtube.com/watch?v=710PDpuLwOc) - Strategic considerations for model selection
+- [OpenAI vs. open-source LLM](https://ubiops.com/openai-vs-open-source-llm/) - Comparison for enterprise use cases

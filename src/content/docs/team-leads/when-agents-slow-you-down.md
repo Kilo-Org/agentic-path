@@ -128,12 +128,8 @@ Help your team develop intuition:
 
 **Review periodically.** As tools improve, patterns change. What's slow today might be fast next quarter.
 
----
+## Resources
 
-## Further reading
+### Deep dives
 
-_Links to external resources coming soon:_
-
-- Task classification frameworks
-- Time studies on agent efficiency
-- Community discussions on when not to use agents
+- [Vibe coding is already dead](https://www.youtube.com/watch?v=tKPtZtsLgUA) - Critical perspective on when AI tools backfire

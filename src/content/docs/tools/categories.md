@@ -159,12 +159,14 @@ The tool landscape is evolving rapidly. Rather than reviewing specific products 
 - Enterprise plans with isolation
 - Edge deployment of some models
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
+- [Claude Code & the evolution of agentic coding – Boris Cherny, Anthropic](https://www.youtube.com/watch?v=Lue8K2jqfKk) - Overview of the coding tools landscape
 
-- Tool comparison matrices
-- Category-specific guides
-- Vendor directories
+### Deep dives
+
+- [Cursor just changed forever](https://www.youtube.com/watch?v=VgtfpTGJmHQ) - Cursor 2.0's agent-centric design
+- [Defying Gravity – Kevin Hou, Google DeepMind](https://www.youtube.com/watch?v=HN-F-OQe6j0) - Google's agentic IDE vision
+- [The State of AI Coding 2025](https://www.greptile.com/state-of-ai-coding-2025) - Survey of AI coding tools

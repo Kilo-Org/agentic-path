@@ -202,12 +202,21 @@ Getting value from tools requires thoughtful integration. Here are patterns that
 - Workflow disruption
 - Evaluation fatigue
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
+- [What is Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro) - The standard protocol for AI integrations
+- [Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761) - How LLMs learn to use external tools
 
-- Integration architecture diagrams
-- Implementation guides by platform
-- Automation workflow templates
+### Deep dives
+
+- [How Claude Code Works – Jared Zoneraich, PromptLayer](https://www.youtube.com/watch?v=RFKCzGlAU6Q) - Architecture deep dive
+- [AI Engineering at Jane Street – John Crepezzi](https://www.youtube.com/watch?v=0ML7ZLMdcl4) - Custom tool integration
+- [MCP server: Step-by-step building guide](https://composio.dev/blog/mcp-server-step-by-step-guide-to-building-from-scrtch) - Building MCP servers
+
+### Papers & research
+
+- [RepoCoder: Repository-Level Code Completion](https://arxiv.org/abs/2303.12570) - Repository context integration
+- [Repository-Level Prompt Generation](https://arxiv.org/abs/2206.12839) - Repo-aware prompt techniques
+- [AI-assisted Code Authoring at Scale – Meta](https://arxiv.org/abs/2305.12050) - Enterprise integration patterns

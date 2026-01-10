@@ -138,12 +138,8 @@ Engage early. Build expertise. Accept some risk for positioning.
 - How would we verify work we don't manually review?
 - What skills do we need our humans to keep sharp?
 
----
+## Resources
 
-## Further reading
+### Deep dives
 
-_Links to external resources coming soon:_
-
-- Autonomous agent research overview
-- Devin and similar tools analysis
-- Long-term industry projections
+- [Self Coding Agents – Colin Flaherty, Augment Code](https://www.youtube.com/watch?v=Iw_3cRf3lnM) - What supervising AI agents at scale looks like

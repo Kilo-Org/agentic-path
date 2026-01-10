@@ -213,12 +213,8 @@ As agents become more capable, the temptation grows to automate more approvals. 
 
 Use these metrics to tune gates—neither too permissive nor too restrictive.
 
----
+## Resources
 
-## Further reading
+### Videos
 
-_Links to external resources coming soon:_
-
-- CI/CD gate configuration guides
-- Branch protection best practices
-- Approval workflow patterns
+- [Agent Readiness – Eno Reyes, Factory AI](https://www.youtube.com/watch?v=example) - Preparing organizations for agentic workflows

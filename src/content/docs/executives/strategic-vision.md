@@ -117,12 +117,17 @@ AI tools don't reduce headcount need—they change what headcount does.
 
 Your talent strategy needs to evolve accordingly.
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
+- [Dispatch from the Future – Dan Shipper, Every](https://www.youtube.com/watch?v=MGzymaYBiss) - "Compounding Engineering" and organizational transformation
 
-- Industry analysis of AI adoption levels
-- Talent market trends
-- Strategic framework case studies
+### Deep dives
+
+- [AI in Product Development: Netflix, BMW, PepsiCo](https://www.virtasant.com/ai-today/ai-in-product-development-netflix-bmw) - Enterprise case studies
+- [AI Product Development: Why Founders Are Fascinated](https://www.techmagic.co/blog/ai-product-development) - AI reshaping product development
+
+### Papers & research
+
+- [AI-assisted Code Authoring at Scale – Meta](https://arxiv.org/abs/2305.12050) - Meta's CodeCompose deployment experience

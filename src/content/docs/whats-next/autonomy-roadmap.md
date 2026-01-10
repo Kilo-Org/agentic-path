@@ -224,12 +224,22 @@ These help regardless of which future arrives.
 - Stay current with capability
 - Lead or follow based on position
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
+- [The 2025 State of AI Report](https://openrouter.ai/announcements/the-2025-state-of-ai-report) - Where AI stands and where it's heading
 
-- Industry projections and analyses
-- Research trends
-- Capability assessments
+### Deep dives
+
+- [LLM predictions for 2026 – Simon Willison](https://simonwillison.net/2026/Jan/8/llm-predictions-for-2026/) - Expert trajectory predictions
+- [Defying Gravity – Kevin Hou, Google DeepMind](https://www.youtube.com/watch?v=HN-F-OQe6j0) - Future of agentic IDEs
+- [Self Coding Agents – Colin Flaherty, Augment Code](https://www.youtube.com/watch?v=Iw_3cRf3lnM) - Self-improving AI agents
+- [Oxide and Friends Predictions 2026](https://www.youtube.com/watch?v=lVDhQMiAbR8) - Industry predictions roundtable
+- [OpenAI's "deep-thinking" o1 model](https://www.youtube.com/watch?v=6xlPJiNpCVw) - Reasoning model capabilities
+- [The LLM Convergence Threshold Has Shifted](https://blog.kilo.ai/p/the-llm-convergence-threshold-has) - Open vs. proprietary trajectory
+- [Competitive programming with AlphaCode](https://deepmind.google/blog/competitive-programming-with-alphacode/) - AI solving novel problems
+
+### Papers & research
+
+- [Sparks of AGI: Early GPT-4 experiments](https://arxiv.org/abs/2303.12712) - Capabilities and what they suggest

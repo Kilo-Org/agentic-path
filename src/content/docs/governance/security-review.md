@@ -180,13 +180,8 @@ Run on all code, including AI-generated:
 - Share learnings (appropriately)
 - Consider tool-specific mitigations
 
----
+## Resources
 
-## Further reading
+### Videos
 
-_Links to external resources coming soon:_
-
-- OWASP resources
-- Security scanning tools
-- AI-specific security research
-- Secure coding guidelines by language
+- [Government Agents – Mark Myshatyn, Los Alamos](https://www.youtube.com/watch?v=example) - Security considerations for AI agents in government

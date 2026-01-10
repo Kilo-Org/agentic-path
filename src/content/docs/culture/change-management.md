@@ -206,12 +206,16 @@ Resistant. May never fully adopt.
 - Quality indicators
 - Team health
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
+- [Stop Peanut Buttering AI Onto Your Organization](https://blog.kilo.ai/p/stop-peanut-buttering-ai) - Why surface-level AI adoption fails
+- [Moving away from Agile – Martin Harrysson, McKinsey](https://www.youtube.com/watch?v=SZStlIhyTCY) - Why operating model changes are required
+- [Your Team Is Already Using AI. Now What?](https://blog.kilo.ai/p/your-team-is-already-using-ai-now) - Managing the transition
 
-- Change management frameworks
-- Case studies of successful AI adoption
-- Communication templates
+### Deep dives
+
+- [Dispatch from the Future – Dan Shipper, Every](https://www.youtube.com/watch?v=MGzymaYBiss) - Memo culture to demo culture
+- [From Vibe Coding To Vibe Engineering – Kitze](https://www.youtube.com/watch?v=JV-wY5pxXLo) - Cultural shift in development
+- [The Year Senior Engineers Stopped Rolling Their Eyes](https://blog.kilo.ai/p/senior-engineers-use-ai-now) - Attitude shifts in 2025

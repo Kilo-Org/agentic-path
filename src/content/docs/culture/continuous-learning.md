@@ -236,12 +236,12 @@ The AI landscape changes monthly. Capabilities that didn't exist last quarter ar
 - Questions welcomed
 - Failures discussed openly
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
+- [Early adoption is the key to AI coding success](https://blog.kilo.ai/p/early-adoption-ai-coding) - Why continuous learning compounds advantages
 
-- Learning program templates
-- Training resource recommendations
-- Curriculum examples
+### Courses
+
+- [Prompt Engineering Specialization – Vanderbilt University](https://www.coursera.org/specializations/prompt-engineering) - Comprehensive prompt engineering course

@@ -253,12 +253,13 @@ Teams may organize around:
 - Quality and oversight
 - System design and architecture
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
+- [The 3 Pillars of Autonomy – Michele Catasta, Replit](https://www.youtube.com/watch?v=MLhAA9yguwM) - Testing, context management, and parallelization for agent autonomy
+- [Embracing the parallel coding agent lifestyle](https://simonwillison.net/2025/Oct/5/parallel-coding-agents/) - Running multiple agents simultaneously on real projects
 
-- Multi-agent research papers
-- Orchestration framework documentation
-- Early case studies
+### Deep dives
+
+- [Self Coding Agents – Colin Flaherty, Augment Code](https://www.youtube.com/watch?v=Iw_3cRf3lnM) - Supervising AI agents at scale

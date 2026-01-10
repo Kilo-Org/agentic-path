@@ -39,7 +39,7 @@ _Academic papers defining agentic systems and patterns._
 
 _Research on code generation, understanding, and synthesis._
 
-- Coming soon
+- [StarCoder: may the source be with you!](https://arxiv.org/abs/2305.06161) - Open-source Code LLM with 8K context and infilling capabilities
 
 ### Human-AI collaboration
 
@@ -53,7 +53,7 @@ _Studies on how humans and AI systems work together effectively._
 
 _Regular sources of insight on AI and development._
 
-- Coming soon
+- [2025: The year in LLMs – Simon Willison](https://simonwillison.net/2025/Dec/31/the-year-in-llms/) - Comprehensive annual review of LLM developments
 
 ### Podcasts
 
@@ -65,7 +65,7 @@ _Audio content covering agentic development._
 
 _Tutorials, talks, and demonstrations._
 
-- Coming soon
+- [The Complete AI Coding Course (2025)](https://www.udemy.com/course/the-complete-ai-coding-course-2025-cursor-ai-v0-vercel/) - Hands-on course covering Cursor and Claude Code
 
 ### Communities
 

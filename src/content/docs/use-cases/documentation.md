@@ -204,12 +204,13 @@ Include alternatives considered.
 - Prioritize high-traffic docs
 - Remove obsolete content
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
+- [AGENTS.md](https://agents.md/) - The emerging standard for agent-readable project documentation
+- [The New Code – Sean Grove, OpenAI](https://www.youtube.com/watch?v=8rABwKRsec4) - Specs as source of truth compiling to documentation
 
-- Documentation standards and tools
-- Docs-as-code practices
-- API documentation examples
+### Deep dives
+
+- [Spec-Driven Development – Al Harris, Amazon Kiro](https://www.youtube.com/watch?v=HY_JyxAZsiE) - Specs generating docs as a side effect

@@ -232,12 +232,14 @@ Honest assessment, not narrative fitting.
 - Overclaim benefits
 - Blame AI for issues
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
+- [Does AI Actually Boost Developer Productivity? – Stanford](https://www.youtube.com/watch?v=tbDDYKRFjhk) - 100k developer study on real productivity impact
+- [ML-Enhanced Code Completion – Google Research](https://research.google/blog/ml-enhanced-code-completion-improves-developer-productivity/) - Google's productivity research
+- [Leadership in AI Assisted Engineering – Justin Reock, DX](https://www.youtube.com/watch?v=PmZDupFP3UM) - DX's AI measurement framework
 
-- DORA metrics and AI
-- Developer experience research
-- Dashboard templates
+### Deep dives
+
+- [The reality of AI-Assisted software engineering productivity](https://addyo.substack.com/p/the-reality-of-ai-assisted-software) - Balanced productivity analysis

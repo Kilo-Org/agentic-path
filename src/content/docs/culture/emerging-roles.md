@@ -242,12 +242,9 @@ Dedicated AI roles become viable.
 
 AI doesn't reduce hiring needs—it changes what you hire for.
 
----
+## Resources
 
-## Further reading
+### Deep dives
 
-_Links to external resources coming soon:_
-
-- Job description templates
-- Skills assessment frameworks
-- Interview guide updates
+- [2025: The year I stopped writing code](https://www.youtube.com/watch?v=Ge8LoXfJJdA) - How roles are evolving
+- [How to Become an AI Engineer](https://www.simplilearn.com/tutorials/artificial-intelligence-tutorial/how-to-become-an-ai-engineer) - Career guide for AI roles

@@ -131,12 +131,9 @@ Be skeptical of projections that:
 - Assume immediate full benefit without learning curve
 - Don't account for tasks where agents don't help
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
-
-- Industry benchmarks on AI ROI
-- Academic studies on productivity impact
-- CFO frameworks for AI investment
+- [Stop Looking for AI Coding Spending Caps](https://blog.kilo.ai/p/stop-looking-for-ai-coding-spending) - Why spending caps are counter-productive
+- [Does AI Actually Boost Developer Productivity? – Stanford](https://www.youtube.com/watch?v=tbDDYKRFjhk) - Data-driven productivity analysis from 100k developers

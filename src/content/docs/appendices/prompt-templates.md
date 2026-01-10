@@ -316,6 +316,16 @@ Review this proposed architecture.
 4. **Include examples** - Show patterns to follow when possible
 5. **Iterate** - First response rarely perfect; refine with follow-ups
 
+## Resources
+
+### Essential
+
+- [Prompt Engineering Specialization – Vanderbilt University](https://www.coursera.org/specializations/prompt-engineering) - Comprehensive course on using LLMs as a "mind exoskeleton"
+
+### Deep dives
+
+- [Understanding Prompt Engineering – DataCamp](https://www.datacamp.com/courses/understanding-prompt-engineering) - Beginner course on prompt engineering fundamentals
+
 ---
 
 _Have a useful template? Consider contributing it back._

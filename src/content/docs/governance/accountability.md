@@ -202,12 +202,12 @@ What if AI helps with code review?
 5. Train on expectations
 6. Monitor and adjust
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
+- [Your job is to deliver code you have proven to work](https://simonwillison.net/2025/Dec/18/code-proven-to-work/) - Accountability for AI-generated code
 
-- Sample accountability policies
-- Legal perspectives on AI liability
-- Case studies of AI-related incidents
+### Deep dives
+
+- [I shipped code I don't understand and I'm mass deleting it](https://www.youtube.com/watch?v=example) - Jake Nations on vibe coding consequences

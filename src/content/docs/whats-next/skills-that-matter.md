@@ -212,12 +212,9 @@ Build your learning capacity itself:
 - Develop learning community
 - Stay curious
 
----
+## Resources
 
-## Further reading
+### Deep dives
 
-_Links to external resources coming soon:_
-
-- Skill assessment frameworks
-- Learning path recommendations
-- Career development in AI era
+- [LLM predictions for 2026 – Simon Willison](https://simonwillison.net/2026/Jan/8/llm-predictions-for-2026/) - Expert predictions for skills trajectory
+- [How to Become an AI Engineer](https://www.simplilearn.com/tutorials/artificial-intelligence-tutorial/how-to-become-an-ai-engineer) - Career guide for AI engineering roles

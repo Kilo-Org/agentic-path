@@ -216,12 +216,11 @@ What will this actually cost?
 - Vendor instability or unclear roadmap
 - Lock-in without data portability
 
----
+## Resources
 
-## Further reading
+### Deep dives
 
-_Links to external resources coming soon:_
-
-- Tool evaluation templates
-- Benchmark resources
-- Community reviews and comparisons
+- [Cursor just changed forever](https://www.youtube.com/watch?v=VgtfpTGJmHQ) - Evaluating agent-centric features
+- [Open-Source vs Closed-Source LLMs – Deloitte AI360](https://www.youtube.com/watch?v=710PDpuLwOc) - Criteria for model selection
+- [OpenAI vs. open-source LLM](https://ubiops.com/openai-vs-open-source-llm/) - Evaluation framework for model choices
+- [The LLM Convergence Threshold Has Shifted](https://blog.kilo.ai/p/the-llm-convergence-threshold-has) - Open vs. proprietary performance analysis

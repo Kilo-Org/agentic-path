@@ -175,12 +175,8 @@ Fix: [summary]
 Write a test that would catch this bug if it returns.
 ```
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
-
-- Test generation tools and frameworks
-- TDD with agents walkthroughs
-- Property-based testing guides
+- [The 3 Pillars of Autonomy – Michele Catasta, Replit](https://www.youtube.com/watch?v=MLhAA9yguwM) - Automatic testing as foundation for agent autonomy

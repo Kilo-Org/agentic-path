@@ -126,13 +126,8 @@ Be aware of training contamination:
 - Understanding of AI impact on codebase
 - Regulatory compliance in some industries
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
-
-- Legal analysis of AI code ownership
-- Open source foundation positions
-- Case law developments
-- Policy templates
+- [Your job is to deliver code you have proven to work](https://simonwillison.net/2025/Dec/18/code-proven-to-work/) - Accountability for AI-generated code

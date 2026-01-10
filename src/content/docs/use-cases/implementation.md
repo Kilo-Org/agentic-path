@@ -160,12 +160,9 @@ Maintain all existing functionality.
 [Additional constraints]
 ```
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
-
-- Prompt templates by language/framework
-- Implementation case studies
-- Complex feature walkthroughs
+- [Embracing the parallel coding agent lifestyle](https://simonwillison.net/2025/Oct/5/parallel-coding-agents/) - Running multiple agents simultaneously
+- [Code research projects with async coding agents](https://simonwillison.net/2025/Nov/6/async-code-research/) - Async research task patterns

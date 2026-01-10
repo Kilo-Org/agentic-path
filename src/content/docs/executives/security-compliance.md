@@ -138,12 +138,8 @@ At minimum, define:
 
 **No blame-shifting:** "The AI did it" is not an excuse.
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
-
-- Industry-specific compliance guides
-- Legal landscape analysis
-- Security frameworks for AI development
+- [Government Agents – Mark Myshatyn, Los Alamos](https://www.youtube.com/watch?v=TnSGx36Ly0Q) - AI agents in high-security regulated environments
