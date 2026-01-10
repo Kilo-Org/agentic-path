@@ -1,28 +1,22 @@
 ---
 title: What is Agentic Engineering?
-description: Understanding the shift from writing code to orchestrating AI agents
+description: The practice of orchestrating AI agents to accomplish software development tasks with varying degrees of autonomy.
 sidebar:
   order: 1
 ---
 
-Agentic engineering is a new discipline. It's not just "using AI to code." It's a fundamental shift in how you approach building software.
+**Agentic engineering** is the practice of orchestrating AI agents to accomplish software development tasks—shifting your role from writing every line to directing intelligent assistants.
 
-## The core idea
+## The core concept
 
-Instead of writing every line yourself, you learn to orchestrate AI agents that handle implementation while you focus on what matters: architecture, requirements, and quality.
+You become a general contractor, not a bricklayer. Instead of typing all the code yourself, you define requirements, coordinate AI agents, and ensure the final result meets spec. The best practitioners know _how_ to do the work—they choose to delegate most of it.
 
-Think of it like being a general contractor. You don't lay every brick yourself. You understand the blueprint, coordinate specialists, and ensure the final result meets spec. The best contractors know _how_ to do the work—they just choose to delegate most of it.
-
-## What changes
-
-**Your job shifts from production to direction.** You spend less time typing code and more time:
+**Your job shifts from production to direction.** You spend less time typing and more time:
 
 - Defining clear requirements
-- Breaking problems into agent-sized chunks
+- Breaking problems into agent-sized tasks
 - Reviewing and validating output
 - Catching what agents miss
-
-**The feedback loop tightens.** What used to take hours now takes minutes. This sounds great until you realize bad decisions also compound faster.
 
 **Communication becomes your primary skill.** Agents do what you tell them, not what you mean. Precision in task definition determines output quality.
 
@@ -30,32 +24,69 @@ Think of it like being a general contractor. You don't lay every brick yourself.
 
 You still need to understand code deeply. Agents make mistakes—sometimes subtle ones. If you can't read code critically, you'll ship bugs faster than ever.
 
-You still own the architecture. Agents excel at local changes but struggle with system-level thinking. That's still on you.
+You still own the architecture. Agents excel at local changes but struggle with system-level thinking.
 
-You still need to understand your domain. Agents don't know your users, your constraints, or your business logic. You bring the context they lack.
+You still need domain knowledge. Agents don't know your users, constraints, or business logic. You bring the context they lack.
 
-## The productivity trap
+## The autonomy spectrum
 
-Here's what most people get wrong: they expect 10x productivity and get frustrated when they see 10-30% gains instead.
+**Choose your level of AI involvement based on task clarity and risk.** Not all AI assistance is equal—the right level depends on how well-defined your task is and how much oversight you need.
 
-The real benefit isn't raw speed. It's capability expansion. You can tackle problems you wouldn't have attempted before. You can explore more solutions. You can maintain larger codebases.
+### Copilot
 
-But only if you develop the right mental models. That's what this guide is for.
+AI suggests, you approve every change.
 
-## Who this is for
+- **What it does:** Generates code blocks based on context and comments
+- **You control:** When to invoke, what context to provide, what to accept
+- **Best for:** Writing functions from descriptions, explaining code, generating tests
 
-- **Engineers** who want to work effectively with agents without losing their edge
-- **Team leads** figuring out how to integrate these tools into existing workflows
-- **Executives** making strategic decisions about AI adoption
+### Task Agent
 
-Each group has different concerns. We've organized this guide so you can jump to what matters most for your role—or read straight through for the complete picture.
+AI executes defined tasks autonomously, you review results.
+
+- **What it does:** Takes a defined task and executes multiple steps to complete it
+- **You control:** The goal, constraints, and validation criteria
+- **Best for:** Features spanning multiple files, refactoring, bug fixes with clear repro steps
+
+### Workflow Agent
+
+AI manages multi-step workflows, you set goals and constraints.
+
+- **What it does:** Handles entire workflows including planning, implementation, testing, and iteration
+- **You control:** High-level objectives and guardrails
+- **Best for:** Well-defined projects with clear acceptance criteria, prototypes, exploration
+
+### Choosing the right level
+
+Higher autonomy isn't always better. Match the level to your situation:
+
+- **Task clarity:** Ambiguous tasks fail at higher autonomy levels
+- **Risk tolerance:** Critical code paths deserve more human oversight
+- **Your familiarity:** In unfamiliar territory, stick to lower autonomy
+- **Iteration speed:** Sometimes writing it yourself is faster than prompt-debug-reprompt
+
+Think of autonomy as a slider, not a fixed setting. Start at Copilot for exploration, move to Task Agent for well-understood work, and always be ready to take manual control.
+
+## Why now?
+
+**AI coding tools crossed a usefulness threshold in 2023-2024.** Three capabilities converged: context windows expanded to handle entire codebases, tool use became reliable enough for agents to read files and run commands, and reasoning improved enough for multi-step planning. Models stopped being chatbots and became actors.
+
+## Who this guide serves
+
+Different roles have different concerns. Jump to what matters most for your role, or read through for the complete picture.
+
+- **Engineers:** Work effectively with agents without losing your edge. See the [Getting Started](/engineers/getting-started/) guide for practical workflows.
+- **Team leads:** Integrate these tools into existing workflows and train your teams. Start with [Workflow Integration](/team-leads/workflow-integration/).
+- **Executives:** Make strategic decisions about AI adoption, budget, and risk. The [Strategic Vision](/executives/strategic-vision/) section covers the business case.
 
 ## Resources
 
 ### Essential
 
 - [The Space Between AI Hype and AI Denial](https://blog.kilo.ai/p/between-ai-hype-and-ai-denial) - Finding the productive middle ground for AI adoption
+- [The 3 Pillars of Autonomy – Michele Catasta, Replit](https://www.youtube.com/watch?v=MLhAA9yguwM) - Core framework for agent autonomy
 
 ### Deep dives
 
-- [From Vibe Coding To Vibe Engineering – Kitze, Sizzy](https://www.youtube.com/watch?v=JV-wY5pxXLo) - How AI collaboration redefines frontend development
+- [From Vibe Coding To Vibe Engineering – Kitze, Sizzy](https://www.youtube.com/watch?v=JV-wY5pxXLo) - How AI collaboration redefines development
+- [Vibe engineering](https://simonwillison.net/2025/Oct/7/vibe-engineering/) - Defining responsible AI-assisted development

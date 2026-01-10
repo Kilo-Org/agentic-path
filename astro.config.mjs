@@ -29,25 +29,13 @@ export default defineConfig({
               slug: "introduction/what-is-agentic-engineering",
             },
             {
-              label: "The Autonomy Spectrum",
-              slug: "introduction/autonomy-spectrum",
-            },
-            { label: "Why This Matters Now", slug: "introduction/why-now" },
-          ],
-        },
-        {
-          label: "Foundations",
-          items: [
-            { label: "How Agents Work", slug: "foundations/how-agents-work" },
-            {
-              label: "Human-AI Collaboration",
-              slug: "foundations/human-ai-collaboration",
+              label: "How Agents Work",
+              slug: "introduction/how-agents-work",
             },
             {
-              label: "Unix Philosophy for AI",
-              slug: "foundations/unix-philosophy",
+              label: "Working with Agents",
+              slug: "introduction/working-with-agents",
             },
-            { label: "Core Terminology", slug: "foundations/terminology" },
           ],
         },
         {
