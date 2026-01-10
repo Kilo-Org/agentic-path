@@ -1,40 +1,99 @@
 ---
 title: Agentic Engineering for Humans
-description: From autocomplete to autonomous agents. A practical framework for engineers, team leads, and executives navigating the future of AI-assisted development.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+description: Real-world guides and resources for learning how software engineering and leadership works in a post-AI world.
+template: splash
 hero:
-  tagline: From autocomplete to autonomous agents. A practical framework for engineers, team leads, and executives navigating the future of AI-assisted development.
+  tagline: Real-world guides and resources for learning how software engineering and leadership works in a post-AI world.
   image:
     file: ../../assets/human-ai.png
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Start Learning
+      link: /introduction/what-is-agentic-engineering/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: View on GitHub
+      link: https://github.com/Kilo-Org/agentic-path
       icon: external
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-## Next steps
+## Choose Your Path
 
-<CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+Pick the track that matches your role. Each path is designed for where you are today.
+
+<CardGrid>
+  <Card title="For Engineers" icon="laptop">
+    Effective prompting, task decomposition, validating agent output, and building AI-compatible codebases.
+    
+    [Start here →](/engineers/getting-started/)
+  </Card>
+  <Card title="For Team Leads" icon="group">
+    Integrating agents into workflows, code review policies, shifting testing left, and managing skill gaps.
+    
+    [Start here →](/team-leads/workflow-integration/)
+  </Card>
+  <Card title="For Executives" icon="bars">
+    Strategic vision, ROI frameworks, adoption blockers, and preparing for autonomous agents.
+    
+    [Start here →](/executives/strategic-vision/)
+  </Card>
+</CardGrid>
+
+---
+
+## What's Inside
+
+### Foundations
+
+<CardGrid>
+  <LinkCard title="What is agentic engineering?" href="/introduction/what-is-agentic-engineering/" />
+  <LinkCard title="The autonomy spectrum" href="/introduction/autonomy-spectrum/" />
+  <LinkCard title="How agents work" href="/foundations/how-agents-work/" />
+  <LinkCard title="Unix philosophy for AI" href="/foundations/unix-philosophy/" />
+</CardGrid>
+
+### Individual Practice
+
+<CardGrid>
+  <LinkCard title="Getting started" href="/engineers/getting-started/" />
+  <LinkCard title="Task decomposition" href="/engineers/task-decomposition/" />
+  <LinkCard title="Validating output" href="/engineers/validating-output/" />
+  <LinkCard title="Common failure modes" href="/engineers/failure-modes/" />
+</CardGrid>
+
+### Team Integration
+
+<CardGrid>
+  <LinkCard title="Workflow integration" href="/team-leads/workflow-integration/" />
+  <LinkCard title="Code review policies" href="/team-leads/code-review-policies/" />
+  <LinkCard title="Testing strategies" href="/team-leads/testing-strategies/" />
+  <LinkCard title="Training your team" href="/team-leads/training-your-team/" />
+</CardGrid>
+
+### Strategy
+
+<CardGrid>
+  <LinkCard title="ROI frameworks" href="/executives/roi-frameworks/" />
+  <LinkCard title="Adoption playbook" href="/executives/adoption-playbook/" />
+  <LinkCard title="Build vs. buy" href="/executives/build-vs-buy/" />
+  <LinkCard title="Future roadmap" href="/whats-next/autonomy-roadmap/" />
+</CardGrid>
+
+### By Phase
+
+<CardGrid>
+  <LinkCard title="Requirements & planning" href="/use-cases/requirements-planning/" />
+  <LinkCard title="Implementation" href="/use-cases/implementation/" />
+  <LinkCard title="Testing & QA" href="/use-cases/testing-qa/" />
+  <LinkCard title="Documentation" href="/use-cases/documentation/" />
+</CardGrid>
+
+### Governance
+
+<CardGrid>
+  <LinkCard title="Security review" href="/governance/security-review/" />
+  <LinkCard title="Code provenance" href="/governance/code-provenance/" />
+  <LinkCard title="Accountability frameworks" href="/governance/accountability/" />
+  <LinkCard title="Quality gates" href="/governance/quality-gates/" />
 </CardGrid>
