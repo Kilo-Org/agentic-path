@@ -72,3 +72,18 @@ But neither is rushing:
 The sweet spot is deliberate adoption: fast enough to capture benefits, slow enough to build real competence.
 
 That's what this guide helps you navigate.
+
+## Resources
+
+### Essential
+
+- [The 2025 State of AI Report](https://openrouter.ai/announcements/the-2025-state-of-ai-report) - Comprehensive industry analysis of where AI stands today
+- [The Space Between AI Hype and AI Denial](https://blog.kilo.ai/p/between-ai-hype-and-ai-denial) - Cutting through the noise on AI's real impact
+
+### Deep dives
+
+- [2025: The year I stopped writing code](https://www.youtube.com/watch?v=Ge8LoXfJJdA) - Evolution of AI code writing and developer workflows
+- [Vibe coding is already dead](https://www.youtube.com/watch?v=tKPtZtsLgUA) - Critical perspective on vibe coding's limitations
+- [The Year Senior Engineers Stopped Rolling Their Eyes](https://blog.kilo.ai/p/senior-engineers-use-ai-now) - How expert attitudes shifted in 2025
+- [The State of AI Coding 2025](https://www.greptile.com/state-of-ai-coding-2025) - Survey of AI coding tools and adoption
+- [Oxide and Friends Predictions 2026](https://www.youtube.com/watch?v=lVDhQMiAbR8) - Industry predictions from Simon Willison and peers

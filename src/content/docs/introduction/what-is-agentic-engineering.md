@@ -49,3 +49,13 @@ But only if you develop the right mental models. That's what this guide is for.
 - **Executives** making strategic decisions about AI adoption
 
 Each group has different concerns. We've organized this guide so you can jump to what matters most for your role—or read straight through for the complete picture.
+
+## Resources
+
+### Essential
+
+- [The Space Between AI Hype and AI Denial](https://blog.kilo.ai/p/between-ai-hype-and-ai-denial) - Finding the productive middle ground for AI adoption
+
+### Deep dives
+
+- [From Vibe Coding To Vibe Engineering – Kitze, Sizzy](https://www.youtube.com/watch?v=JV-wY5pxXLo) - How AI collaboration redefines frontend development

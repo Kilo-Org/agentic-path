@@ -109,13 +109,8 @@ Notice patterns:
 
 **Contract tests (boundaries):** Verify API contracts. Especially important when agents modify interfaces.
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
-
-- TDD with agents
-- Netflix's testing philosophy
-- Test coverage strategies
-- Property-based testing with AI
+- [Agent Readiness – Eno Reyes, Factory AI](https://www.youtube.com/watch?v=ShuJ_CN6zr4) - How testing infrastructure affects agent reliability

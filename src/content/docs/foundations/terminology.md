@@ -71,12 +71,16 @@ A quick reference for the vocabulary of agentic engineering. These terms appear 
 
 **Time to first useful output** - How quickly an agent produces something you can work with.
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
+- [The Minimum Every Developer Must Know About AI Models](https://blog.kilo.ai/p/minimum-every-developer-must-know-about-ai-models) - Baseline knowledge every developer needs
+- [What is a large language model (LLM)?](https://www.cloudflare.com/en-gb/learning/ai/what-is-large-language-model/) - Clear, accessible LLM definition
+- [What is Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro) - The standard for AI-external system connections
 
-- Comprehensive AI/ML glossary
-- Research papers defining key concepts
-- Evolving terminology in the field
+### Videos
+
+- [How Large Language Models Work](https://www.youtube.com/watch?v=5sLYAQS9sWQ) - 5-minute explainer on LLM fundamentals
+- [OpenAI Embeddings Explained in 5 Minutes](https://www.youtube.com/watch?v=8kJStTRuMcs) - Quick primer on embeddings for AI systems
+- [Large Language Models – Everything You NEED To Know](https://www.youtube.com/watch?v=osKyvYJ3PRM) - Comprehensive beginner overview

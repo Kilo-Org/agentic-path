@@ -89,12 +89,12 @@ Notice patterns in what you correct:
 - They inform better prompting
 - They highlight where human oversight matters most
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
+- [Vibe engineering](https://simonwillison.net/2025/Oct/7/vibe-engineering/) - Defining responsible AI-assisted development vs. vibe coding
 
-- Pair programming with AI
-- Effective human-AI teaming patterns
-- Case studies of collaboration workflows
+### Deep dives
+
+- [Vibes won't cut it – Chris Kelly, Augment Code](https://www.youtube.com/watch?v=Dc3qOA9WOnE) - Why context—not code—is the real focus

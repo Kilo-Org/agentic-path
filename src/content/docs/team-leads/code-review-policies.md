@@ -121,12 +121,8 @@ If you require disclosure, make it easy:
 
 **Don't ignore the conversation.** Pretending AI isn't changing your workflow doesn't help anyone.
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
-
-- Sample code review policies
-- Review training materials
-- Industry standards and emerging practices
+- [Your job is to deliver code you have proven to work](https://simonwillison.net/2025/Dec/18/code-proven-to-work/) - Standards for reviewing AI-assisted code

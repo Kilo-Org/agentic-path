@@ -112,12 +112,8 @@ Notice what works:
 
 Your patterns may differ from someone else's. Learn your own.
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
-
-- Delegation frameworks
-- Time tracking studies
-- Community experiences and patterns
+- [Code research projects with async coding agents](https://simonwillison.net/2025/Nov/6/async-code-research/) - Practical pattern for asynchronous agent research tasks

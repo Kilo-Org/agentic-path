@@ -130,12 +130,14 @@ Start them on high-ROI, low-risk tasks: tests, documentation, boilerplate.
 - Quality of agent use
 - Peer mentoring emergence
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
+- [Leadership in AI Assisted Engineering – Justin Reock, DX](https://www.youtube.com/watch?v=PmZDupFP3UM) - Data-driven framework for top-down AI adoption
+- [Early adoption is the key to AI coding success](https://blog.kilo.ai/p/early-adoption-ai-coding) - Why early-adopting teams compound their advantages
 
-- Training curriculum templates
-- Workshop facilitation guides
-- Case studies from other teams
+### Courses
+
+- [Prompt Engineering Specialization – Vanderbilt University](https://www.coursera.org/specializations/prompt-engineering) - Comprehensive team training resource
+- [The Complete AI Coding Course (2025)](https://www.udemy.com/course/the-complete-ai-coding-course-2025-cursor-ai-v0-vercel/) - Hands-on Cursor and Claude Code training

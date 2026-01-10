@@ -58,12 +58,8 @@ A well-structured codebase makes agents more effective. Better agent output mean
 
 This is a virtuous cycle. Teams that invest in code quality get more from their AI tools, which lets them invest more in quality.
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
-
-- The Unix Philosophy (original documents)
-- Clean code principles for AI
-- Architecture patterns that work with agents
+- [Unix principles guiding agentic AI](https://www.eficode.com/blog/unix-principles-guiding-agentic-ai-eternal-wisdom-for-new-innovations) - How Unix philosophy shapes modern AI development

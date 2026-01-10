@@ -99,12 +99,14 @@ Ask "Are we building what we need to build, at the quality we need, without burn
 
 If yes, your approach is working. Whether agents contribute 10% or 30% to that outcome matters less than the outcome itself.
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
+- [Does AI Actually Boost Developer Productivity? – Yegor Denisov-Blanch, Stanford](https://www.youtube.com/watch?v=tbDDYKRFjhk) - 100k developer study: ~20% average boost, significant variance
+- [Stop Looking for AI Coding Spending Caps](https://blog.kilo.ai/p/stop-looking-for-ai-coding-spending) - Why caps cost more than they save
+- [ML-Enhanced Code Completion – Google Research](https://research.google/blog/ml-enhanced-code-completion-improves-developer-productivity/) - Google's productivity impact research
 
-- Engineering metrics frameworks
-- Developer experience research
-- Case studies on productivity measurement
+### Deep dives
+
+- [The reality of AI-Assisted software engineering productivity](https://addyo.substack.com/p/the-reality-of-ai-assisted-software) - Balanced take on productivity claims

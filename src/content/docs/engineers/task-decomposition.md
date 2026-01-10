@@ -112,12 +112,19 @@ For these, consider:
 - Accept that you'll need more oversight
 - Build a throwaway prototype first to understand the shape
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
+- [Embracing the parallel coding agent lifestyle](https://simonwillison.net/2025/Oct/5/parallel-coding-agents/) - Running multiple agents simultaneously on real projects
+- [Spec-Driven Development – Al Harris, Amazon Kiro](https://www.youtube.com/watch?v=HY_JyxAZsiE) - How specs enable reproducible AI delivery
+- [Spec Kit](https://github.com/github/spec-kit) - GitHub's framework for spec-driven development
 
-- Task decomposition frameworks
-- Real-world examples of good decomposition
-- When to break the rules
+### Deep dives
+
+- [No Vibes Allowed – Dex Horthy, HumanLayer](https://www.youtube.com/watch?v=rmvDxxNubIg) - "Frequent intentional compaction" for large codebases
+- [Research → Plan → Implement Framework](https://www.alexkurkin.com/guides/claude-code-framework) - Systematic Claude Code workflow
+
+### Papers & research
+
+- [Repository-Level Prompt Generation](https://arxiv.org/abs/2206.12839) - Techniques for repo-aware prompt generation

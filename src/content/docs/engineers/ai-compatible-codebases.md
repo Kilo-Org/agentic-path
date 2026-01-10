@@ -105,12 +105,14 @@ You don't need to rewrite everything. As you touch code:
 
 Over time, the codebase becomes more agent-friendly—and more human-friendly too.
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
+- [AGENTS.md](https://agents.md/) - Open format for guiding agents, used by 60k+ open-source projects
+- [No Vibes Allowed – Dex Horthy, HumanLayer](https://www.youtube.com/watch?v=rmvDxxNubIg) - Making agents work in 300k LOC codebases
+- [Agent Readiness – Eno Reyes, Factory AI](https://www.youtube.com/watch?v=ShuJ_CN6zr4) - Eight categories that determine if your codebase is agent-ready
 
-- Refactoring guides for AI compatibility
-- Code organization patterns
-- Documentation best practices
+### Papers & research
+
+- [RepoCoder: Repository-Level Code Completion](https://arxiv.org/abs/2303.12570) - Framework for leveraging repository context

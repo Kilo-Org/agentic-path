@@ -80,12 +80,22 @@ Signs you should code it yourself:
 
 There's no shame in manual coding. The goal is productivity, not agent usage.
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
+- [Research → Plan → Implement Framework](https://www.alexkurkin.com/guides/claude-code-framework) - Systematic approach to AI-assisted development
+- [AGENTS.md](https://agents.md/) - Open format for guiding agents, used by 60k+ projects
+- [The Minimum Every Developer Must Know About AI Models](https://blog.kilo.ai/p/minimum-every-developer-must-know-about-ai-models) - Baseline knowledge to avoid breaking things
 
-- Tool-specific getting started guides
-- Video tutorials for beginners
-- Community tips and tricks
+### Deep dives
+
+- [AI Engineering at Jane Street – John Crepezzi](https://www.youtube.com/watch?v=0ML7ZLMdcl4) - Building custom AI tools for specialized languages
+- [What is Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro) - The standard for AI integrations
+- [OpenAI Embeddings Explained in 5 Minutes](https://www.youtube.com/watch?v=8kJStTRuMcs) - Quick primer on embeddings
+- [MCP server: Step-by-step building guide](https://composio.dev/blog/mcp-server-step-by-step-guide-to-building-from-scrtch) - Building your own MCP servers
+
+### Courses
+
+- [Prompt Engineering Specialization – Vanderbilt University](https://www.coursera.org/specializations/prompt-engineering) - Comprehensive prompt engineering course
+- [Understanding Prompt Engineering – DataCamp](https://www.datacamp.com/courses/understanding-prompt-engineering) - Beginner prompt engineering fundamentals

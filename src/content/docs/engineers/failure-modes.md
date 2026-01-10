@@ -139,12 +139,8 @@ Agents fail in predictable ways. Learning these patterns helps you catch problem
 - Include examples of correct solutions
 - Stay skeptical of impressive-looking code
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
-
-- Failure mode case studies
-- Recovery strategies for each failure type
-- Tool-specific failure patterns
+- ["I shipped code I don't understand" – Jake Nations, Netflix](https://www.youtube.com/watch?v=eIoohUmYpGI) - The "Infinite Software Crisis" and how to avoid it

@@ -98,12 +98,14 @@ Agents run automatically on triggers: PRs, commits, scheduled jobs.
 
 **One-size-fits-all.** Different people on your team will use agents differently. That's okay.
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
+- [Your Team Is Already Using AI. Now What?](https://blog.kilo.ai/p/your-team-is-already-using-ai-now) - Practical guide for leading teams already using AI
+- [Stop Peanut Buttering AI Onto Your Organization](https://blog.kilo.ai/p/stop-peanut-buttering-ai) - Why adding AI without restructuring fails
 
-- Team workflow case studies
-- Adoption playbooks
-- Process change management
+### Videos
+
+- [Dispatch from the Future – Dan Shipper, Every](https://www.youtube.com/watch?v=MGzymaYBiss) - How 100% AI adoption changes organizational physics
+- [Moving away from Agile – Martin Harrysson, McKinsey](https://www.youtube.com/watch?v=SZStlIhyTCY) - Why unchanged operating models limit AI value

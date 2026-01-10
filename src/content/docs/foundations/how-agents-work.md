@@ -79,13 +79,24 @@ Agents fail in predictable ways:
 
 Knowing these patterns helps you catch problems early.
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
+- [How Large Language Models Work](https://www.youtube.com/watch?v=5sLYAQS9sWQ) - Clear 5-minute explainer on LLM fundamentals (5 min)
+- [Claude Code & the evolution of agentic coding – Boris Cherny, Anthropic](https://www.youtube.com/watch?v=Lue8K2jqfKk) - Ten thousand foot view from Claude Code's creator
+- [Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761) - Foundational paper on LLMs learning to use external tools
+- [What is a large language model (LLM)?](https://www.cloudflare.com/en-gb/learning/ai/what-is-large-language-model/) - Clear, accessible definition
 
-- How transformers work (conceptual overview)
-- ReAct paper and explanation
-- Context window strategies
-- Tool use in practice
+### Deep dives
+
+- [How Claude Code Works – Jared Zoneraich, PromptLayer](https://www.youtube.com/watch?v=RFKCzGlAU6Q) - Reverse-engineered architecture analysis
+- [Large Language Models – Everything You NEED To Know](https://www.youtube.com/watch?v=osKyvYJ3PRM) - Comprehensive beginner-friendly overview
+- [OpenAI's "deep-thinking" o1 model](https://www.youtube.com/watch?v=6xlPJiNpCVw) - Introduction to reasoning models
+- [Competitive programming with AlphaCode](https://deepmind.google/blog/competitive-programming-with-alphacode/) - How AI tackles unforeseen programming problems
+
+### Papers & research
+
+- [StarCoder: may the source be with you!](https://arxiv.org/abs/2305.06161) - Open-source Code LLM with 8K context and infilling
+- [Sparks of AGI: Early GPT-4 experiments](https://arxiv.org/abs/2303.12712) - Landmark paper on GPT-4's cross-domain capabilities
+- [Efficient Training: Fill in the Middle](https://arxiv.org/abs/2207.14255) - How FIM training enables code completion

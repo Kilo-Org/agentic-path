@@ -87,3 +87,10 @@ The goal isn't maximum automation. It's maximum effectiveness.
 As of early 2025, most practical work happens at Levels 2-3. Level 4 tools exist but require significant oversight. Level 5 remains research territory.
 
 This is changing fast. Tools that seemed futuristic six months ago are now standard practice. The fundamentals in this guide should remain useful regardless of which specific level becomes dominant.
+
+## Resources
+
+### Essential
+
+- [The 3 Pillars of Autonomy – Michele Catasta, Replit](https://www.youtube.com/watch?v=MLhAA9yguwM) - Core framework: testing, context management, and parallelization for agent autonomy
+- [Vibe engineering](https://simonwillison.net/2025/Oct/7/vibe-engineering/) - Defining responsible AI-assisted development vs. vibe coding

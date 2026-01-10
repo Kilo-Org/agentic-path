@@ -113,12 +113,14 @@ Like code review, validation improves with practice:
 - Notice what you miss that causes bugs later
 - Share patterns with your team
 
----
+## Resources
 
-## Further reading
+### Essential
 
-_Links to external resources coming soon:_
+- [Your job is to deliver code you have proven to work](https://simonwillison.net/2025/Dec/18/code-proven-to-work/) - Why testing AI code is non-negotiable
+- ["I shipped code I don't understand" – Jake Nations, Netflix](https://www.youtube.com/watch?v=eIoohUmYpGI) - Three-phase methodology to avoid "vibecoding to disaster"
+- [No Vibes Allowed – Dex Horthy, HumanLayer](https://www.youtube.com/watch?v=rmvDxxNubIg) - Maintaining code quality that passes expert review
 
-- Code review checklist for AI code
-- Common hallucination patterns by model
-- Security review guides
+### Deep dives
+
+- [Vibes won't cut it – Chris Kelly, Augment Code](https://www.youtube.com/watch?v=Dc3qOA9WOnE) - Why context trumps code in production
