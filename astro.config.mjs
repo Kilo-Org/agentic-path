@@ -93,14 +93,9 @@ export default defineConfig({
               label: "Adoption Playbook",
               slug: "executives/adoption-playbook",
             },
-            { label: "Build vs. Buy", slug: "executives/build-vs-buy" },
             {
               label: "Security & Compliance",
               slug: "executives/security-compliance",
-            },
-            {
-              label: "Autonomous Agents",
-              slug: "executives/autonomous-agents",
             },
           ],
         },
@@ -126,52 +121,12 @@ export default defineConfig({
           ],
         },
         {
-          label: "Tool Landscape",
-          items: [
-            { label: "Categories of Tools", slug: "tools/categories" },
-            { label: "Evaluation Criteria", slug: "tools/evaluation-criteria" },
-            {
-              label: "Integration Patterns",
-              slug: "tools/integration-patterns",
-            },
-          ],
-        },
-        {
           label: "Governance & Risk",
           items: [
             { label: "Code Provenance", slug: "governance/code-provenance" },
             { label: "Security Review", slug: "governance/security-review" },
             { label: "Accountability", slug: "governance/accountability" },
             { label: "Quality Gates", slug: "governance/quality-gates" },
-          ],
-        },
-        {
-          label: "Building AI-Native Culture",
-          items: [
-            { label: "Change Management", slug: "culture/change-management" },
-            { label: "Emerging Roles", slug: "culture/emerging-roles" },
-            {
-              label: "Continuous Learning",
-              slug: "culture/continuous-learning",
-            },
-            {
-              label: "Metrics That Matter",
-              slug: "culture/metrics-that-matter",
-            },
-          ],
-        },
-        {
-          label: "What's Next",
-          items: [
-            { label: "Autonomy Roadmap", slug: "whats-next/autonomy-roadmap" },
-            {
-              label: "Multi-Agent Systems",
-              slug: "whats-next/multi-agent-systems",
-            },
-            {
-              label: "Skills That Matter",
-              slug: "whats-next/skills-that-matter",
-            },
           ],
         },
         {
