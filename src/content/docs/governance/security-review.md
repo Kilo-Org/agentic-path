@@ -1,48 +1,46 @@
 ---
-title: Security Review for AI-Generated Code
-description: Catching security issues in agent output
+title: Security Review
+description: Catching security issues in AI-generated code
 sidebar:
-  order: 2
+  order: 3
 ---
 
-AI-generated code can introduce security vulnerabilities. Some are the same bugs humans write; some are unique to AI patterns. Here's how to address them.
+**AI-generated code can introduce security vulnerabilities.** Some are bugs humans write too; some are unique to AI patterns.
 
 ## AI-specific security concerns
 
 ### Pattern-based vulnerabilities
 
-AI learns from patterns. Some patterns in training data include vulnerabilities:
+AI learns from patterns—including vulnerable ones in training data.
 
 **Common issues:**
 
-- SQL injection in database queries
-- Command injection in shell operations
-- Insecure deserialization patterns
-- Hardcoded credentials or keys
-- Missing authentication/authorization checks
+- SQL/command injection
+- Insecure deserialization
+- Hardcoded credentials
+- Missing auth checks
 - Insecure defaults
 
-**Why it happens:** Models optimize for "code that looks right," not "code that's secure."
+**Why:** Models optimize for "code that looks right," not "code that's secure."
 
 ### Hallucinated security
 
 AI may implement security incorrectly:
 
-- Encryption that uses weak algorithms
+- Encryption using weak algorithms
 - Authentication that doesn't actually validate
 - Authorization checks that can be bypassed
-- Input validation that misses edge cases
+- Input validation missing edge cases
 
 Code _looks_ secure but isn't.
 
 ### Dependency risks
 
-AI may suggest dependencies that:
+AI may suggest packages that:
 
-- Don't exist (hallucinated packages that could be typosquatted)
+- Don't exist (hallucinated—could be typosquatted)
 - Have known vulnerabilities
 - Are unmaintained
-- Have inappropriate licenses
 
 ## Security review checklist
 
@@ -50,32 +48,23 @@ AI may suggest dependencies that:
 
 - [ ] All user inputs validated
 - [ ] Input length limits enforced
-- [ ] Character encoding handled correctly
 - [ ] Paths sanitized (no traversal)
-- [ ] URLs validated and sanitized
+- [ ] URLs validated
 
-### Authentication
+### Authentication & authorization
 
-- [ ] Authentication properly implemented
+- [ ] Auth properly implemented
 - [ ] Tokens validated correctly
 - [ ] Sessions managed securely
-- [ ] Password handling follows best practices
-- [ ] Multi-factor where appropriate
-
-### Authorization
-
-- [ ] Access controls on all sensitive operations
-- [ ] Authorization checked on server side
-- [ ] No authorization bypass through parameter manipulation
-- [ ] Privilege escalation prevented
+- [ ] Access controls on sensitive operations
+- [ ] Authorization checked server-side
 
 ### Data protection
 
 - [ ] Sensitive data encrypted at rest
-- [ ] Secure transport (TLS) enforced
+- [ ] TLS enforced
 - [ ] Secrets not hardcoded
 - [ ] No sensitive data in logs
-- [ ] Appropriate data retention
 
 ### Injection prevention
 
@@ -83,69 +72,30 @@ AI may suggest dependencies that:
 - [ ] Shell commands properly escaped
 - [ ] No eval() with user input
 - [ ] Template injection prevented
-- [ ] XML/JSON parsing secured
 
-### Dependency security
+### Dependencies
 
 - [ ] All dependencies verified to exist
 - [ ] No known vulnerable versions
-- [ ] Dependencies from trusted sources
 - [ ] Lock files committed
 
-## Review process
+## Review by risk level
 
-### For every AI-generated change
-
-**Minimum review:**
-
-1. Skim for obvious security patterns
-2. Check any input handling
-3. Verify dependencies are real
-
-### For security-sensitive code
-
-**Enhanced review:**
-
-1. Full security checklist walkthrough
-2. Manual testing of security boundaries
-3. Consider security-focused code review
-
-### For authentication/authorization
-
-**Maximum scrutiny:**
-
-1. Line-by-line review
-2. Threat modeling
-3. Penetration testing consideration
-4. Senior security review
+| Code Type          | Review Level                                          |
+| ------------------ | ----------------------------------------------------- |
+| Any AI change      | Skim for patterns, check inputs, verify deps exist    |
+| Security-sensitive | Full checklist, manual testing of boundaries          |
+| Auth/authz         | Line-by-line, threat modeling, senior security review |
 
 ## Automated tools
 
-### Static analysis (SAST)
+**Static analysis (SAST):** Run on all code. Won't catch all AI-specific issues, but catches common vulnerabilities.
 
-Run on all code, including AI-generated:
+**Dependency scanning:** Dependabot, Snyk. Check all deps exist before installing.
 
-- Language-specific security scanners
-- Custom rules for your patterns
-- Integration in CI/CD
+**Secret scanning:** Pre-commit hooks, repository scanning, CI/CD checks.
 
-**Note:** SAST won't catch all AI-specific issues, but catches common vulnerabilities.
-
-### Dependency scanning
-
-- Check all dependencies exist before installing
-- Scan for known vulnerabilities (Dependabot, Snyk, etc.)
-- Verify sources
-
-### Secret scanning
-
-- Pre-commit hooks for secrets
-- Repository scanning
-- CI/CD checks
-
-## Training your team
-
-### What to teach
+## Team training
 
 **AI-specific:**
 
@@ -156,29 +106,19 @@ Run on all code, including AI-generated:
 **General security:**
 
 - OWASP Top 10
-- Language-specific security issues
+- Language-specific issues
 - Secure coding guidelines
-
-### Practice patterns
-
-- Include security scenarios in agent usage training
-- Share examples of AI security failures
-- Build review habits specifically for AI code
 
 ## Incident response
 
-### When AI-generated code causes security issue
+When AI-generated code causes a security issue:
 
-1. **Treat like any security incident:** Don't minimize because "AI did it"
-2. **Document AI involvement:** Note which tool, what prompt, what review happened
+1. **Treat like any security incident**—don't minimize because "AI did it"
+2. **Document AI involvement:** Tool, prompt, what review happened
 3. **Root cause:** Was this AI-specific? Would human have caught it?
 4. **Process improvement:** What would have caught this earlier?
 
-### Post-incident
-
-- Update review checklists
-- Share learnings (appropriately)
-- Consider tool-specific mitigations
+**Post-incident:** Update checklists, share learnings, consider tool-specific mitigations.
 
 ## Resources
 

@@ -1,25 +1,13 @@
 ---
-title: Accountability Frameworks
-description: Who's responsible when AI is involved?
+title: Accountability & Provenance
+description: Who owns AI-generated code, and how to track it
 sidebar:
-  order: 3
+  order: 1
 ---
 
-When code is AI-generated, modified by AI, or reviewed with AI assistance, who's accountable? Clear frameworks prevent confusion and blame-shifting.
+**Humans are accountable for the code they commit.** This remains true regardless of how code was generated. "The AI did it" is not a defense.
 
-## The core principle
-
-**Humans are accountable for the code they commit.**
-
-This remains true regardless of how the code was generated. The developer who commits the code takes responsibility for it. "The AI did it" is not a defense.
-
-This simplifies everything:
-
-- No special exception handling for AI code
-- Standard accountability models apply
-- Clear ownership regardless of origin
-
-## Levels of accountability
+## Accountability by role
 
 ### Individual contributor
 
@@ -30,161 +18,101 @@ This simplifies everything:
 - Validating AI output before committing
 - Understanding code they submit
 
-**Not responsible for:**
-
-- AI tool quality or behavior
-- Others' use of AI
-- Organizational policy decisions
-
 ### Code reviewer
 
 **Responsible for:**
 
-- Reviewing code to established standards
-- Catching issues regardless of code origin
-- Applying appropriate scrutiny to AI-generated code
-- Raising concerns about code quality or patterns
+- Reviewing to established standards
+- Catching issues regardless of origin
+- Raising concerns about quality or patterns
 
-**Not responsible for:**
-
-- Original code quality
-- Exhaustively finding every issue
-- Tool selection decisions
-
-### Team lead / Manager
+### Team lead
 
 **Responsible for:**
 
-- Setting team practices around AI use
-- Ensuring team has appropriate training
-- Creating environment for quality output
+- Team practices around AI use
+- Ensuring appropriate training
 - Addressing patterns of issues
-
-**Not responsible for:**
-
-- Every individual commit
-- Organizational policy setting
-- Tool procurement decisions (usually)
 
 ### Engineering leadership
 
 **Responsible for:**
 
-- Organizational policy for AI use
+- Organizational AI policy
 - Tool decisions and procurement
-- Risk acceptance at organizational level
-- Ensuring appropriate governance
-
-**Not responsible for:**
-
-- Day-to-day tool usage
-- Individual code decisions
-- Implementation of policies (delegate to managers)
+- Risk acceptance at org level
 
 ## When things go wrong
 
 ### Production incident from AI code
 
-**Response:**
+1. Treat like any incident—resolution first
+2. Post-mortem includes AI involvement as context
+3. Process improvements may involve AI practices
 
-1. Treat like any incident—focus on resolution first
-2. Standard incident management applies
-3. Post-mortem includes AI involvement as context
-4. Process improvements may involve AI practices
-
-**Don't do:**
-
-- Blame the AI (it's a tool)
-- Create special "AI incident" category
-- Exempt individuals from accountability
+**Don't:** Blame the AI, create special "AI incident" categories, or exempt individuals from accountability.
 
 ### Security vulnerability from AI code
-
-**Response:**
 
 1. Standard security response
 2. Document AI involvement for learning
 3. Review: would our process have caught this?
-4. Improve review processes if needed
 
-**Accountability:**
+**Accountability flows to:** Developer who committed it, reviewers who approved it—NOT the AI tool.
 
-- Developer who committed it
-- Reviewers who approved it
-- NOT transferable to AI tool
+## Code provenance
 
-### Quality issues pattern
+Where does AI-generated code come from? Models train on vast public code with various licenses. Output is statistically influenced by training data but typically isn't direct copying. **Legal uncertainty exists**—courts haven't fully resolved how copyright applies to AI output.
 
-**Response:**
+### What we know
 
-1. Identify pattern—is this tool-specific? User-specific? Task-specific?
-2. Address through training, process, or tool adjustment
-3. Don't punish AI use; improve AI practices
+- **Training legality:** Ongoing lawsuits testing fair use; no resolution yet
+- **Output ownership:** Person/org prompting is treated as author practically, but not legally settled
+- **Verbatim reproduction:** If AI outputs exact copies, original copyright likely applies
 
-## Accountability documentation
+### Risk management
 
-### What to document
+**Low-risk scenarios:**
 
-**At commit level:**
+- Boilerplate code anyone would write the same way
+- Internal tools with no external distribution
+- Code you heavily modify after generation
 
-- AI assistance involved (optional, depends on policy)
-- What tool used (if required)
-- Human who authored/approved
+**Higher-risk scenarios:**
 
-**At review level:**
+- Distributing generated code in products
+- Open-source contributions with copyleft licenses
+- Unique or distinctive algorithms
 
-- Reviewer identity
-- Review completed date
-- Any AI assistance in review
+## Tracking AI involvement
 
-**At project level:**
+### What to track
 
-- AI tools authorized for use
-- Policies in effect
-- Training completed by team
+- Which files/commits involved AI assistance
+- Which tool was used
+- Human review performed
 
-### Why documentation matters
+### How to track
 
-- **Incident investigation:** Understand how code entered codebase
-- **Legal/compliance:** Demonstrate human oversight
-- **Improvement:** Learn from patterns over time
-- **Audit:** Show governance is in place
+- **Git commit conventions:** Tags in commit messages
+- **Code review annotations:** Note AI involvement in review
+- **Tooling:** Some tools log AI interactions
+
+### Why track
+
+- Future legal compliance may require it
+- Incident response if issues arise
+- Regulatory compliance in some industries
 
 ## Edge cases
 
-### Automated AI changes
+**Automated AI changes (CI/CD, bots):** Person who configured automation owns the output. Don't automate consequential changes without human approval.
 
-What if AI makes changes through automation (CI/CD, bots)?
+**Multi-person AI sessions:** Committer takes responsibility. Should review/understand before committing.
 
-**Accountability model:**
+**AI-assisted review:** Human reviewer still accountable. AI findings must be human-validated.
 
-- Person who configured automation owns the output
-- Automation should have review checkpoints
-- Don't automate consequential changes without human approval
-
-### Multi-person AI sessions
-
-What if one person prompts and another commits?
-
-**Accountability model:**
-
-- Committer takes responsibility
-- Should review/understand before committing
-- Original prompter may share context but not primary accountability
-
-### AI-assisted review
-
-What if AI helps with code review?
-
-**Accountability model:**
-
-- Human reviewer still accountable for review
-- AI assistance is a tool, not a replacement
-- AI findings must be human-validated
-
-## Building the framework
-
-### Policy elements needed
+## Policy checklist
 
 1. **Scope:** What activities are covered
 2. **Roles:** Who has what accountability
@@ -193,21 +121,8 @@ What if AI helps with code review?
 5. **Exceptions:** How to handle special cases
 6. **Enforcement:** What happens when policy is violated
 
-### Implementation steps
-
-1. Draft framework (can start simple)
-2. Socialize with engineering leadership
-3. Review with legal/compliance
-4. Communicate to all engineers
-5. Train on expectations
-6. Monitor and adjust
-
 ## Resources
 
 ### Essential
 
 - [Your job is to deliver code you have proven to work](https://simonwillison.net/2025/Dec/18/code-proven-to-work/) - Accountability for AI-generated code
-
-### Deep dives
-
-- [I shipped code I don't understand and I'm mass deleting it](https://www.youtube.com/watch?v=example) - Jake Nations on vibe coding consequences

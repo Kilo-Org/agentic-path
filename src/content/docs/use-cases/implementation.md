@@ -1,130 +1,45 @@
 ---
 title: Implementation
-description: The core use case—writing code with agents
+description: Writing code with agents—the core use case
 sidebar:
-  order: 3
+  order: 2
 ---
 
-Implementation is where most engineers first encounter agents. It's the clearest use case, but success depends on approach.
+Implementation is where most engineers first encounter agents. Success depends on approach, not just prompting.
 
-## High-value implementation tasks
+## High-value tasks
 
-### Boilerplate generation
+**Boilerplate generation** — CRUD operations, API scaffolding, form components, DTOs, configs. Agents handle these quickly and reliably. This is where "10x" claims are almost true.
 
-The classic sweet spot:
+**Feature implementation** — Best when requirements are clear, patterns exist in your codebase to follow, and scope is bounded (single PR, few files).
 
-- CRUD operations
-- API endpoint scaffolding
-- Form components
-- Data models and DTOs
-- Configuration files
+**Bug fixes** — Clear bugs are excellent agent tasks. "User login fails with null pointer when email contains '+'" beats "fix the login flow."
 
-Agents handle these quickly and reliably. This is where "10x" claims are almost true.
+**Refactoring** — Mechanical refactoring is ideal: rename across codebase, extract function/class, convert patterns. Complex restructuring is harder.
 
-### Feature implementation
+**Data transformations** — Migration scripts, format conversions, ETL logic. Well-defined inputs and outputs make these agent-friendly.
 
-Features vary widely, but agents help most when:
+## The workflow
 
-- Requirements are clear
-- Patterns exist in your codebase to follow
-- Scope is bounded (single PR, few files)
+1. **Plan** — Know what files will change, the desired end state, and what should NOT change.
 
-### Bug fixes
+2. **Set context** — Provide relevant code, existing patterns to follow, and constraints.
 
-Clear bug fixes are excellent agent tasks:
+3. **Generate** — For complex tasks, ask for the plan first: "Describe how you would implement [feature]. Don't write code yet."
 
-- Specific repro steps
-- Known root cause
-- Bounded change required
+4. **Validate** — Does it work? Handle edges? Follow conventions? Have security issues?
 
-"Fix the login flow" is bad. "User login fails with null pointer when email contains '+'" is good.
-
-### Refactoring
-
-Mechanical refactoring is ideal:
-
-- Rename across codebase
-- Extract function/class
-- Change data structure
-- Convert patterns (callbacks to promises, etc.)
-
-Complex refactoring (restructuring a tangled module) is harder.
-
-### Data transformations
-
-- Migration scripts
-- Format conversions
-- ETL logic
-- Data cleanup
-
-Well-defined inputs and outputs make these agent-friendly.
-
-## The implementation workflow
-
-### Step 1: Plan the change
-
-Before prompting, know:
-
-- What files will change?
-- What's the desired end state?
-- What should NOT change?
-
-### Step 2: Set context
-
-Provide the agent with:
-
-- Relevant code (or let it explore)
-- Existing patterns to follow
-- Constraints and requirements
-
-### Step 3: Generate
-
-Let the agent work. For complex tasks, ask for the plan first:
-
-"Given [context], describe how you would implement [feature]. Don't write code yet."
-
-Review the plan before proceeding.
-
-### Step 4: Validate
-
-Before accepting, verify:
-
-- Does it work?
-- Does it handle edges?
-- Does it follow conventions?
-- Are there security issues?
-
-### Step 5: Refine
-
-Common refinement needs:
-
-- "This doesn't handle the case where..."
-- "Follow the pattern used in [other file] instead"
-- "Add error handling for..."
+5. **Refine** — "This doesn't handle the case where..." or "Follow the pattern in [file] instead."
 
 ## What slows you down
 
-### Overcomplicated prompts
+- **Overcomplicated prompts** — Start simple, add detail as needed
+- **Under-constrained asks** — "Build the feature" leaves too many decisions to the agent
+- **Fighting the agent** — After 3+ reprompts without progress, re-think or do it yourself
+- **Insufficient context** — Missing context leads to invalid output
+- **Wrong tool** — Some code is faster to write manually
 
-Long, detailed prompts often confuse agents. Start simple, add detail as needed.
-
-### Under-constrained asks
-
-"Build the feature" leaves too many decisions to the agent. Break it down.
-
-### Fighting the agent
-
-If you've reprompted 3+ times without progress, stop. Re-think the approach or do it yourself.
-
-### Insufficient context
-
-Agents work with what you give them. Critical missing context leads to invalid output.
-
-### Wrong tool for the job
-
-Some code is faster to write manually. Recognize when and skip the agent.
-
-## Prompt patterns that work
+## Prompt patterns
 
 **Feature implementation:**
 
@@ -161,8 +76,6 @@ Maintain all existing functionality.
 ```
 
 ## Resources
-
-### Essential
 
 - [Embracing the parallel coding agent lifestyle](https://simonwillison.net/2025/Oct/5/parallel-coding-agents/) - Running multiple agents simultaneously
 - [Code research projects with async coding agents](https://simonwillison.net/2025/Nov/6/async-code-research/) - Async research task patterns

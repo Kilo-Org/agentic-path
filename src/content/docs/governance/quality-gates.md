@@ -1,118 +1,59 @@
 ---
-title: Quality Gates and Human Checkpoints
+title: Quality Gates
 description: Where to require human approval in agentic workflows
 sidebar:
-  order: 4
+  order: 2
 ---
 
-Not all code changes are equal. Quality gates define where human approval is required, preventing automation from bypassing critical checkpoints.
+**Quality gates define where human approval is required.** As agents become more capable, gates prevent automation from bypassing critical checkpoints.
 
-## Why quality gates matter
-
-As agents become more capable, the temptation grows to automate more approvals. Quality gates are the backstop that prevents:
-
-- Consequential changes without human oversight
-- Security issues reaching production
-- Quality erosion over time
-- Loss of human understanding of the codebase
-
-## Types of quality gates
+## Types of gates
 
 ### Merge gates
 
-**What:** Requirements before code merges to main/production branches.
+Requirements before code merges to main/production branches.
 
-**Standard gates:**
+**Standard:** Passing tests, code review approval, no conflicts, docs updated.
 
-- Passing tests
-- Code review approval
-- No merge conflicts
-- Documentation updated
-
-**AI-specific considerations:**
-
-- Are there different requirements for AI-heavy PRs?
-- Should AI assist or fully replace human review?
-- What disclosure is required?
+**AI-specific:** Different requirements for AI-heavy PRs? AI assist vs. replace review? Disclosure required?
 
 ### Deployment gates
 
-**What:** Requirements before deploying to environments.
+Requirements before deploying to environments.
 
-**Standard gates:**
+**Standard:** Pre-deployment tests pass, security scan clean, performance benchmarks met, production approval.
 
-- All pre-deployment tests pass
-- Security scan clean
-- Performance benchmarks met
-- Approval for production
-
-**AI-specific considerations:**
-
-- Extra scrutiny for first deploy of AI-generated code?
-- Automated rollback triggers?
-- Monitoring requirements?
+**AI-specific:** Extra scrutiny for first deploy of AI-generated code? Automated rollback triggers?
 
 ### Design gates
 
-**What:** Approval required before significant architecture changes.
+Approval required before significant architecture changes.
 
-**Standard gates:**
+**Standard:** Design doc approved, security review for sensitive areas, architecture review.
 
-- Design document approved
-- Security review for sensitive areas
-- Architecture review for significant changes
-
-**AI-specific considerations:**
-
-- Can AI propose architecture? (Inform but not decide)
-- Human approval required for AI-suggested design changes
+**AI-specific:** AI can inform but not decide architecture. Human approval required for AI-suggested design changes.
 
 ### Data gates
 
-**What:** Controls around data access and modification.
+Controls around data access and modification.
 
-**Standard gates:**
+**Standard:** Database migration reviewed, data deletion requires approval, PII access controlled.
 
-- Database migration reviewed
-- Data deletion requires approval
-- PII access controlled
+**AI-specific:** AI-generated migrations need extra review. No direct AI access to production data.
 
-**AI-specific considerations:**
-
-- AI-generated data migrations need extra review
-- No direct AI access to production data
-- Data transformation logic requires validation
-
-## Implementing gates
+## Implementation
 
 ### Technical enforcement
 
-**CI/CD checks:**
+**CI/CD checks:** Automated testing, coverage thresholds, security scanning, linting.
 
-- Automated testing requirements
-- Coverage thresholds
-- Security scanning
-- Linting and formatting
-
-**Branch protection:**
-
-- Required reviewers
-- Status checks must pass
-- No direct pushes
+**Branch protection:** Required reviewers, status checks must pass, no direct pushes.
 
 ### Process enforcement
 
-**Required reviewers:**
+**Required reviewers:** Minimum approvals, specific approvers for specific paths, CODEOWNERS configuration.
 
-- Minimum approvals
-- Specific approvers for specific paths
-- CODEOWNERS configuration
-
-**Checklists:**
-
-- PR templates with required confirmations
-- Security consideration checkboxes
-- AI disclosure prompts
+**Checklists:** PR templates with required confirmations, security checkboxes, AI disclosure prompts.
 
 ### Human checkpoints
 
@@ -125,91 +66,41 @@ As agents become more capable, the temptation grows to automate more approvals. 
 
 **Cannot be automated:**
 
-- Final deployment approval (for critical systems)
+- Final deployment approval (critical systems)
 - Architecture decisions
 - Security exception approvals
 - Compliance sign-off
 
 ## Gate configuration by risk
 
-### Low-risk changes
-
-**Examples:** Documentation, test additions, style fixes
-
-**Gates:**
-
-- Automated checks
-- Single reviewer
-- Auto-merge if checks pass
-
-### Medium-risk changes
-
-**Examples:** Feature code, non-critical bug fixes
-
-**Gates:**
-
-- Full automated checks
-- Human code review
-- Standard approval flow
-
-### High-risk changes
-
-**Examples:** Security code, payment processing, data handling
-
-**Gates:**
-
-- Enhanced automated checks
-- Senior reviewer required
-- Security review if applicable
-- Additional approval for production
-
-### Critical changes
-
-**Examples:** Authentication system, encryption, compliance-related
-
-**Gates:**
-
-- All previous gates
-- Security team review
-- Lead/architect approval
-- Staged rollout required
-- Enhanced monitoring
+| Risk Level   | Examples                          | Gates                                                      |
+| ------------ | --------------------------------- | ---------------------------------------------------------- |
+| **Low**      | Docs, tests, style fixes          | Automated checks, single reviewer, auto-merge              |
+| **Medium**   | Feature code, non-critical bugs   | Full automated checks, human review, standard approval     |
+| **High**     | Security, payments, data handling | Enhanced checks, senior reviewer, security review          |
+| **Critical** | Auth, encryption, compliance      | All gates + security team + lead approval + staged rollout |
 
 ## Agents and gates
 
-### What agents can do
+**Agents can:** Run automated checks, flag issues, suggest reviewers, generate artifacts (changelogs, migration scripts).
 
-- Run automated checks
-- Flag potential issues
-- Suggest reviewers
-- Generate gate artifacts (changelogs, migration scripts)
-
-### What agents shouldn't do
-
-- Approve their own output
-- Bypass human checkpoints
-- Deploy to production without human trigger
-- Grant elevated permissions
+**Agents shouldn't:** Approve their own output, bypass human checkpoints, deploy to production without human trigger, grant elevated permissions.
 
 ### Gate anti-patterns
 
-**Rubber-stamp gates:** Human approval that's always granted without review.
+- **Rubber-stamp gates:** Approval always granted without review
+- **Gate proliferation:** So many gates people game them
+- **Inconsistent enforcement:** Gates apply sometimes but not others
+- **AI gate avoidance:** Routing AI code around tighter reviews
 
-**Gate proliferation:** So many gates that people game them to ship.
+## Measuring effectiveness
 
-**Inconsistent enforcement:** Gates that apply sometimes but not others.
-
-**AI gate avoidance:** Routing AI code around tighter reviews.
-
-## Measuring gate effectiveness
-
-**Gate pass rate:** Are legitimate changes passing?
-
-**Gate catch rate:** Are issues caught at gates before production?
-
-**Gate latency:** How much do gates slow the process?
-
-**Gate bypass rate:** How often are gates skipped or overridden?
+| Metric          | Question                             |
+| --------------- | ------------------------------------ |
+| **Pass rate**   | Are legitimate changes passing?      |
+| **Catch rate**  | Are issues caught before production? |
+| **Latency**     | How much do gates slow the process?  |
+| **Bypass rate** | How often are gates skipped?         |
 
 Use these metrics to tune gates—neither too permissive nor too restrictive.
 

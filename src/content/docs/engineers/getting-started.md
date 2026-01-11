@@ -1,74 +1,78 @@
 ---
 title: Getting Started with Agentic Tools
-description: Your first steps into AI-assisted development
+description: Your first steps into AI-assisted development and when to delegate
 sidebar:
   order: 1
 ---
 
-Ready to start working with agents? Here's a practical path from zero to productive.
+Pick one tool and learn it well before trying everything.
 
 ## Choose your first tool
 
-Don't try everything at once. Pick one tool and learn it well.
+**New to AI coding?** Start with GitHub Copilot or similar. Low risk, immediate value.
 
-**If you're new to AI coding:**
-Start with GitHub Copilot or a similar copilot-style tool. Low risk, immediate value, gentle learning curve.
+**Ready for more autonomy?** Try a task-level agent like Cursor, Cline, or Kilo Code for multi-file changes.
 
-**If you're ready for more autonomy:**
-Try a task-level agent like Cursor, Cline, or Kilo Code. These handle multi-file changes with more independence.
-
-**If you're exploring:**
-Most tools offer free tiers or trials. Try a few, but commit to one for deep learning.
+**Exploring?** Most tools have free tiers. Try a few, commit to one for deep learning.
 
 ## Your first session
 
-Start small. Don't try to generate your whole project.
+Start small—don't generate your whole project.
 
 **Good first tasks:**
 
 - Generate a single function from a clear description
 - Write tests for existing code
-- Add documentation to a confusing function
-- Refactor a small, messy piece of code
+- Add documentation to confusing code
+- Refactor a small, messy piece
 
-**Watch how it works:**
+**Watch how it works:** Notice what context it uses, how it handles ambiguity, where it makes mistakes.
 
-- Notice what context it picks up
-- See how it handles ambiguity
-- Observe where it makes mistakes
+## Build prompting intuition
 
-## Build your prompting intuition
+**Be explicit:** Instead of "fix this bug," try "The function `calculateTotal` returns NaN when items array is empty. Add a check that returns 0."
 
-Effective prompting is a skill. It develops with practice.
+**Provide context:** "This is a React component using TypeScript. Follow the pattern in other components in this folder."
 
-**Start explicit:**
-Instead of "fix this bug," try "The function `calculateTotal` returns NaN when the items array is empty. Add a check for empty arrays that returns 0."
+**Set constraints:** "Don't modify the public API. Keep backward compatibility."
 
-**Provide context:**
-"This is a React component using TypeScript. It should follow the existing pattern in other components in this folder."
+## When to delegate
 
-**Set constraints:**
-"Don't modify the public API. Keep backward compatibility with existing callers."
+Not every task should go to an agent. Ask yourself:
 
-## Learn from failures
+1. **How clear is the task?** Vague tasks fail. Clear tasks succeed.
+2. **How much context is needed?** Deep domain knowledge is risky to delegate.
+3. **What's the blast radius?** Mistakes in critical paths cost more to fix.
+4. **How long would I take?** If it's 5 minutes manually, prompting might not be worth it.
 
-You'll hit frustrating moments. Use them.
+### Good candidates
 
-When the agent fails, ask:
+| Task type                            | Why it works                                       |
+| ------------------------------------ | -------------------------------------------------- |
+| **Boilerplate** (CRUD, DTOs, config) | Repetitive, well-defined, low-risk                 |
+| **Tests**                            | Self-validating—you know immediately if they work  |
+| **Documentation**                    | Easy to verify accuracy                            |
+| **Mechanical refactoring**           | Renaming, extracting functions, syntax conversions |
+| **Bug fixes with clear repro**       | "When X happens, Y occurs, but should be Z"        |
 
-- Was my prompt clear enough?
-- Did it have the context it needed?
-- Am I asking for something it's bad at?
-- Should I break this into smaller steps?
+### Keep for yourself
+
+- **Architectural decisions** — Agents don't understand your system's history or future
+- **Security-sensitive code** — Cost of subtle errors is too high
+- **Performance-critical paths** — Agents optimize for correctness, not speed
+- **Novel algorithms** — Agents pattern-match; new problems need human creativity
+- **Ambiguous requirements** — Clarify before delegating
+
+### The gray zone
+
+For tasks that don't fit cleanly: **start with the agent, prepare to take over.** Get initial structure from the agent, then refine manually.
 
 ## Build habits
 
-Integrate agents into your workflow gradually:
-
-**Week 1:** Use for boilerplate and tests only
-**Week 2:** Add documentation and refactoring tasks
-**Week 3:** Try feature implementation with clear specs
-**Week 4:** Experiment with more complex, multi-step tasks
+**Week 1:** Boilerplate and tests only  
+**Week 2:** Add documentation and refactoring  
+**Week 3:** Feature implementation with clear specs  
+**Week 4:** Complex, multi-step tasks
 
 ## Know when to stop
 
@@ -92,8 +96,7 @@ There's no shame in manual coding. The goal is productivity, not agent usage.
 
 - [AI Engineering at Jane Street – John Crepezzi](https://www.youtube.com/watch?v=0ML7ZLMdcl4) - Building custom AI tools for specialized languages
 - [What is Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro) - The standard for AI integrations
-- [OpenAI Embeddings Explained in 5 Minutes](https://www.youtube.com/watch?v=8kJStTRuMcs) - Quick primer on embeddings
-- [MCP server: Step-by-step building guide](https://composio.dev/blog/mcp-server-step-by-step-guide-to-building-from-scrtch) - Building your own MCP servers
+- [Code research projects with async coding agents](https://simonwillison.net/2025/Nov/6/async-code-research/) - Practical pattern for asynchronous agent research
 
 ### Courses
 
