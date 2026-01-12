@@ -46,41 +46,23 @@ export default defineConfig({
               label: "Task Decomposition",
               slug: "engineers/task-decomposition",
             },
-            { label: "Validating Output", slug: "engineers/validating-output" },
-            { label: "Common Failure Modes", slug: "engineers/failure-modes" },
-            {
-              label: "AI-Compatible Codebases",
-              slug: "engineers/ai-compatible-codebases",
-            },
-            { label: "When to Delegate", slug: "engineers/when-to-delegate" },
+            { label: "Best Practices", slug: "engineers/best-practices" },
           ],
         },
         {
           label: "For Team Leads",
           items: [
             {
-              label: "Workflow Integration",
-              slug: "team-leads/workflow-integration",
+              label: "Adopting Agentic Tools",
+              slug: "team-leads/adopting-agentic-tools",
             },
             {
-              label: "Code Review Policies",
-              slug: "team-leads/code-review-policies",
+              label: "Measuring Impact",
+              slug: "team-leads/measuring-impact",
             },
             {
-              label: "Testing Strategies",
-              slug: "team-leads/testing-strategies",
-            },
-            {
-              label: "Measuring Productivity",
-              slug: "team-leads/measuring-productivity",
-            },
-            {
-              label: "Training Your Team",
-              slug: "team-leads/training-your-team",
-            },
-            {
-              label: "When Agents Slow You Down",
-              slug: "team-leads/when-agents-slow-you-down",
+              label: "Quality Assurance",
+              slug: "team-leads/quality-assurance",
             },
           ],
         },
@@ -103,27 +85,23 @@ export default defineConfig({
           label: "Use Cases by Phase",
           items: [
             {
-              label: "Requirements & Planning",
-              slug: "use-cases/requirements-planning",
-            },
-            {
-              label: "Architecture & Design",
-              slug: "use-cases/architecture-design",
+              label: "Planning & Design",
+              slug: "use-cases/planning-design",
             },
             { label: "Implementation", slug: "use-cases/implementation" },
-            { label: "Testing & QA", slug: "use-cases/testing-qa" },
-            { label: "CI/CD & Deployment", slug: "use-cases/cicd-deployment" },
             {
-              label: "Monitoring & Maintenance",
-              slug: "use-cases/monitoring-maintenance",
+              label: "Deployment & Operations",
+              slug: "use-cases/deployment-operations",
             },
-            { label: "Documentation", slug: "use-cases/documentation" },
+            {
+              label: "Quality & Documentation",
+              slug: "use-cases/quality-documentation",
+            },
           ],
         },
         {
           label: "Governance & Risk",
           items: [
-            { label: "Code Provenance", slug: "governance/code-provenance" },
             { label: "Security Review", slug: "governance/security-review" },
             { label: "Accountability", slug: "governance/accountability" },
             { label: "Quality Gates", slug: "governance/quality-gates" },
