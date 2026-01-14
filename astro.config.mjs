@@ -9,6 +9,15 @@ export default defineConfig({
   site: "https://path.kilo.ai",
   integrations: [
     starlight({
+      head: [
+        {
+          tag: "script",
+          attrs: {
+            src: "/posthog.js",
+            defer: true,
+          },
+        },
+      ],
       title: "Agentic Engineering",
       social: [
         {
