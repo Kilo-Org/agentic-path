@@ -29,6 +29,9 @@ The percentage of agent-generated suggestions accepted without modification.
 **Chain-of-thought (CoT)**
 A prompting technique where the model shows its reasoning step-by-step, often improving accuracy.
 
+**Context engineering**
+The discipline of providing AI agents with the right information at the right time. Goes beyond prompt engineering to encompass the entire system of what an agent knows when making decisions—including system instructions, codebase knowledge, conversation history, tool outputs, and external documentation.
+
 **Context window**
 The maximum amount of text (measured in tokens) that a model can process at once.
 

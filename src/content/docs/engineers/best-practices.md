@@ -1,13 +1,83 @@
 ---
 title: Best Practices
-description: Common failure modes and building AI-compatible codebases
+description: Context engineering, common failure modes, and building AI-compatible codebases
 sidebar:
   order: 3
 ---
 
-Agents fail in predictable ways. Learning these patterns—and structuring your code to help agents succeed—makes agentic development reliable.
+The difference between agents that reliably ship code and agents that spin their wheels? Context. Learning to engineer context—and structure your code to help agents succeed—makes agentic development predictable.
+
+## Context engineering
+
+Context engineering is the discipline of providing AI agents with the right information at the right time. It's not just prompt engineering—it's the entire system of what an agent knows when it makes decisions.
+
+Think of it this way: an agent's context window is its entire working memory. Everything it can "see" at once—your instructions, the code, conversation history, tool outputs—shapes every decision it makes. Engineer that context poorly, and even the smartest model produces garbage.
+
+### Why context matters more than prompts
+
+A perfect prompt with bad context fails. A mediocre prompt with excellent context often succeeds.
+
+**Context includes:**
+
+- **System instructions** — The agent's baseline behavior and constraints
+- **Codebase knowledge** — Files, patterns, conventions the agent can reference
+- **Conversation history** — What's been discussed and decided
+- **Tool outputs** — Results from file reads, command execution, searches
+- **External documentation** — API docs, specs, requirements
+
+**Prompts are just one piece.** The agent's entire context window determines output quality.
+
+### The context engineering workflow
+
+**1. Curate what goes in**
+
+Not everything belongs in context. More isn't better—it's often worse. Irrelevant context dilutes signal and wastes tokens.
+
+Ask: What does the agent _need_ to complete this task? Include that. Exclude everything else.
+
+**2. Structure for retrieval**
+
+Agents scan context looking for relevant information. Make it findable:
+
+- Use clear headings and sections
+- Put critical constraints early
+- Group related information together
+- Use consistent formatting
+
+**3. Manage context lifecycle**
+
+Context windows fill up. When they do, older content gets truncated—the agent literally forgets it.
+
+- Start fresh conversations for new tasks
+- Summarize long discussions before continuing
+- Re-state critical constraints when context is getting full
+- Use tools like AGENTS.md to persist important context across sessions
+
+### Practical context techniques
+
+**Include relevant code, not all code.** If you're modifying a function, include that function and its direct dependencies. Don't dump the entire codebase.
+
+**Provide examples of desired output.** Show the agent what good looks like. A single example often beats paragraphs of description.
+
+**State constraints explicitly.** "Don't modify the public API" is context. "Follow the error handling pattern in auth.ts" is context. Make implicit knowledge explicit.
+
+**Use documentation as context.** When working with unfamiliar APIs, paste relevant docs into the conversation. The agent can't hallucinate what's right in front of it.
+
+**Leverage persistent context files.** AGENTS.md, README files, and similar documents provide context that persists across sessions. Keep them current.
+
+### Context anti-patterns
+
+**Kitchen sink context** — Dumping everything "just in case." Dilutes signal, wastes tokens, confuses the agent.
+
+**Stale context** — Outdated documentation or code that contradicts current state. Leads to hallucinations and wrong assumptions.
+
+**Implicit context** — Assuming the agent knows things you haven't told it. Your mental model isn't in the context window.
+
+**Context fragmentation** — Spreading related information across many messages. Group related context together.
 
 ## Failure modes to watch
+
+Agents fail in predictable ways. Learning these patterns helps you catch problems early.
 
 ### Hallucinations
 
@@ -17,7 +87,7 @@ Agents use APIs, methods, or parameters that don't exist. Code looks right but f
 
 **Catch it:** Be suspicious of unfamiliar method names. Verify imports exist. Run the code—don't just read it.
 
-**Prevent it:** Include relevant docs in your prompt. Use well-known patterns. Ask the agent to explain its reasoning.
+**Prevent it:** Include relevant docs in your context. Use well-known patterns. Ask the agent to explain its reasoning.
 
 ### Drift
 
@@ -148,9 +218,14 @@ Over time, the codebase becomes more agent-friendly—and more human-friendly.
 
 ## Resources
 
-### Essential
+### Context engineering
 
-- [AGENTS.md](https://agents.md/) - Open format for guiding agents, used by 60k+ open-source projects
+- [Context Engineering for AI Agents – Tobi Lutke](https://x.com/tolobi/status/1935533391175041359) - Shopify CEO on why context engineering is the new skill
+- [Context Engineering – Andrej Karpathy](https://x.com/karpathy/status/1937902205765607626) - "Prompt engineering is dead, context engineering is king"
+- [AGENTS.md](https://agents.md/) - Open format for persistent agent context, used by 60k+ open-source projects
+
+### Failure modes and recovery
+
 - ["I shipped code I don't understand" – Jake Nations, Netflix](https://www.youtube.com/watch?v=eIoohUmYpGI) - The "Infinite Software Crisis" and how to avoid it
 - [Agent Readiness – Eno Reyes, Factory AI](https://www.youtube.com/watch?v=ShuJ_CN6zr4) - Eight categories for agent-ready codebases
 

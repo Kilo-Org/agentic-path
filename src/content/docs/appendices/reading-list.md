@@ -15,6 +15,14 @@ _Section for foundational books on AI, software engineering, and related topics.
 
 - Coming soon
 
+### Context engineering
+
+_The emerging discipline of providing agents with the right information at the right time._
+
+- [Context Engineering for AI Agents – Tobi Lutke](https://x.com/tolobi/status/1935533391175041359) - Shopify CEO on why context engineering is the new skill
+- [Context Engineering – Andrej Karpathy](https://x.com/karpathy/status/1937902205765607626) - "Prompt engineering is dead, context engineering is king"
+- [AGENTS.md](https://agents.md/) - Open format for persistent agent context, used by 60k+ open-source projects
+
 ### Prompt engineering
 
 _Guides to effective prompting and AI interaction._
