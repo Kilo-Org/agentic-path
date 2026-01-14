@@ -3,6 +3,7 @@
   "workspaces": {
     "": {
       "dependencies": {
+        "@astrojs/sitemap": "^3.6.1",
         "@astrojs/starlight": "^0.37.2",
         "@catppuccin/starlight": "^1.0.2",
         "astro": "^5.6.1",

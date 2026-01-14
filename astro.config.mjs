@@ -2,9 +2,11 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import catppuccin from "@catppuccin/starlight";
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://path.kilo.ai",
   integrations: [
     starlight({
       title: "Agentic Engineering",
@@ -128,5 +130,6 @@ export default defineConfig({
         }),
       ],
     }),
+    sitemap(),
   ],
 });
