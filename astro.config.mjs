@@ -36,6 +36,10 @@ export default defineConfig({
               label: "Working with Agents",
               slug: "introduction/working-with-agents",
             },
+            {
+              label: "Trends & Patterns",
+              slug: "introduction/trends-patterns",
+            },
           ],
         },
         {
