@@ -64,15 +64,17 @@ A methodology that treats specifications as executable, living artifacts that di
 
 ### Research, Plan, Implement (RPI)
 
-A three-phase workflow where AI first researches the codebase and requirements, then creates a phased implementation plan with atomic tasks, and finally implements the solution. Emphasizes research before planning to avoid false assumptions.
+A three-phase framework for transforming chaotic AI interactions into predictable, high-quality software delivery. Instead of jumping straight to code generation, RPI breaks work into focused phases with built-in validation: research what exists, plan the change systematically, then execute mechanically.
+
+→ **[Read the full RPI guide](/introduction/patterns/rpi/)**
 
 **The three phases:**
 
-1. **Research**: AI explores the codebase, understands patterns, discovers constraints
-2. **Plan**: Create phased approach with atomic tasks (markdown checkboxes)
-3. **Implement**: Execute the plan with context from research
+1. **Research**: Document what exists today—no opinions, no suggestions, just facts
+2. **Plan**: Design the change with atomic tasks, success criteria, and validation checkpoints
+3. **Implement**: Execute mechanically, verify after each phase, update progress tracking
 
-**Key principle:** Planning without research leads to bad assumptions. RPI begins with research to ground plans in reality.
+**Key principle:** Planning without research leads to bad assumptions. RPI uses FAR (Factual, Actionable, Relevant) and FACTS (Feasible, Atomic, Clear, Testable, Scoped) validation scales to ensure readiness before proceeding.
 
 **Resources:**
 
