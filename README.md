@@ -18,7 +18,7 @@ This is a comprehensive guide to agentic engineering—the practice of working e
 - **For Executives** — Strategic vision, ROI frameworks, and security compliance
 - **Use Cases** — Planning, implementation, deployment, and documentation
 - **Governance** — Security review, accountability, and quality gates
-- **Appendices** — Glossary, reading list, sample policies, and prompt templates
+- **Appendices** — Glossary, reading list, and prompt templates
 
 ## Tech Stack
 

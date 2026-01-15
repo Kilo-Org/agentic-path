@@ -133,7 +133,6 @@ export default defineConfig({
           items: [
             { label: "Glossary", slug: "appendices/glossary" },
             { label: "Recommended Reading", slug: "appendices/reading-list" },
-            { label: "Sample Policies", slug: "appendices/sample-policies" },
             { label: "Prompt Templates", slug: "appendices/prompt-templates" },
           ],
         },
