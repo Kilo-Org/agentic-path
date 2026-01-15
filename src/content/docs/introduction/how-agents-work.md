@@ -38,6 +38,28 @@ The **Large Language Model (LLM)** is the "brain" of an agent—a neural network
 - Probabilistic, not deterministic—same input may produce different output
 - Limited long-horizon planning—they work best with clear, bounded tasks
 
+## Closed vs Open Weight Models
+
+The models powering AI agents come in two flavors: **closed** and **open weight**. Each has tradeoffs that affect how you build and deploy agents.
+
+**Closed models** (Claude, GPT, Gemini, Grok, etc.) are accessed through APIs. You send requests to the provider's servers and pay per token.
+
+- **Pros:** State-of-the-art performance, no infrastructure to manage, continuous improvements
+- **Cons:** Data leaves your network, usage costs scale with volume, dependent on provider availability
+
+**Open weight models** (Llama, Mistral, DeepSeek, Qwen) can be downloaded and run on your own hardware _or_ accessed through APIs.
+
+- **Pros:** Full data control, predictable costs at scale, customizable through fine-tuning
+- **Cons:** Requires GPU infrastructure, you manage updates and security, generally lower capability than frontier closed models
+
+**Choosing between them:**
+
+- **Start with closed models.** They're easier to integrate and currently more capable. Most teams should begin here.
+- **Consider open weight when:** You have strict data residency requirements, predictable high-volume workloads where self-hosting is cheaper, or need to fine-tune for specialized domains.
+- **Hybrid approaches work.** Use closed models for complex reasoning tasks and open weight for high-volume, simpler operations like code formatting or basic classification.
+
+The gap between closed and open weight models continues to narrow. What requires a closed model today may be achievable with open weight next year. Design your systems to swap models as the landscape evolves.
+
 ## Tool Use
 
 Raw LLMs can only generate text. **Tools** are what transform them into agents that can actually do things in the world.
