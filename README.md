@@ -80,7 +80,7 @@ Be excellent to each other. We're all figuring this out together. Respectful dis
 
 ## License
 
-MIT
+[Apache 2.0](LICENSE) — Use it, build on it, share it.
 
 ## Links
 
