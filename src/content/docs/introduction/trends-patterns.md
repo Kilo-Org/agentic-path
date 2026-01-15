@@ -13,7 +13,7 @@ A collection of emerging patterns, techniques, and methodologies in AI-assisted 
 
 A technique for running AI coding agents in continuous loops where the AI iterates on its own output repeatedly until tests pass and the code compiles. Uses "stop hooks" to prevent premature exit, forcing the AI to refine its work through multiple passes instead of attempting perfection on the first try.
 
-→ **[Read the full Ralph Wiggum guide](/introduction/ralph-wiggum/)**
+→ **[Read the full Ralph Wiggum guide](/introduction/patterns/alph-wiggum/)**
 
 **Key characteristics:**
 
@@ -35,23 +35,25 @@ A technique for running AI coding agents in continuous loops where the AI iterat
 - [The Ralph Wiggum Approach: Running AI Coding Agents for Hours](https://dev.to/sivarampg/the-ralph-wiggum-approach-running-ai-coding-agents-for-hours-not-minutes-57c1) - DEV Community tutorial
 - [GitHub - vercel-labs/ralph-loop-agent](https://github.com/vercel-labs/ralph-loop-agent) - Open source implementation
 
-### Spec-driven Development (spec-kit)
+### Spec-Driven Development (Spec Kit)
 
-Intent-driven development where specifications define the "what" before the "how" using guardrails and organizational principles. Multi-step refinement rather than one-shot code generation from prompts, relying on advanced AI model capabilities for specification interpretation.
+A methodology that treats specifications as executable, living artifacts that directly drive AI agent implementation. Instead of jumping straight to code, you define intent in a specification that becomes the source of truth—preventing the "vibe coding" trap where agents build something that compiles but doesn't match what you actually wanted.
+
+→ **[Read the full Spec-Driven Development guide](/introduction/patterns/spec-driven-development/)**
 
 **Key characteristics:**
 
-- Specifications defined upfront
-- Structured process with guardrails
-- Multi-step refinement
-- Works with GitHub Copilot, Claude Code, Gemini CLI
+- Specifications defined upfront as living documents
+- Phased workflow: Constitution → Specify → Plan → Tasks → Implement
+- Multi-variant exploration from same spec
+- Works with GitHub Copilot, Claude Code, Gemini CLI, Cursor, and more
 
-**Benefits:**
+**Use cases:**
 
-- Clearer requirements before implementation
-- Better alignment with business goals
-- More maintainable code
-- Reduced back-and-forth iterations
+- Greenfield development with clear intent
+- Feature work in complex existing codebases
+- Legacy modernization
+- High-stakes features (payments, healthcare, safety-critical)
 
 **Resources:**
 
