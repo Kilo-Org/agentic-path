@@ -1,0 +1,55 @@
+---
+import {
+  TwitterShareButton,
+  LinkedInShareButton,
+  RedditShareButton,
+  SocialShare,
+} from "astro-social-share";
+
+const { title } = Astro.props;
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const description = "Learn about agentic engineering";
+---
+
+<div class="share-buttons-container">
+  <h4 class="share-title">Share this page</h4>
+  <SocialShare
+    url={pageUrl}
+    title={title}
+    description={description}
+    buttons={[TwitterShareButton, LinkedInShareButton, RedditShareButton]}
+  />
+</div>
+
+<style>
+  .share-buttons-container {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--sl-color-gray-5);
+    text-align: center;
+  }
+
+  .share-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--sl-color-gray-2);
+  }
+
+  /* Center the social share buttons */
+  .share-buttons-container :global(.astro-social-share) {
+    justify-content: center;
+  }
+
+  /* Dark mode: make icons #F0DAAA */
+  :global([data-theme="dark"])
+    .share-buttons-container
+    :global(.astro-social-share svg) {
+    fill: #f0daaa;
+  }
+
+  /* Hover colors - white for all icons including X/Twitter */
+  .share-buttons-container :global(.astro-social-share a:hover svg) {
+    fill: var(--sl-color-white) !important;
+  }
+</style>

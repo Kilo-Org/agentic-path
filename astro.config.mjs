@@ -19,6 +19,12 @@ export default defineConfig({
         },
       ],
       title: "Agentic Engineering",
+      editLink: {
+        baseUrl: "https://github.com/Kilo-Org/agentic-path/edit/main/",
+      },
+      components: {
+        Footer: "./src/components/Footer.astro",
+      },
       social: [
         {
           icon: "discord",

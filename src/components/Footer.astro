@@ -1,0 +1,80 @@
+---
+import EditLink from "virtual:starlight/components/EditLink";
+import LastUpdated from "virtual:starlight/components/LastUpdated";
+import Pagination from "virtual:starlight/components/Pagination";
+import config from "virtual:starlight/user-config";
+import { Icon } from "@astrojs/starlight/components";
+import ShareButtons from "./ShareButtons.astro";
+
+const { starlightRoute } = Astro.locals;
+// Only show share buttons if we have an entry (not 404 or other special pages)
+const showShareButtons = starlightRoute?.entry?.data;
+---
+
+{
+  showShareButtons && (
+    <div class="share-section">
+      <ShareButtons title={starlightRoute.entry.data.title} />
+    </div>
+  )
+}
+
+<footer class="sl-flex">
+  <div class="meta sl-flex">
+    <EditLink />
+    <LastUpdated />
+  </div>
+  <Pagination />
+
+  {
+    config.credits && (
+      <a class="kudos sl-flex" href="https://starlight.astro.build">
+        <Icon name={"starlight"} /> {Astro.locals.t("builtWithStarlight.label")}
+      </a>
+    )
+  }
+</footer>
+
+<style>
+  .share-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--sl-color-hairline-light);
+  }
+
+  @layer starlight.core {
+    footer {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .meta {
+      gap: 0.75rem 3rem;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+      font-size: var(--sl-text-sm);
+      color: var(--sl-color-gray-3);
+    }
+    .meta > :global(p:only-child) {
+      margin-inline-start: auto;
+    }
+
+    .kudos {
+      align-items: center;
+      gap: 0.5em;
+      margin: 1.5rem auto;
+      font-size: var(--sl-text-xs);
+      text-decoration: none;
+      color: var(--sl-color-gray-3);
+    }
+    .kudos:hover {
+      color: var(--sl-color-white);
+    }
+  }
+
+  @layer starlight.components {
+    .kudos :global(svg) {
+      color: var(--sl-color-orange);
+    }
+  }
+</style>
