@@ -79,7 +79,8 @@ _Tutorials, talks, and demonstrations._
 
 _Places to connect with others working in this space._
 
-- Coming soon
+- [Kilo Code Discord](https://kilo.love/discord) - Our community for discussing agentic engineering
+- [GitHub Discussions](https://github.com/Kilo-Org/agentic-path/discussions) - Longer-form conversations about this guide
 
 ## Documentation and guides
 
@@ -113,10 +114,23 @@ _Real-world implementations and lessons._
 
 ## Contributing resources
 
-Know a great resource we should include?
+Know a great resource we should include? This list grows through community contributions.
 
-_Contribution guidelines coming soon._
+**How to add a resource:**
+
+1. [Open a PR](/community/contributing/) with your addition
+2. Include a brief description of why it's valuable
+3. Place it in the appropriate section
+
+We're especially looking for:
+
+- Books and papers that shaped your understanding
+- Tutorials that actually helped you get started
+- Communities where you've found good discussions
+- Case studies from real implementations
+
+[Join the conversation on Discord](https://kilo.love/discord) if you want to discuss what should be included.
 
 ---
 
-_This list is actively maintained. Check back for updates as we add vetted resources._
+_This list is actively maintained by the community. Your recommendations help others learn faster._

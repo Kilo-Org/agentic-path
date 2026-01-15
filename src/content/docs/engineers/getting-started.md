@@ -102,3 +102,7 @@ There's no shame in manual coding. The goal is productivity, not agent usage.
 
 - [Prompt Engineering Specialization – Vanderbilt University](https://www.coursera.org/specializations/prompt-engineering) - Comprehensive prompt engineering course
 - [Understanding Prompt Engineering – DataCamp](https://www.datacamp.com/courses/understanding-prompt-engineering) - Beginner prompt engineering fundamentals
+
+---
+
+**Found a resource that helped you get started?** [Add it to this page](/community/contributing/)—your recommendation might be exactly what someone else needs.

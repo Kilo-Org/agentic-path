@@ -26,6 +26,14 @@ const showShareButtons = starlightRoute?.entry?.data;
   </div>
   <Pagination />
 
+  <div class="community-cta">
+    <p>
+      This guide is community-driven. <a href="/community/contributing/"
+        >Contribute</a
+      > or <a href="https://kilo.love/discord">join the conversation</a>.
+    </p>
+  </div>
+
   {
     config.credits && (
       <a class="kudos sl-flex" href="https://starlight.astro.build">
@@ -76,5 +84,23 @@ const showShareButtons = starlightRoute?.entry?.data;
     .kudos :global(svg) {
       color: var(--sl-color-orange);
     }
+  }
+
+  .community-cta {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-top: 1px solid var(--sl-color-hairline-light);
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-3);
+  }
+
+  .community-cta a {
+    color: var(--sl-color-text-accent);
+    text-decoration: none;
+  }
+
+  .community-cta a:hover {
+    text-decoration: underline;
   }
 </style>

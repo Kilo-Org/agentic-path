@@ -91,3 +91,7 @@ Agents fail in predictable ways. Knowing these patterns helps you catch problems
 - **Overconfidence** — Asserting that code works without actually verifying it runs
 
 When you see these patterns, intervene. Reset the context, clarify the goal, or break the task into smaller pieces. The agent isn't being stubborn—it's hitting a limitation you can work around.
+
+---
+
+**Have a failure mode we missed?** This guide is community-driven. [Share your experience](/community/contributing/) so others can learn from it.

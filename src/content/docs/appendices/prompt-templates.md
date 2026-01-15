@@ -328,4 +328,4 @@ Review this proposed architecture.
 
 ---
 
-_Have a useful template? Consider contributing it back._
+**Have a useful template?** [Share it with the community](/community/contributing/)—your prompt might save someone hours of trial and error.

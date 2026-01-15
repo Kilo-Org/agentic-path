@@ -76,8 +76,10 @@ Think of autonomy as a slider, not a fixed setting. Start at Copilot for explora
 Different roles have different concerns. Jump to what matters most for your role, or read through for the complete picture.
 
 - **Engineers:** Work effectively with agents without losing your edge. See the [Getting Started](/engineers/getting-started/) guide for practical workflows.
-- **Team leads:** Integrate these tools into existing workflows and train your teams. Start with [Workflow Integration](/team-leads/workflow-integration/).
+- **Team leads:** Integrate these tools into existing workflows and train your teams. Start with [Adopting Agentic Tools](/team-leads/adopting-agentic-tools/).
 - **Executives:** Make strategic decisions about AI adoption, budget, and risk. The [Strategic Vision](/executives/strategic-vision/) section covers the business case.
+
+**This guide is community-driven.** We're all learning together. If you have experience to share or gaps to fill, [join us](/community/).
 
 ## Resources
 

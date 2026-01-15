@@ -137,6 +137,13 @@ export default defineConfig({
             { label: "Prompt Templates", slug: "appendices/prompt-templates" },
           ],
         },
+        {
+          label: "Community",
+          items: [
+            { label: "Join the Community", slug: "community" },
+            { label: "Contributing", slug: "community/contributing" },
+          ],
+        },
       ],
       plugins: [
         catppuccin({
