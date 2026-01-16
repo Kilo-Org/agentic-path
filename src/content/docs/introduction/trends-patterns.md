@@ -13,7 +13,7 @@ A collection of emerging patterns, techniques, and methodologies in AI-assisted 
 
 A technique for running AI coding agents in continuous loops where the AI iterates on its own output repeatedly until tests pass and the code compiles. Uses "stop hooks" to prevent premature exit, forcing the AI to refine its work through multiple passes instead of attempting perfection on the first try.
 
-→ **[Read the full Ralph Wiggum guide](/introduction/patterns/alph-wiggum/)**
+→ **[Read the full Ralph Wiggum guide](/introduction/patterns/ralph-wiggum/)**
 
 **Key characteristics:**
 
