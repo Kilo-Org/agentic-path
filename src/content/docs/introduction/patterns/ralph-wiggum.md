@@ -188,6 +188,7 @@ This is continuous autonomy—the agent works until the job is actually done, no
 
 ### Official
 
+- [Ralph Wiggum as a Software Engineer](https://ghuntley.com/ralph/)
 - [GitHub - vercel-labs/ralph-loop-agent](https://github.com/vercel-labs/ralph-loop-agent) — Core NPM package
 - [Ralph Wiggum - AI Loop Technique for Claude Code](https://awesomeclaude.ai/ralph-wiggum) — Complete guide and examples
 

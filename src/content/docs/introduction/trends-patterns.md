@@ -30,6 +30,7 @@ A technique for running AI coding agents in continuous loops where the AI iterat
 
 **Resources:**
 
+- [Ralph Wiggum as a Software Engineer](https://ghuntley.com/ralph/) - Original concept
 - [Ralph Wiggum - AI Loop Technique for Claude Code](https://awesomeclaude.ai/ralph-wiggum) - Complete guide and examples
 - [11 Tips For AI Coding With Ralph Wiggum](https://www.aihero.dev/tips-for-ai-coding-with-ralph-wiggum) - Practical tips for autonomous loops
 - [The Ralph Wiggum Approach: Running AI Coding Agents for Hours](https://dev.to/sivarampg/the-ralph-wiggum-approach-running-ai-coding-agents-for-hours-not-minutes-57c1) - DEV Community tutorial
