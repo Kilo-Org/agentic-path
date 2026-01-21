@@ -23,11 +23,11 @@ When you ask an AI agent to implement something without structure, you're gambli
 
 **What actually happens:**
 
-- Context overflow—too much information, AI loses focus
-- Hallucination—AI invents code that doesn't exist
-- Wrong problem solved—misunderstood requirements
-- Scope creep—work expands beyond intended boundaries
-- Untestable code—no clear success criteria
+- Context overflow: With too much information, AI loses focus.
+- Hallucination: AI invents code that doesn't exist.
+- Wrong problem solved: AI misunderstands your requirements.
+- Scope creep: Work expands beyond intended boundaries.
+- Untestable code: You have no clear success criteria.
 
 The insight: without structure, even brilliant AI assistants become expensive random code generators.
 
@@ -37,16 +37,16 @@ RPI is a three-phase framework with validation gates between each phase. Think o
 
 **The phases:**
 
-1. **Research** — Build context. Document what exists today. No opinions, no suggestions.
-2. **Plan** — Design the change. Phased approach with atomic tasks and success criteria.
-3. **Implement** — Execute mechanically. Follow the plan, verify after each phase.
+1. **Research**: Build context. Document what exists today—no opinions, no suggestions.
+2. **Plan**: Design the change. Use a phased approach with atomic tasks and success criteria.
+3. **Implement**. Execute mechanically. Follow the plan, and verify after each phase.
 
 **Core principles:**
 
-- One goal per session—keep the LLM laser-focused
-- Validation before progression—use scoring scales to verify readiness
-- Human judgment preserved—AI doesn't make big decisions without validation
-- Context management—fresh sessions for each phase
+- One goal per session: Keep the LLM laser-focused.
+- Validation before progression: Use scoring scales to verify readiness.
+- Human judgment preserved: AI doesn't make big decisions without validation.
+- Context management: Start with a fresh session for each phase.
 
 The framework trades speed for clarity, predictability, and correctness. You'll spend more time upfront, but you'll spend far less time debugging hallucinations and fixing architectural mistakes.
 
@@ -83,13 +83,13 @@ The document includes git metadata, file and line references, flow descriptions,
 
 ### Reverse prompting
 
-Here's where it gets interesting. Instead of you explaining everything upfront, the AI asks _you_ clarifying questions one at a time:
+Here's where things get interesting. Instead of you explaining everything upfront, the AI asks _you_ clarifying questions one at a time:
 
 - "Should this work from the file manager or dashboard?"
 - "Any file type restrictions?"
 - "What happens to shared files?"
 
-This reveals insights you hadn't considered. It prevents wrong assumptions from propagating through the entire workflow.
+This reveals insights you hadn't considered, and prevents wrong assumptions from propagating through the entire workflow.
 
 ### Validating research: the FAR scale
 
@@ -101,7 +101,7 @@ Before moving to planning, validate your research against FAR criteria:
 | **A**ctionable | You know exactly what to build        | Vague requirements   |
 | **R**elevant   | Solves the real user need             | Wrong problem solved |
 
-**Critical:** Human must review the research document before proceeding. This informs everything downstream.
+**Critical:** A human must review the research document before proceeding. This informs everything downstream.
 
 ## Phase 2: Plan
 
@@ -113,12 +113,12 @@ The planning phase translates research into a phased implementation plan. You're
 /plan a removal of the Tool Selection Strategy feature
 ```
 
-**Process:**
+**AI's Process:**
 
-1. Reads research document from previous phase
-2. Asks clarifying questions (full removal vs deprecation? config cleanup behavior?)
-3. Presents design options where multiple approaches exist
-4. Produces phased implementation plan
+1. Read the research document from the previous phase
+2. Ask clarifying questions (full removal vs deprecation? config cleanup behavior?)
+3. Present design options where multiple approaches exist
+4. Produce a phased implementation plan
 
 **Output:** A detailed plan at `thoughts/plans/YYYY-MM-DD-HHmm-description.md`
 
@@ -160,12 +160,12 @@ The implementation phase executes the plan step-by-step with verification. This 
 /implement thoughts/plans/2025-12-23-remove-tool-selection-strategy.md
 ```
 
-**Process:**
+**AI's Process:**
 
 1. Read the plan completely
 2. Execute phases in order
 3. Run verification after each phase
-4. Update checkboxes directly in plan file as you go
+4. Update checkboxes directly in the plan file as you go
 
 ### Feedback loop options
 
@@ -175,7 +175,7 @@ Choose your control level based on confidence in the plan:
 | ------------------------- | ------------------------- | --------------------------------------- |
 | Task-by-task validation   | Maximum control needed    | High—validate after each atomic task    |
 | Phase-by-phase validation | Balance speed and control | Medium—validate after completing phase  |
-| Full plan validation      | High confidence in plan   | Low—execute everything, validate at end |
+| Full plan validation      | High confidence in plan   | Low—execute everything, validate at the end |
 
 ### Verification gates
 
@@ -202,12 +202,12 @@ Sometimes plans need adjustment after review or during implementation.
 /iterate "plan path" + feedback
 ```
 
-**Process:**
+**AI's Process:**
 
-1. Reads existing plan
-2. Researches only what needs rethinking
-3. Proposes targeted updates
-4. Edits plan surgically (doesn't start over)
+1. Read the existing plan
+2. Research only what needs rethinking
+3. Propose targeted updates
+4. Edit the plan surgically (doesn't start over)
 
 This enables refinement without discarding good work. Changed sections must pass FACTS validation again.
 
@@ -223,7 +223,7 @@ thoughts/
     └── YYYY-MM-DD-HHmm-description.md
 ```
 
-## Real-world example
+## A Real-world example
 
 Let's walk through an actual RPI execution: removing the "Tool Selection Strategy" feature from a large codebase.
 
@@ -451,12 +451,12 @@ You stop directing the AI step-by-step and start designing workflows that conver
 
 ### Official
 
-- [Research → Plan → Implement Pattern | goose](https://block.github.io/goose/docs/tutorials/rpi/) — Official tutorial with demonstrations
-- [Introducing the RPI Strategy](https://patrickarobinson.com/blog/introducing-rpi-strategy/) — Creator's blog post explaining the approach
+- READ: [Research → Plan → Implement Pattern | goose](https://block.github.io/goose/docs/tutorials/rpi/) — Official tutorial with demonstrations
+- READ: [Introducing the RPI Strategy](https://patrickarobinson.com/blog/introducing-rpi-strategy/) — Creator's blog post explaining the approach
 
 ### Community
 
-- [The RPI workflow - Build Wiz AI Show (Podcast)](https://open.spotify.com/episode/1OdIYj0SZzhyzFGGoVuELP) — Audio discussion on advanced AI coding
+- LISTEN: [The RPI workflow - Build Wiz AI Show (Podcast)](https://open.spotify.com/episode/1OdIYj0SZzhyzFGGoVuELP) — Audio discussion on advanced AI coding
 
 ### Origins
 

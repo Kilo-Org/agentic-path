@@ -11,7 +11,7 @@ A collection of emerging patterns, techniques, and methodologies in AI-assisted 
 
 ### Ralph Wiggum
 
-A technique for running AI coding agents in continuous loops where the AI iterates on its own output repeatedly until tests pass and the code compiles. Uses "stop hooks" to prevent premature exit, forcing the AI to refine its work through multiple passes instead of attempting perfection on the first try.
+An AI loop technique for running coding agents in continuous loops where the AI iterates on its own output repeatedly until tests pass and the code compiles. This approach uses "stop hooks" to prevent premature exit, forcing the AI to refine its work through multiple passes instead of attempting perfection on the first try.
 
 → **[Read the full Ralph Wiggum guide](/introduction/patterns/ralph-wiggum/)**
 
@@ -30,11 +30,11 @@ A technique for running AI coding agents in continuous loops where the AI iterat
 
 **Resources:**
 
-- [Ralph Wiggum as a Software Engineer](https://ghuntley.com/ralph/) - Original concept
-- [Ralph Wiggum - AI Loop Technique for Claude Code](https://awesomeclaude.ai/ralph-wiggum) - Complete guide and examples
-- [11 Tips For AI Coding With Ralph Wiggum](https://www.aihero.dev/tips-for-ai-coding-with-ralph-wiggum) - Practical tips for autonomous loops
-- [The Ralph Wiggum Approach: Running AI Coding Agents for Hours](https://dev.to/sivarampg/the-ralph-wiggum-approach-running-ai-coding-agents-for-hours-not-minutes-57c1) - DEV Community tutorial
-- [GitHub - vercel-labs/ralph-loop-agent](https://github.com/vercel-labs/ralph-loop-agent) - Open source implementation
+- READ: [Ralph Wiggum as a Software Engineer](https://ghuntley.com/ralph/) - Original concept
+- READ: [Ralph Wiggum - AI Loop Technique for Claude Code](https://awesomeclaude.ai/ralph-wiggum) - Complete guide and examples
+- READ: [11 Tips For AI Coding With Ralph Wiggum](https://www.aihero.dev/tips-for-ai-coding-with-ralph-wiggum) - Practical tips for autonomous loops
+- READ: [The Ralph Wiggum Approach: Running AI Coding Agents for Hours](https://dev.to/sivarampg/the-ralph-wiggum-approach-running-ai-coding-agents-for-hours-not-minutes-57c1) - DEV Community tutorial
+- TRY: [GitHub - vercel-labs/ralph-loop-agent](https://github.com/vercel-labs/ralph-loop-agent) - Open source implementation
 
 ### Spec-Driven Development (Spec Kit)
 
@@ -58,10 +58,10 @@ A methodology that treats specifications as executable, living artifacts that di
 
 **Resources:**
 
-- [Spec-driven development with AI - GitHub Blog](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/) - Official announcement and overview
-- [GitHub - github/spec-kit](https://github.com/github/spec-kit) - Official spec-kit repository
-- [Spec-Driven Development Tutorial using GitHub Spec Kit](https://www.scalablepath.com/machine-learning/spec-driven-development-workflow) - Real-world tutorial with examples
-- [Diving Into Spec-Driven Development With GitHub Spec Kit](https://developer.microsoft.com/blog/spec-driven-development-spec-kit) - Microsoft Developer Blog
+- READ: [Spec-driven development with AI - GitHub Blog](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/) - Official announcement and overview
+- TRY: [GitHub - github/spec-kit](https://github.com/github/spec-kit) - Official spec-kit repository
+- READ: [Spec-Driven Development Tutorial using GitHub Spec Kit](https://www.scalablepath.com/machine-learning/spec-driven-development-workflow) - Real-world tutorial with examples
+- READ: [Diving Into Spec-Driven Development With GitHub Spec Kit](https://developer.microsoft.com/blog/spec-driven-development-spec-kit) - Microsoft Developer Blog
 
 ### Research, Plan, Implement (RPI)
 
@@ -71,23 +71,23 @@ A three-phase framework for transforming chaotic AI interactions into predictabl
 
 **The three phases:**
 
-1. **Research**: Document what exists today—no opinions, no suggestions, just facts
-2. **Plan**: Design the change with atomic tasks, success criteria, and validation checkpoints
-3. **Implement**: Execute mechanically, verify after each phase, update progress tracking
+1. **Research**: Document what exists today—no opinions, no suggestions, just facts.
+2. **Plan**: Design the change with atomic tasks, success criteria, and validation checkpoints.
+3. **Implement**: Execute mechanically, verify after each phase, and update progress tracking.
 
 **Key principle:** Planning without research leads to bad assumptions. RPI uses FAR (Factual, Actionable, Relevant) and FACTS (Feasible, Atomic, Clear, Testable, Scoped) validation scales to ensure readiness before proceeding.
 
 **Resources:**
 
-- [Research → Plan → Implement Pattern | goose](https://block.github.io/goose/docs/tutorials/rpi/) - Official tutorial with demonstrations
-- [Introducing the RPI Strategy](https://patrickarobinson.com/blog/introducing-rpi-strategy/) - Creator's blog post explaining the approach
-- [The RPI workflow - Build Wiz AI Show (Podcast)](https://open.spotify.com/episode/1OdIYj0SZzhyzFGGoVuELP) - Audio discussion on advanced AI coding
+- READ: [Research → Plan → Implement Pattern | goose](https://block.github.io/goose/docs/tutorials/rpi/) - Official tutorial with demonstrations
+- READ: [Introducing the RPI Strategy](https://patrickarobinson.com/blog/introducing-rpi-strategy/) - Creator's blog post explaining the approach
+- WATCH: [The RPI workflow - Build Wiz AI Show (Podcast)](https://open.spotify.com/episode/1OdIYj0SZzhyzFGGoVuELP) - Audio discussion on advanced AI coding
 
 ## Prompting Patterns
 
 ### Stepwise / Iterative Prompting
 
-Breaking complex tasks into small, manageable chunks with feedback loops between each iteration, rather than requesting monolithic code blocks.
+In this pattern, you break complex tasks into small, manageable chunks with feedback loops between each iteration, rather than requesting monolithic code blocks.
 
 **Benefits:**
 
@@ -106,13 +106,13 @@ Breaking complex tasks into small, manageable chunks with feedback loops between
 
 **Resources:**
 
-- [How to write better prompts for AI code generation](https://graphite.com/guides/better-prompts-ai-code) - Best practices guide
-- [Iterative Prompt Refinement: Step-by-Step Guide](https://latitude-blog.ghost.io/blog/iterative-prompt-refinement-step-by-step-guide/) - Structured experimentation approach
-- [What is Iterative Prompting? | IBM](https://www.ibm.com/think/topics/iterative-prompting) - Enterprise perspective on best practices
+- READ: [How to write better prompts for AI code generation](https://graphite.com/guides/better-prompts-ai-code) - Best practices guide
+- READ: [Iterative Prompt Refinement: Step-by-Step Guide](https://latitude-blog.ghost.io/blog/iterative-prompt-refinement-step-by-step-guide/) - Structured experimentation approach
+- READ: [What is Iterative Prompting? | IBM](https://www.ibm.com/think/topics/iterative-prompting) - Enterprise perspective on best practices
 
 ### Context Packing / Brain Dumps
 
-The practice of frontloading all relevant context (codebase architecture, API docs, constraints, invariants) into prompts before coding.
+This is the practice of frontloading all relevant context (codebase architecture, API docs, constraints, invariants) into prompts before coding.
 
 **What to include:**
 
@@ -126,9 +126,9 @@ The practice of frontloading all relevant context (codebase architecture, API do
 
 **Resources:**
 
-- [How to Manage Context in AI Coding Workflows](https://refactoring.fm/p/managing-context-for-ai-coding) - Context management strategies
-- [16x Prompt - AI Coding with Advanced Context Management](https://prompt.16x.engineer/) - Tool and methodology
-- [Context Engineering: Bringing Engineering Discipline to Prompts](https://addyo.substack.com/p/context-engineering-bringing-engineering) - Engineering approach to context
+- READ: [How to Manage Context in AI Coding Workflows](https://refactoring.fm/p/managing-context-for-ai-coding) - Context management strategies
+- READ: [16x Prompt - AI Coding with Advanced Context Management](https://prompt.16x.engineer/) - Tool and methodology
+- READ: [Context Engineering: Bringing Engineering Discipline to Prompts](https://addyo.substack.com/p/context-engineering-bringing-engineering) - Engineering approach to context
 
 ### Chain-of-Thought Prompting
 
@@ -155,15 +155,15 @@ Then provide the implementation.
 
 **Resources:**
 
-- [Chain-of-Thought Prompting | Prompt Engineering Guide](https://www.promptingguide.ai/techniques/cot) - Comprehensive technique guide
-- [Chain of Thought Prompting Explained | Codecademy](https://www.codecademy.com/article/chain-of-thought-cot-prompting) - Tutorial with examples
-- [Chain-of-Thought Prompting: Techniques, Tips, and Code Examples](https://www.helicone.ai/blog/chain-of-thought-prompting) - Implementation guide with code
+- READ: [Chain-of-Thought Prompting | Prompt Engineering Guide](https://www.promptingguide.ai/techniques/cot) - Comprehensive technique guide
+- READ: [Chain of Thought Prompting Explained | Codecademy](https://www.codecademy.com/article/chain-of-thought-cot-prompting) - Tutorial with examples
+- READ: [Chain-of-Thought Prompting: Techniques, Tips, and Code Examples](https://www.helicone.ai/blog/chain-of-thought-prompting) - Implementation guide with code
 
 ## Development Styles
 
 ### Vibe Coding / Prompt-First Development
 
-A style of AI-assisted development where developers describe what they want in natural language and iterate with the AI.
+In this style of AI-assisted development, developers describe what they want in natural language and iterate with the AI.
 
 **Characteristics:**
 
@@ -186,14 +186,14 @@ A style of AI-assisted development where developers describe what they want in n
 
 **Resources:**
 
-- [Vibe Coding Prompts | VibeCodex](https://vibecodex.io/) - Curated prompt directory
-- [The 50 Most Important Vibe Coding Prompts to Learn First](https://hexshift.medium.com/the-50-most-important-vibe-coding-prompts-to-learn-first-9a1e2a6d5623) - Essential prompt library
-- [8 Vibe Coding Prompt Techniques for Web Development](https://strapi.io/blog/vibe-coding-prompt-techniques) - Practical techniques
-- [Mastering prompting techniques for vibe coding](https://medium.com/@zahwahjameel26/mastering-prompting-techniques-for-vibe-coding-e140ad07603b) - Advanced prompting guide
+- TRY: [Vibe Coding Prompts | VibeCodex](https://vibecodex.io/) - Curated prompt directory
+- READ: [The 50 Most Important Vibe Coding Prompts to Learn First](https://hexshift.medium.com/the-50-most-important-vibe-coding-prompts-to-learn-first-9a1e2a6d5623) - Essential prompt library
+- READ: [8 Vibe Coding Prompt Techniques for Web Development](https://strapi.io/blog/vibe-coding-prompt-techniques) - Practical techniques
+- READ: [Mastering prompting techniques for vibe coding](https://medium.com/@zahwahjameel26/mastering-prompting-techniques-for-vibe-coding-e140ad07603b) - Advanced prompting guide
 
 ### Objective-Validation Protocol
 
-A systematic approach to defining clear success criteria and validation objectives for AI-generated code, establishing performance thresholds and tracking validation goals across iterations.
+This is a systematic approach to defining clear success criteria and validation objectives for AI-generated code, establishing performance thresholds and tracking validation goals across iterations.
 
 **Components:**
 
@@ -211,12 +211,12 @@ A systematic approach to defining clear success criteria and validation objectiv
 
 ## Adoption Considerations
 
-When evaluating these patterns:
+When evaluating these patterns, consider:
 
-- **Team maturity**: Some patterns require more AI experience
-- **Project phase**: Different patterns suit exploration vs. production
-- **Code criticality**: Safety-critical code needs more rigorous approaches
-- **Team size**: Collaborative work may need more structured patterns
+- **Team maturity**: Some patterns require more AI experience.
+- **Project phase**: Different patterns suit exploration vs. production.
+- **Code criticality**: Safety-critical code needs more rigorous approaches.
+- **Team size**: Collaborative work may need more structured patterns.
 
 ---
 

@@ -9,14 +9,14 @@ Understanding what's happening under the hood helps you work with agents more ef
 
 ## The ReAct Loop
 
-Every AI agent follows the same core pattern: **Reason → Act → Observe**. This cycle, called ReAct (Reason + Act), is how agents turn your request into working code.
+Every AI agent follows the same core pattern: **Reason → Act → Observe**. This cycle, called ReAct (Reason + Act—not the frontend framework), is how agents turn your request into working code.
 
-Here's what happens each iteration:
+Here's what happens with each iteration:
 
-1. **Observe** — Read the current state (code, errors, file system)
-2. **Reason** — Decide what action will move toward the goal
-3. **Act** — Execute that action (write code, run a command, ask for clarification)
-4. **Evaluate** — Check if it worked, then repeat
+1. **Observe**: Read the current state (code, errors, file system)
+2. **Reason**: Decide what action will move toward the goal
+3. **Act**: Execute that action (write code, run a command, ask for clarification)
+4. **Evaluate**: Check if it worked, then repeat
 
 The quality of each step determines the quality of the output. When an agent seems stuck, it's usually failing at one specific step in this loop.
 
@@ -33,10 +33,10 @@ The **Large Language Model (LLM)** is the "brain" of an agent—a neural network
 
 **What LLMs struggle with:**
 
-- No persistent memory between sessions—each conversation starts fresh
-- No system access without tools—they can only generate text by default
-- Probabilistic, not deterministic—same input may produce different output
-- Limited long-horizon planning—they work best with clear, bounded tasks
+- No persistent memory between sessions: each conversation starts fresh
+- No system access without tools: they can only generate text by default
+- Probabilistic, not deterministic: the same input may produce different output
+- Limited long-horizon planning: they work best with clear, bounded tasks
 
 ## Closed vs Open Weight Models
 
@@ -50,7 +50,7 @@ The models powering AI agents come in two flavors: **closed** and **open weight*
 **Open weight models** (Llama, Mistral, DeepSeek, Qwen) can be downloaded and run on your own hardware _or_ accessed through APIs.
 
 - **Pros:** Full data control, predictable costs at scale, customizable through fine-tuning
-- **Cons:** Requires GPU infrastructure, you manage updates and security, generally lower capability than frontier closed models
+- **Cons:** Requires GPU infrastructure and you managing updates and security, with generally lower capability than frontier closed models
 
 **Choosing between them:**
 
@@ -66,10 +66,10 @@ Raw LLMs can only generate text. **Tools** are what transform them into agents t
 
 Common tools include:
 
-- **File operations** — Read, write, and search code files
-- **Terminal commands** — Run builds, tests, linters, and deployments
-- **API calls** — Interact with external services and databases
-- **Code execution** — Run and verify generated code
+- **File operations**: These read, write, and search code files
+- **Terminal commands**: These run builds, tests, linters, and deployments
+- **API calls**: These interact with external services and databases
+- **Code execution**: These run and verify generated code
 
 Each tool extends what the agent can do. The quality of tool integration—how reliably tools work and how well the agent knows when to use them—matters as much as the underlying model.
 
@@ -85,13 +85,13 @@ When context fills up, older content gets **truncated**—the agent literally fo
 
 Agents fail in predictable ways. Knowing these patterns helps you catch problems early:
 
-- **Hallucination** — Generating plausible but incorrect information, like APIs or functions that don't exist
-- **Context drift** — Gradually losing track of the original goal as steps accumulate
-- **Infinite loops** — Getting stuck repeating the same failed approach without trying something new
-- **Overconfidence** — Asserting that code works without actually verifying it runs
+- **Hallucination**: Generating plausible but incorrect information, like APIs or functions that don't exist
+- **Context drift**: Gradually losing track of the original goal as steps accumulate
+- **Infinite loops**: Getting stuck repeating the same failed approach without trying something new
+- **Overconfidence**: Asserting that code works without actually verifying it runs
 
 When you see these patterns, intervene. Reset the context, clarify the goal, or break the task into smaller pieces. The agent isn't being stubborn—it's hitting a limitation you can work around.
 
 ---
 
-**Have a failure mode we missed?** This guide is community-driven. [Share your experience](/community/contributing/) so others can learn from it.
+**Did we miss a failure mode?** This guide is community-driven. [Share your experience](/community/contributing/) so others can learn from it.
