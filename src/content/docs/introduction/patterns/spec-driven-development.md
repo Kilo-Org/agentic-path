@@ -5,7 +5,7 @@ sidebar:
   order: 7
 ---
 
-You've watched it happen: you ask an AI agent to "add photo sharing to the app," and it builds something. The code compiles. Tests pass. But the architecture doesn't match what you'd choose. The data model makes assumptions you'd never make. And now you're three days into a feature that needs a rewrite.
+You've watched it happen: you ask an AI agent to "add photo sharing to the app" and it builds something. The code compiles. Tests pass. But the architecture doesn't match what you'd choose. The data model makes assumptions you'd never make. And now you're three days into a feature that needs a rewrite.
 
 This is the vibe coding trap. The agent isn't broken—it's doing exactly what you asked. The problem is you asked for code when you should have asked for clarity first.
 
@@ -17,11 +17,11 @@ When you prompt an AI agent without clear specifications, you're asking it to re
 
 **What happens with vague prompts:**
 
-- The agent makes reasonable assumptions—some will be wrong
-- Requirements emerge incrementally, locking you into early decisions
-- The codebase becomes the de-facto specification
-- Crucial decisions get trapped in Slack threads or people's heads
-- Major rewrites require enormous effort because code is inherently binding
+- The agent makes reasonable assumptions—some will be wrong.
+- Requirements emerge incrementally, locking you into early decisions.
+- The codebase becomes the de-facto specification.
+- Crucial decisions get trapped in Slack threads or people's heads.
+- Major rewrites require enormous effort because code is inherently binding.
 
 You discover issues deep into implementation when they're expensive to fix. The agent built what you said, not what you meant.
 
@@ -29,9 +29,9 @@ You discover issues deep into implementation when they're expensive to fix. The 
 
 Let's be clear about what SDD isn't:
 
-- **Not waterfall planning** — You're not writing exhaustive documentation before touching code
-- **Not bureaucracy** — This shouldn't slow you down; it should prevent expensive rework
-- **Not predicting the future** — You're capturing current understanding, which evolves
+- **Not waterfall planning**: You're not writing exhaustive documentation before touching code.
+- **Not bureaucracy**: This shouldn't slow you down; it should prevent expensive rework.
+- **Not predicting the future**: You're capturing current understanding, which evolves.
 
 SDD is making technical decisions explicit, reviewable, and evolvable. It's version control for your thinking.
 
@@ -56,11 +56,11 @@ Before any iteration begins, establish the rules of the game. What are your non-
 - Engineering practices
 - Integration requirements
 
-This becomes the guardrails that guide all development. The agent knows what's off-limits before it writes a single line.
+This becomes the guardrails that guide all development. The agent knows what's off-limits before it writes a single line of code.
 
 ### Phase 1: Specify
 
-Define the "what" and "why"—the problem, users, scope, and success criteria.
+Define the "what" and "why": the problem, users, scope, and success criteria.
 
 **Focus on:**
 
@@ -71,7 +71,7 @@ Define the "what" and "why"—the problem, users, scope, and success criteria.
 - Constraints (performance, privacy, security)
 - What's explicitly out of scope
 
-**Avoid:** Technical implementation details, stack choices, architecture. That comes later.
+**Avoid:** Technical implementation details, stack choices, architecture (that comes later).
 
 **Example specification prompt:**
 
@@ -89,7 +89,7 @@ The output is a structured `SPEC.md` that captures requirements. The agent may f
 
 ### Phase 2: Plan
 
-Translate the product spec into technical implementation. Now you're defining the "how."
+Translate the product spec into technical implementation. Now you're defining the "how".
 
 **Focus on:**
 
@@ -105,7 +105,7 @@ Translate the product spec into technical implementation. Now you're defining th
 
 ```
 Stack: FastAPI + Postgres + Redis; Next.js front end; mobile via Expo.
-Architecture: API-first, backend service + vector store for POI embeddings.
+Architecture: API-first, backend service + vector store for place of interest (POI) embeddings.
 AI: routing agent for POIs, scheduler for packing days, critic for validation.
 Performance: target end-to-end plan in under 4 seconds at P95.
 Security: redact PII in logs, encrypt at rest.
@@ -140,7 +140,7 @@ By default, test-related items are included and ordered before implementation—
 
 Execute tasks in small slices while staying within constraints.
 
-**Key practice:** Keep agents pointing back to `SPEC.md` and `PLAN.md` for every change. Work from spec, plan, and task file rather than ad-hoc prompts. Execute in small, reviewable chunks.
+**Key practice:** Keep agents pointing back to `SPEC.md` and `PLAN.md` for every change. Work from the spec, plan, or task file rather than ad-hoc prompts. Execute in small, reviewable chunks.
 
 **Example implementation slice:**
 
@@ -268,42 +268,42 @@ After running `specify init`, you'll see:
 
 **Feature work in existing systems (N-to-N+1):** The most powerful use case. Adding features to complex, existing codebases. Forces clarity on how new features interact with existing systems. New code feels native, not bolted-on.
 
-**Legacy modernization:** Rebuilding legacy systems where original intent is lost to time. Capture essential business logic in a modern spec, design fresh architecture, let AI rebuild without inherited debt.
+**Legacy modernization:** Rebuilding legacy systems where original intent is lost to time. Capture essential business logic in a modern spec, design fresh architecture, and let AI rebuild without inherited debt.
 
 **Complex systems with many contributors:** Microservice architectures, multi-repo frontends, AI-powered backends. Every boundary becomes explicit, enabling contract testing.
 
-**High-stakes features:** Payment flows, healthcare diagnostics, safety-critical automation. Encodes performance, security, and reliability thresholds.
+**High-stakes features:** Payment flows, healthcare diagnostics, safety-critical automation. Encode performance, security, and reliability thresholds.
 
-**Long-term projects:** Will outlive the founding team. Preserves design intent as institutional memory.
+**Long-term projects:** When a project will outlive the founding team, SDD preserves design intent as institutional memory.
 
 ### When to skip it
 
-**Quick prototypes:** Lighten the process—short spec, simple plan, manual notes.
+**Quick prototypes:** SDD might be overkill. Lighten the process—short spec, simple plan, manual notes.
 
-**Design experiments:** Full structure slows momentum when you're exploring.
+**Design experiments:** SDD's full structure slows momentum when you're exploring.
 
-**One-shot operations:** Need immediate results without iteration.
+**One-shot operations:** Sometimes you need immediate results without iteration.
 
 **Simple, well-understood problems:** Overhead isn't justified for trivial tasks.
 
 ## Why this works
 
-The core problem with vague prompting: language models are exceptional at pattern completion, not mind reading.
+The core problem with vague prompting is that language models are exceptional at pattern completion, not mind reading.
 
 Vague prompt: "add photo sharing to my app"
 
-This forces the model to guess at thousands of unstated requirements. It makes reasonable assumptions—some will be wrong. You discover issues deep into implementation when they're expensive to fix.
+This forces the model to guess at thousands of unstated requirements. It makes reasonable assumptions—but some will be wrong. You discover issues deep into implementation when they're expensive to fix.
 
-**Clear specification + technical plan + focused tasks = AI clarity**
+**With clear specification + technical plan + focused tasks = AI clarity**
 
-Instead of guessing:
+Now, instead of guessing, AI:
 
 - **Knows what to build:** From specification
 - **Knows how to build it:** From plan
 - **Knows sequence:** From tasks
 - **Knows constraints:** From constitution
 
-The approach works across different stacks because the fundamental challenge is the same: translating intent into working code. Specification captures intent clearly. Plan translates to technical decisions. Tasks break into implementable pieces. AI handles actual coding.
+The approach works across different stacks because the fundamental challenge is the same: translating intent into working code. Your specification captures intent clearly. Your plan translates intent to technical decisions. And tasks break the work down into implementable pieces. AI just handles the actual coding.
 
 ## Common pitfalls
 
@@ -311,49 +311,49 @@ The approach works across different stacks because the fundamental challenge is 
 
 **Problem:** Trying to capture every pixel before building.
 
-**Solution:** Specs should evolve with insight. Aim for just-enough structure for test automation and AI generation. Iterate as you validate assumptions.
+**Solution:** Specs should evolve with insight. Aim for just-enough structure for test automation and AI generation, and iterate as you validate assumptions.
 
 ### Letting specs drift
 
 **Problem:** Changes sneak into production without spec updates.
 
-**Solution:** Treat the document as changelog's front line. Update spec first, then merge code. Preserves traceability for audits.
+**Solution:** Treat the document as your changelog's front line. Update the spec first, then merge code. This preserves traceability for audits.
 
 ### No clear ownership
 
 **Problem:** "Someone else will fix it later" syndrome.
 
-**Solution:** Appoint a "spec steward" (role that rotates). Ensures merge requests include spec updates. Flags inconsistencies early.
+**Solution:** Appoint a "spec steward" (a role that rotates) to ensure that merge requests include spec updates. They should flag inconsistencies early.
 
 ### Focusing on what instead of why
 
 **Problem:** Future teammates lack context for confident changes.
 
-**Solution:** Capture rationale as well as requirements. Include business drivers ("reduce checkout time to under 2 seconds"). Document risks mitigated ("meet SOC 2 audit log mandates").
+**Solution:** Capture rationale as well as requirements. Include business drivers ("reduce checkout time to under 2 seconds") and document risks mitigated ("meet SOC 2 audit log mandates").
 
 ### Treating as static document
 
-**Problem:** Spec becomes an outdated artifact.
+**Problem:** The spec becomes an outdated artifact.
 
-**Solution:** Keep spec as living document. Evolve alongside code. Update during maintenance phase. Keep changelog of revisions.
+**Solution:** Keep your spec as living document that evolves alongside the code. Update during maintenance phase and keep a changelog of revisions.
 
 ## Enterprise benefits
 
-**Centralized requirements:** Security policies, compliance rules, design system constraints, integration needs—all in specification and plan where AI can actually use them. Not in someone's head, buried in a wiki nobody reads, or scattered across Slack conversations.
+**Centralized requirements:** Security policies, compliance rules, design system constraints, integration needs—these should all live in the specification and plan, where AI can actually use them. Not in someone's head, buried in a wiki nobody reads, or scattered across Slack conversations.
 
-**Auditability:** Spec commit linked to every release. Provable chain from requirement to implementation. Satisfies auditors demanding due diligence.
+**Auditability:** With a spec commit linked to every release, you have a provable chain from requirement to implementation, to satisfy auditors demanding due diligence.
 
-**Shared vocabulary:** One glossary of user flows, metrics, error states. No dueling definitions of "session," "tenant," or "SLA." Lower friction in cross-functional work.
+**Shared vocabulary:** One glossary of user flows, metrics, and error states. With no dueling definitions of "session", "tenant", or "SLA", you have less friction in cross-functional work.
 
-**Accelerated onboarding:** New hires skim change-tracked specs. See how requirements evolved. Reach productive coding in days, not weeks.
+**Accelerated onboarding:** New hires skim change-tracked specs. They can see how requirements evolved and reach productive coding in days, not weeks.
 
-**Safe parallel development:** Interfaces frozen in contract. Mock servers generated from specification. Surface integration issues early, before staging.
+**Safe parallel development:** With interfaces frozen in contract and mock servers generated from specification, you can surface integration issues early, before staging.
 
 ## The shift in thinking
 
 Traditional development: code is the source of truth.
 
-Spec-driven development: intent is the source of truth.
+Spec-driven development: _intent_ is the source of truth.
 
 You stop asking "How do I get the perfect prompt?" and start asking "How do I capture intent clearly enough that AI can execute it?"
 
@@ -363,13 +363,13 @@ The agent's job is translating intent into working code. Your job is making that
 
 ### Official
 
-- [GitHub - github/spec-kit](https://github.com/github/spec-kit) — Official repository (62k+ stars, MIT license)
-- [Spec-driven development with AI - GitHub Blog](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/) — Official announcement and overview
+- TRY: [GitHub - github/spec-kit](https://github.com/github/spec-kit) — Official repository (62k+ stars, MIT license)
+- READ: [Spec-driven development with AI - GitHub Blog](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/) — Official announcement and overview
 
 ### Tutorials
 
-- [Spec-Driven Development Tutorial using GitHub Spec Kit](https://www.scalablepath.com/machine-learning/spec-driven-development-workflow) — Real-world tutorial with examples
-- [Diving Into Spec-Driven Development With GitHub Spec Kit](https://developer.microsoft.com/blog/spec-driven-development-spec-kit) — Microsoft Developer Blog
+- READ: [Spec-Driven Development Tutorial using GitHub Spec Kit](https://www.scalablepath.com/machine-learning/spec-driven-development-workflow) — Real-world tutorial with examples
+- READ: [Diving Into Spec-Driven Development With GitHub Spec Kit](https://developer.microsoft.com/blog/spec-driven-development-spec-kit) — Microsoft Developer Blog
 
 ### Maintainers
 

@@ -17,7 +17,7 @@ At its simplest, Ralph is a bash loop:
 while :; do cat PROMPT.md | claude ; done
 ```
 
-That's it. Feed the agent the same task repeatedly. Each iteration builds on the last through git history and progress tracking. The agent doesn't need to be perfect—it needs to be persistent.
+That's it. Feed the agent the same task repeatedly. Each iteration builds on the last through git history and progress tracking. The agent doesn't need to be perfect—it just needs to be persistent.
 
 **The philosophy:** Iteration beats perfection. Deterministic failures are data. Keep trying until success.
 
@@ -42,11 +42,11 @@ Ralph wraps the standard AI tool loop with an outer verification layer:
 
 The key mechanisms:
 
-- **Stop hook** — Intercepts exit attempts and checks completion criteria before allowing the agent to stop
-- **Progress tracking** — A `progress.txt` file tracks what's been done, decisions made, and blockers encountered
-- **Git commits** — Each iteration commits work, creating context for future iterations
-- **Feedback loops** — Types, tests, and linting verify quality before continuing
-- **Verification** — Custom completion criteria determine when the task is truly done
+- **Stop hook**: This intercepts exit attempts and checks completion criteria before allowing the agent to stop.
+- **Progress tracking**: A `progress.txt` file tracks what's been done, decisions made, and blockers encountered.
+- **Git commits**: Each iteration commits work, creating context for future iterations.
+- **Feedback loops**: Types, tests, and linting verify quality before continuing.
+- **Verification**: Custom completion criteria determine when the task is truly done.
 
 ## Two operating modes
 
@@ -54,13 +54,25 @@ The key mechanisms:
 
 Run one iteration at a time. Watch the agent work. Intervene when needed.
 
-This is pair programming with AI. You see every decision, catch mistakes early, and guide the direction. Best for learning the technique, refining prompts, or working on risky tasks where you want eyes on every change.
+This is pair programming with AI. You see every decision, catch mistakes early, and guide the direction. 
+
+Best for: 
+
+- Learning the technique 
+- Refining prompts 
+- Working on risky tasks where you want eyes on every change
 
 ### AFK (Away From Keyboard)
 
 Set a maximum iteration count and let it run. Come back to results.
 
-This is overnight work. You define clear success criteria, cap the iterations, and let the agent grind through mechanical tasks while you sleep. Best for well-defined work like test migrations, coverage improvements, or large refactors with clear patterns.
+This is overnight work. You define clear success criteria, cap the iterations, and let the agent grind through mechanical tasks while you sleep. 
+
+Best for well-defined work like: 
+
+- Test migrations
+- Coverage improvements
+- Large refactors with clear patterns
 
 **Critical for AFK mode:** Use Docker sandboxes. You're giving an agent autonomous access to your system. Contain it.
 
@@ -85,11 +97,11 @@ Ralph excels at tasks with clear completion criteria:
 
 Some tasks resist iteration:
 
-- **Ambiguous requirements** — If you can't define "done," the loop can't verify completion
-- **Architectural decisions** — These need human judgment, not persistence
-- **Security-sensitive code** — Auth, payments, and crypto require human review regardless of test results
-- **Exploration tasks** — "Figure out why the app is slow" has no clear stopping point
-- **One-shot operations** — If you need immediate results, the loop overhead isn't worth it
+- **Ambiguous requirements**: If you can't define "done," the loop can't verify completion.
+- **Architectural decisions**: These need human judgment, not persistence.
+- **Security-sensitive code**: Auth, payments, and crypto require human review regardless of test results.
+- **Exploration tasks**: "Figure out why the app is slow" has no clear stopping point.
+- **One-shot operations**: If you need immediate results, the loop overhead isn't worth it.
 
 ## Practical tips
 
@@ -133,7 +145,7 @@ If any check fails, the iteration isn't complete.
 
 ### Take small steps
 
-One logical change per commit. Break large tasks into subtasks. Run feedback loops after each change. Quality over speed.
+Keep it to one logical change per commit. Break large tasks into subtasks, and run feedback loops after each change. You want quality over speed.
 
 ### Cap iterations
 
@@ -145,7 +157,7 @@ A 50-iteration loop on a large codebase can cost $50-100+ in API credits. Start 
 
 ### Commit after each feature
 
-Creates clean git history and rollback points. If iteration 15 breaks something, you can revert to iteration 14.
+Good git hygiene creates a clean git history and clear rollback points. If iteration 15 breaks something, you can revert to iteration 14.
 
 ## Getting started
 
