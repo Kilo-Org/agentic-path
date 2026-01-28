@@ -209,6 +209,31 @@ This is a systematic approach to defining clear success criteria and validation 
 - Easier debugging
 - Better documentation
 
+## Agentic Tooling
+
+### Moltbot (formerly Clawdbot)
+
+An open-source tool that brings Claude AI capabilities directly into Slack, enabling team-wide AI assistance for collaborative workflows. Moltbot exemplifies the trend of embedding agentic AI into existing team communication platforms rather than requiring context switches to separate tools.
+
+**Key characteristics:**
+
+- Native Slack integration for seamless team adoption
+- Claude-powered responses for coding questions, documentation, and problem-solving
+- Configurable with [Kilo Gateway](https://kilo.ai) for enhanced capabilities and usage management
+- Open-source and self-hostable for enterprise control
+
+**Use cases:**
+
+- Team-wide AI assistance without leaving Slack
+- Quick code reviews and explanations in channel discussions
+- Documentation lookups and technical Q&A
+- Onboarding support for new team members
+
+**Resources:**
+
+- READ: [Kilo Gateway Supercharges Moltbot](https://blog.kilo.ai/p/kilo-gateway-supercharges-moltbot-fka-clawdbot) - Integration guide with Kilo Gateway
+- TRY: [GitHub - kiloai/moltbot](https://github.com/kiloai/moltbot) - Open source repository
+
 ## Adoption Considerations
 
 When evaluating these patterns, consider:
