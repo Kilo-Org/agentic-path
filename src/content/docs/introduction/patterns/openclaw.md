@@ -162,3 +162,5 @@ The onboarding wizard walks through:
 ---
 
 *OpenClaw is open source and actively developed. The project welcomes contributions.*
+
+*Note: OpenClaw was originally called "ClawdBot", then "MoltBot", before landing on "OpenClaw".*

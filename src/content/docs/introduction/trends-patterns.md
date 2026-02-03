@@ -110,6 +110,8 @@ An open-source AI agent runtime that connects language models to your existing t
 - READ: [OpenClaw Documentation](https://docs.openclaw.ai) - Official docs
 - JOIN: [OpenClaw Discord](https://discord.com/invite/clawd) - Community support
 
+*Note: OpenClaw was originally called "ClawdBot", then "MoltBot", before landing on "OpenClaw".*
+
 ## Prompting Patterns
 
 ### Stepwise / Iterative Prompting
