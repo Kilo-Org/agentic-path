@@ -83,6 +83,35 @@ A three-phase framework for transforming chaotic AI interactions into predictabl
 - READ: [Introducing the RPI Strategy](https://patrickarobinson.com/blog/introducing-rpi-strategy/) - Creator's blog post explaining the approach
 - WATCH: [The RPI workflow - Build Wiz AI Show (Podcast)](https://open.spotify.com/episode/1OdIYj0SZzhyzFGGoVuELP) - Audio discussion on advanced AI coding
 
+### OpenClaw
+
+An open-source AI agent runtime that connects language models to your existing tools and services. Instead of AI living in a browser tab, OpenClaw runs locally (or on your VPS) and integrates with messaging apps, calendars, email, shell, browser, and more—giving agents persistent context about your workflow.
+
+→ **[Read the full OpenClaw guide](/introduction/patterns/openclaw/)**
+
+**Key characteristics:**
+
+- Runs locally or self-hosted (your data stays yours)
+- Connects to messaging (Telegram, Discord, Signal, Slack), calendars, email, and more
+- Persistent memory across sessions via workspace files
+- Sub-agent spawning for parallel background tasks
+- Skills system for extending capabilities
+
+**Use cases:**
+
+- Personal AI assistant with access to your actual tools
+- Automated workflows (inbox triage, calendar management, code review)
+- Proactive monitoring and scheduled tasks
+- Background research and task execution
+
+**Resources:**
+
+- TRY: [OpenClaw GitHub](https://github.com/openclaw/openclaw) - Open source repository
+- READ: [OpenClaw Documentation](https://docs.openclaw.ai) - Official docs
+- JOIN: [OpenClaw Discord](https://discord.com/invite/clawd) - Community support
+
+*Note: OpenClaw was originally called "ClawdBot", then "MoltBot", before landing on "OpenClaw".*
+
 ## Prompting Patterns
 
 ### Stepwise / Iterative Prompting
