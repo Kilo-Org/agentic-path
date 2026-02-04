@@ -70,38 +70,46 @@ export default defineConfig({
             { label: "Best Practices", slug: "engineers/best-practices" },
           ],
         },
-        {
-          label: "For Team Leads",
-          items: [
-            {
-              label: "Adopting Agentic Tools",
-              slug: "team-leads/adopting-agentic-tools",
-            },
-            {
-              label: "Measuring Impact",
-              slug: "team-leads/measuring-impact",
-            },
-            {
-              label: "Quality Assurance",
-              slug: "team-leads/quality-assurance",
-            },
-          ],
-        },
-        {
-          label: "For Executives",
-          items: [
-            { label: "Strategic Vision", slug: "executives/strategic-vision" },
-            { label: "ROI Frameworks", slug: "executives/roi-frameworks" },
-            {
-              label: "Adoption Playbook",
-              slug: "executives/adoption-playbook",
-            },
-            {
-              label: "Security & Compliance",
-              slug: "executives/security-compliance",
-            },
-          ],
-        },
+         {
+           label: "For Team Leads",
+           items: [
+             {
+               label: "Adopting Agentic Tools",
+               slug: "team-leads/adopting-agentic-tools",
+             },
+             {
+               label: "Measuring Impact",
+               slug: "team-leads/measuring-impact",
+             },
+             {
+               label: "Quality Assurance",
+               slug: "team-leads/quality-assurance",
+             },
+             {
+               label: "The 1-Pizza Team",
+               slug: "team-leads/1-pizza-teams",
+             },
+           ],
+         },
+         {
+           label: "For Executives",
+           items: [
+             { label: "Strategic Vision", slug: "executives/strategic-vision" },
+             { label: "ROI Frameworks", slug: "executives/roi-frameworks" },
+             {
+               label: "Adoption Playbook",
+               slug: "executives/adoption-playbook",
+             },
+             {
+               label: "Security & Compliance",
+               slug: "executives/security-compliance",
+             },
+             {
+               label: "AI-Native Economics",
+               slug: "executives/ai-native-economics",
+             },
+           ],
+         },
         {
           label: "Use Cases by Phase",
           items: [
