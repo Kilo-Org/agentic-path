@@ -164,7 +164,7 @@ Good git hygiene creates a clean git history and clear rollback points. If itera
 ### Claude Code Plugin
 
 ```bash
-/plugin install ralph-wiggum@claude-plugins-official
+/plugin install ralph-loop@claude-plugins-official
 /ralph-loop "Add JSDoc comments to all exported functions" --max-iterations 10
 ```
 
