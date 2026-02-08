@@ -4,5 +4,13 @@ import Default from '@astrojs/starlight/components/Header.astro';
 import ContributeBanner from './ContributeBanner.astro';
 ---
 
-<ContributeBanner />
-<Default {...Astro.props}><slot /></Default>
+<div class="header-with-banner">
+  <ContributeBanner />
+  <Default {...Astro.props}><slot /></Default>
+</div>
+
+<style>
+  .header-with-banner {
+    display: contents;
+  }
+</style>

@@ -1,0 +1,27 @@
+/* Offset Starlight's fixed header, sidebar, and main content
+   to account for the contribution banner above the navbar.
+   --sl-contribute-banner-height is set dynamically by the banner script. */
+
+:root {
+  --sl-contribute-banner-height: 0px;
+}
+
+/* Push the fixed header down by the banner height */
+.header {
+  top: var(--sl-contribute-banner-height) !important;
+}
+
+/* Push the sidebar down so it starts below header + banner */
+.sidebar-pane {
+  top: calc(var(--sl-nav-height) + var(--sl-contribute-banner-height)) !important;
+}
+
+/* Add banner height to the main content top padding */
+.main-frame {
+  padding-top: calc(var(--sl-nav-height) + var(--sl-mobile-toc-height) + var(--sl-contribute-banner-height)) !important;
+}
+
+/* Fix scroll-padding so anchor links don't hide behind the banner + header */
+html {
+  scroll-padding-top: calc(1.5rem + var(--sl-nav-height) + var(--sl-mobile-toc-height) + var(--sl-contribute-banner-height)) !important;
+}

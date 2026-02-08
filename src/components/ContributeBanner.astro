@@ -1,5 +1,6 @@
 ---
 // Dismissible banner encouraging contributions
+// Renders above the fixed Starlight header and shifts layout down via --sl-banner-height.
 ---
 
 <div id="contribute-banner" class="contribute-banner">
@@ -18,11 +19,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 1rem;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     border-bottom: 1px solid #30363d;
-    font-size: 0.9rem;
-    position: relative;
+    font-size: 0.85rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: calc(var(--sl-z-index-navbar) + 1);
   }
 
   :global([data-theme='light']) .contribute-banner {
@@ -38,7 +43,7 @@
   }
 
   .banner-icon {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .banner-text {
@@ -73,6 +78,7 @@
     line-height: 1;
     border-radius: 4px;
     transition: background-color 0.2s;
+    flex-shrink: 0;
   }
 
   .dismiss-btn:hover {
@@ -91,17 +97,40 @@
 </style>
 
 <script>
-  const banner = document.getElementById('contribute-banner');
-  const dismissBtn = document.getElementById('dismiss-banner');
-  const storageKey = 'contribute-banner-dismissed';
+  function initBanner() {
+    const banner = document.getElementById('contribute-banner');
+    const dismissBtn = document.getElementById('dismiss-banner');
+    const storageKey = 'contribute-banner-dismissed';
 
-  // Check if banner was previously dismissed
-  if (localStorage.getItem(storageKey) === 'true') {
-    banner?.classList.add('hidden');
+    function updateBannerOffset() {
+      if (banner && !banner.classList.contains('hidden')) {
+        const height = banner.offsetHeight;
+        document.documentElement.style.setProperty('--sl-contribute-banner-height', `${height}px`);
+      } else {
+        document.documentElement.style.setProperty('--sl-contribute-banner-height', '0px');
+      }
+    }
+
+    // Check if banner was previously dismissed
+    if (localStorage.getItem(storageKey) === 'true') {
+      banner?.classList.add('hidden');
+    }
+
+    updateBannerOffset();
+
+    dismissBtn?.addEventListener('click', () => {
+      banner?.classList.add('hidden');
+      localStorage.setItem(storageKey, 'true');
+      updateBannerOffset();
+    });
+
+    // Recalculate on resize in case text wraps differently
+    window.addEventListener('resize', updateBannerOffset);
   }
 
-  dismissBtn?.addEventListener('click', () => {
-    banner?.classList.add('hidden');
-    localStorage.setItem(storageKey, 'true');
-  });
+  // Run on initial load
+  initBanner();
+
+  // Re-run after Astro view transitions (Starlight uses them)
+  document.addEventListener('astro:after-swap', initBanner);
 </script>
