@@ -1,0 +1,107 @@
+---
+// Dismissible banner encouraging contributions
+---
+
+<div id="contribute-banner" class="contribute-banner">
+  <div class="banner-content">
+    <span class="banner-icon">🌟</span>
+    <span class="banner-text">
+      <strong>Help us grow!</strong> Found a great resource? Share it with the community. 
+      <a href="https://github.com/Kilo-Org/agentic-path" target="_blank" rel="noopener">Contribute on GitHub →</a>
+    </span>
+  </div>
+  <button id="dismiss-banner" class="dismiss-btn" aria-label="Dismiss banner">×</button>
+</div>
+
+<style>
+  .contribute-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-bottom: 1px solid #30363d;
+    font-size: 0.9rem;
+    position: relative;
+  }
+
+  :global([data-theme='light']) .contribute-banner {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 100%);
+    border-bottom: 1px solid #d0d7de;
+  }
+
+  .banner-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .banner-icon {
+    font-size: 1.1rem;
+  }
+
+  .banner-text {
+    color: #c9d1d9;
+  }
+
+  :global([data-theme='light']) .banner-text {
+    color: #24292f;
+  }
+
+  .banner-text a {
+    color: #58a6ff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .banner-text a:hover {
+    text-decoration: underline;
+  }
+
+  :global([data-theme='light']) .banner-text a {
+    color: #0969da;
+  }
+
+  .dismiss-btn {
+    background: none;
+    border: none;
+    color: #8b949e;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    line-height: 1;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+
+  .dismiss-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #c9d1d9;
+  }
+
+  :global([data-theme='light']) .dismiss-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #24292f;
+  }
+
+  .contribute-banner.hidden {
+    display: none;
+  }
+</style>
+
+<script>
+  const banner = document.getElementById('contribute-banner');
+  const dismissBtn = document.getElementById('dismiss-banner');
+  const storageKey = 'contribute-banner-dismissed';
+
+  // Check if banner was previously dismissed
+  if (localStorage.getItem(storageKey) === 'true') {
+    banner?.classList.add('hidden');
+  }
+
+  dismissBtn?.addEventListener('click', () => {
+    banner?.classList.add('hidden');
+    localStorage.setItem(storageKey, 'true');
+  });
+</script>
