@@ -83,6 +83,29 @@ A three-phase framework for transforming chaotic AI interactions into predictabl
 - READ: [Introducing the RPI Strategy](https://patrickarobinson.com/blog/introducing-rpi-strategy/) - Creator's blog post explaining the approach
 - WATCH: [The RPI workflow - Build Wiz AI Show (Podcast)](https://open.spotify.com/episode/1OdIYj0SZzhyzFGGoVuELP) - Audio discussion on advanced AI coding
 
+### Outcome Engineering (o16g)
+
+A manifesto for reorienting development around outcomes rather than code. O16g argues that with AI agents removing the constraints of human bandwidth, we should manage to cost (tokens) instead of capacity (engineer-hours), measure success by verified impact rather than lines written, and treat code as the mechanism for delivering ideas rather than the end goal itself.
+
+→ **[Read the full Outcome Engineering guide](/introduction/patterns/outcome-engineering/)**
+
+**Core reframing:**
+
+- Creation, not code — Focus on what you're building, not how you're typing it.
+- Cost, not time — If the outcome is worth the tokens, it gets built.
+- Certainty, not vibes — The only truth is the rate of positive change delivered to the customer.
+
+**The 16 principles include:**
+
+- "The Backlog is Dead" — Never reject an idea for lack of time, only for lack of budget.
+- "Code the Constitution" — Encode laws and intent into the environment where agents can use them.
+- "Verified Reality is the Only Truth" — Grade agents on verified outcomes, not lines written.
+- "Failures are Artifacts" — Debug the decision, not just the code.
+
+**Resources:**
+
+- READ: [The o16g Manifesto](https://o16g.com/) — Complete manifesto with all 16 principles
+
 ### OpenClaw
 
 An open-source AI agent runtime that connects language models to your existing tools and services. Instead of AI living in a browser tab, OpenClaw runs locally (or on your VPS) and integrates with messaging apps, calendars, email, shell, browser, and more—giving agents persistent context about your workflow.

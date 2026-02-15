@@ -15,6 +15,10 @@ The end-game is different: AI woven through every phase of development, from req
 
 ## The integration spectrum
 
+The [o16g Manifesto](https://o16g.com/) argues for a fundamental reframe: with AI removing human bandwidth constraints, we should manage to *cost* (tokens) instead of *capacity* (engineer-hours). The backlog, in this view, is "a relic of human limitation" — never reject an idea for lack of time, only for lack of budget.
+
+This reframing changes how you think about each integration level:
+
 ### Level 1: Tool adoption
 
 Individual developers use AI tools. No organizational change.
@@ -122,6 +126,7 @@ Your talent strategy needs to evolve accordingly.
 ### Essential
 
 - [Dispatch from the Future – Dan Shipper, Every](https://www.youtube.com/watch?v=MGzymaYBiss) - "Compounding Engineering" and organizational transformation
+- [The o16g Manifesto](https://o16g.com/) - "Outcome Engineering" — 16 principles for managing to cost instead of capacity
 
 ### Deep dives
 

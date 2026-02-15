@@ -88,6 +88,11 @@ When an agent gets stuck repeating the same failed approach.
 **Multi-agent system**
 Multiple specialized agents collaborating to complete complex tasks.
 
+## O
+
+**Outcome Engineering (o16g)**
+A development philosophy that reorients work around outcomes rather than code. Core tenets: manage to cost (tokens) instead of capacity (engineer-hours), measure success by verified impact rather than lines written, and treat the backlog as a relic of human limitation. See the [o16g Manifesto](https://o16g.com/).
+
 ## P
 
 **Prompt**

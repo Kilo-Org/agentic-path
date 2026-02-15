@@ -20,6 +20,12 @@ _Foundational books on AI, machine learning systems, and data architecture._
 - [AI Engineering](https://huyenchip.com/books/) – Chip Huyen (2025). Practical framework for building applications with foundation models, bridging traditional engineering and modern AI development.
 - [Designing Data-Intensive Applications](https://martin.kleppmann.com/2017/03/27/designing-data-intensive-applications.html) – Martin Kleppmann (2017). Deep dive into reliable, scalable systems—crucial architectural knowledge before layering on AI features.
 
+### Manifestos and philosophy
+
+_Frameworks for thinking about AI-assisted development at a higher level._
+
+- [The o16g Manifesto](https://o16g.com/) – Cory Ondrejka (2025). "Outcome Engineering" — 16 principles for reorienting development around outcomes rather than code. Argues for managing to cost (tokens) instead of capacity (engineer-hours), measuring success by verified impact, and treating the backlog as a relic of human limitation. From the CTO of Onebrief, co-creator of Second Life, and former engineering leader at Google and Meta.
+
 ### Context engineering
 
 _The emerging discipline of providing agents with the right information at the right time._

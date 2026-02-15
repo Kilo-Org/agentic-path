@@ -87,6 +87,7 @@ Different roles have different concerns. Jump to what matters most for your role
 
 - READ: [The Space Between AI Hype and AI Denial](https://blog.kilo.ai/p/between-ai-hype-and-ai-denial) - Finding the productive middle ground for AI adoption
 - WATCH: [The 3 Pillars of Autonomy – Michele Catasta, Replit](https://www.youtube.com/watch?v=MLhAA9yguwM) - Core framework for agent autonomy
+- READ: [The o16g Manifesto](https://o16g.com/) - "Outcome Engineering" — reframing development around outcomes, not code
 
 ### Deep dives
 
