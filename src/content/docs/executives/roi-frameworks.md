@@ -121,6 +121,10 @@ Not transformational. But clearly positive.
 
 "This is a capability investment, not a cost-cutting exercise. The real value emerges over 2-3 years as the technology improves and our skills compound."
 
+### The o16g reframe
+
+The [Outcome Engineering manifesto](https://o16g.com/) suggests an alternative mental model: stop measuring engineer-hours entirely. If an outcome is worth the compute cost, build it. The traditional backlog exists because human bandwidth was the constraint—with agents, that constraint lifts. Stack rank by expected value per token, not by available engineer-hours.
+
 ## Warning signs in ROI projections
 
 Be skeptical of projections that:
