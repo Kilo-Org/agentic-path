@@ -43,7 +43,8 @@
 
 // Initialize PostHog with your project API key
 posthog.init("phc_GK2Pxl0HPj5ZPfwhLRjXrtdz8eD7e9MKnXiFrOqnB6z", {
-  api_host: "https://us.i.posthog.com",
+  api_host: "https://path.kilo.ai/ingest",
+  ui_host: "https://us.posthog.com",
   person_profiles: "identified_only",
   capture_pageview: true,
   capture_pageleave: true,
