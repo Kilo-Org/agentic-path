@@ -8,18 +8,18 @@ import {
 
 const { title } = Astro.props;
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
-const description = "Learn about agentic engineering";
+const description = Astro.locals.t("shareButtons.description");
 ---
 
-<div class="share-buttons-container">
-  <h4 class="share-title">Share this page</h4>
-  <SocialShare
-    url={pageUrl}
-    title={title}
-    description={description}
-    buttons={[TwitterShareButton, LinkedInShareButton, RedditShareButton]}
-  />
-</div>
+  <div class="share-buttons-container">
+    <h4 class="share-title">{Astro.locals.t("shareButtons.shareThisPage")}</h4>
+    <SocialShare
+      url={pageUrl}
+      title={title}
+      description={Astro.locals.t("shareButtons.description")}
+      buttons={[TwitterShareButton, LinkedInShareButton, RedditShareButton]}
+    />
+  </div>
 
 <style>
   .share-buttons-container {

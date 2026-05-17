@@ -9,8 +9,9 @@ import ShareButtons from "./ShareButtons.astro";
 const { starlightRoute } = Astro.locals;
 // Only show share buttons if we have an entry (not 404 or other special pages)
 const showShareButtons = starlightRoute?.entry?.data;
+// Locale-aware base path: prepend /ru/ when viewing the Russian locale
+const localeBase = Astro.url.pathname.startsWith("/ru/") ? "/ru" : "";
 ---
-
 {
   showShareButtons && (
     <div class="share-section">
@@ -26,13 +27,13 @@ const showShareButtons = starlightRoute?.entry?.data;
   </div>
   <Pagination />
 
-  <div class="community-cta">
-    <p>
-      This guide is community-driven. <a href="/community/contributing/"
-        >Contribute</a
-      > or <a href="https://kilo.love/discord">join the conversation</a>.
-    </p>
-  </div>
+   <div class="community-cta">
+     <p>
+        {Astro.locals.t("footer.communityDriven")} <a href={`${localeBase}/community/contributing/`}
+          >{Astro.locals.t("footer.contribute")}</a
+        > или <a href="https://kilo.love/discord">{Astro.locals.t("footer.joinConversation")}</a>.
+     </p>
+   </div>
 
   {
     config.credits && (

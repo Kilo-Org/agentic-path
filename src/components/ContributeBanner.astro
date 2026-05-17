@@ -4,14 +4,14 @@
 ---
 
 <div id="contribute-banner" class="contribute-banner">
-  <div class="banner-content">
-    <span class="banner-icon">🌟</span>
-    <span class="banner-text">
-      <strong>Help us grow!</strong> Found a great resource? Share it with the community. 
-      <a href="https://github.com/Kilo-Org/agentic-path" target="_blank" rel="noopener">Contribute on GitHub →</a>
-    </span>
-  </div>
-  <button id="dismiss-banner" class="dismiss-btn" aria-label="Dismiss banner">×</button>
+   <div class="banner-content">
+     <span class="banner-icon">🌟</span>
+     <span class="banner-text">
+       <strong>{Astro.locals.t("contributeBanner.helpUsGrow")}</strong> {Astro.locals.t("contributeBanner.foundResource")} 
+       <a href="https://github.com/Kilo-Org/agentic-path" target="_blank" rel="noopener">{Astro.locals.t("contributeBanner.contributeOnGitHub")}</a>
+     </span>
+   </div>
+   <button id="dismiss-banner" class="dismiss-btn" aria-label="{Astro.locals.t("contributeBanner.dismissBanner")}">×</button>
 </div>
 
 <style>
